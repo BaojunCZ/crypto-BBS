@@ -8,15 +8,33 @@ export default class UserInfo extends React.Component {
 
     constructor() {
         super()
+        this.state = {
+            src: headIcon
+        }
+    }
+
+    componentWillReceiveProps(nextProps) {
+        this._initAttrs(nextProps);
+    }
+
+    componentDidMount() {
+        this._initAttrs(this.props);
+    }
+
+    _initAttrs(props) {
+        this.setState({src: props.player.icon}, () => {
+            console.log(this.state.src)
+        });
     }
 
     render() {
         return (
             <div style={Styles.Container}>
                 <img alt={'head'}
-                     src={headIcon}
-                     style={Styles.Head}/>
-                <text style={Styles.Name}>{this.props.name}</text>
+                     src={this.state.src}
+                     style={Styles.Head}
+                     onError={() => this.setState({src: headIcon})}/>
+                <text style={Styles.Name}>{this.props.player.name}</text>
             </div>
         )
     }

@@ -14,15 +14,15 @@ export default class Mine extends React.Component {
     constructor() {
         super();
         this.state = {
-            name: 'name',
+            player: {name: 'name', icon: '', sex: true},
             loading: true
         }
     }
 
     componentDidMount() {
-        checkPlayer(address1)
+        checkPlayer(address2)
             .then(player => {
-                this.setState({name: player.name, loading: false})
+                this.setState({player: player, loading: false})
             })
             .catch(err => {
                 this.setState({loading: false})
@@ -38,7 +38,8 @@ export default class Mine extends React.Component {
         return (
             <div>
                 <div style={Styles.Container}>
-                    <UserInfo name={this.state.name} style={Styles.UserInfo}/>
+                    <UserInfo player={this.state.player}
+                              style={Styles.UserInfo}/>
                     <PartingLine/>
                 </div>
                 <BottomTabs select={3}/>

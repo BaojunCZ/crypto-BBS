@@ -9,7 +9,7 @@ import {
     sendMessage,
     getPageMsgIDs
 } from "../contract/utils/tokenStore"
-import {initPlayer, setName,getPlayer} from "../contract/utils/UserInfoUtils"
+import {initPlayer, setName, getPlayer} from "../contract/utils/UserInfoUtils"
 import {address1, address2} from "../contract/test.config"
 
 export default class Test extends React.Component {
@@ -56,7 +56,8 @@ export default class Test extends React.Component {
     }
 
     _initPlayer() {
-        initPlayer(this.state.initPlayerName, true, "https://avatars2.githubusercontent.com/u/17841676?s=460&v=4").then(res => {
+        initPlayer(this.state.initPlayerName, true, "https://s1.ax1x.com/2018/09/07/iP1JNF.jpg").then(res => {
+            // initPlayer(this.state.initPlayerName, true, "11").then(res => {
             console.log(res)
         }).catch(err => {
             console.log(err)

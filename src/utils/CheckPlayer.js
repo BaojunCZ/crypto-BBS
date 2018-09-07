@@ -7,8 +7,8 @@ export const checkPlayer = (address) => {
     return new Promise((resolve, reject) => {
         getPlayer(address).then((player) => {
             console.log(player)
-            if (player.name !== undefined && player.name.length !== 0) {
-                resolve(player.name)
+            if (player.playerAddress.toLowerCase() === address.toLowerCase()) {
+                resolve(player)
             } else {
                 reject("未注册")
             }
