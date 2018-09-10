@@ -22,9 +22,7 @@ export default class UserInfo extends React.Component {
     }
 
     _initAttrs(props) {
-        this.setState({src: props.player.icon}, () => {
-            console.log(this.state.src)
-        });
+        this.setState({src: props.player.icon});
     }
 
     render() {
@@ -34,7 +32,9 @@ export default class UserInfo extends React.Component {
                      src={this.state.src}
                      style={Styles.Head}
                      onError={() => this.setState({src: headIcon})}/>
-                <text style={Styles.Name}>{this.props.player.name}</text>
+                <text
+                    style={Styles.Name}>{this.props.player.sex ? this.props.player.name + ' ♂' : this.props.player.name + ' ♀'}</text>
+                <text style={Styles.Address}>{this.props.player.playerAddress}</text>
             </div>
         )
     }
@@ -49,11 +49,12 @@ const Styles = {
         flexDirection: 'column',
         background: '#456cff',
         width: '100vw',
-        height: '40vw'
+        paddingTop: '15px',
+        paddingBottom: '15px'
     },
     Head: {
-        width: 70,
-        height: 70,
+        width: 60,
+        height: 60,
         display: 'flex',
         borderRadius: '50%',
         alignItems: 'center',
@@ -64,6 +65,11 @@ const Styles = {
     Name: {
         fontSize: 18,
         marginTop: 7,
+        color: '#ffffff'
+    },
+    Address: {
+        fontSize: 13,
+        marginTop: 3,
         color: '#ffffff'
     }
 }

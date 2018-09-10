@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import {checkPlayer} from "../../utils/CheckPlayer";
-import BottomTabs from '../../components/BottomTabs/BottomTabs'
+import BottomTabs from '../../components/BottomTabs'
 import {address1, address2} from "../../contract/test.config";
 import Loading from "react-loading-animation"
 import UserInfo from "./UserInfo"

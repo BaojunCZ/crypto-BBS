@@ -243,6 +243,10 @@ contract CryptoBBS {
         return MsgIDs;
     }
 
+    function getMsgIDSize() public view returns (uint256){
+        return MsgIDs.length;
+    }
+
     //点赞
     function likeMsg(uint256 id) msgExist(id) isLogin(msg.sender) public payable {
         require(!data[id].like[msg.sender]);

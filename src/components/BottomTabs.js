@@ -3,12 +3,12 @@
  */
 import React from "react";
 import {Link} from "react-router-dom";
-import mineUnIcon from "../../public/image/ic_tab_mine_unclick.png"
-import mineIcon from "../../public/image/ic_tab_mine_click.png"
-import favoriteUnIcon from "../../public/image/ic_tab_favorite_unclick.png"
-import favoriteIcon from "../../public/image/ic_tab_favorite_click.png"
-import homeUnIcon from "../../public/image/ic_tab_home_unclick.png"
-import homeIcon from "../../public/image/ic_tab_home_click.png"
+import mineUnIcon from "../public/image/ic_tab_mine_unclick.png"
+import mineIcon from "../public/image/ic_tab_mine_click.png"
+import favoriteUnIcon from "../public/image/ic_tab_favorite_unclick.png"
+import favoriteIcon from "../public/image/ic_tab_favorite_click.png"
+import homeUnIcon from "../public/image/ic_tab_home_unclick.png"
+import homeIcon from "../public/image/ic_tab_home_click.png"
 
 export default class BottomTabs extends React.Component {
 
@@ -24,14 +24,14 @@ export default class BottomTabs extends React.Component {
                         <img alt={'favorite'}
                              src={this._renderFavorite()}
                              style={Styles.Icon}/>
-                        <text style={this._renderFavoriteButton()}>排名</text>
+                        <text style={this._renderFavoriteButton()}>收藏</text>
                     </Link>
                 </div>
                 <Link to={'/'} style={Styles.ButtonContainer}>
                     <img alt={'sign'}
                          src={this._renderSign()}
                          style={Styles.Icon}/>
-                    <text style={this._renderSignButton()}>签到</text>
+                    <text style={this._renderSignButton()}>论坛</text>
                 </Link>
                 <Link to={'/mine'} style={Styles.ButtonContainer}>
                     <img alt={'mine'}

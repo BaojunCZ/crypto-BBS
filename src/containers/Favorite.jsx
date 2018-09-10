@@ -2,7 +2,7 @@
  * Created by 包俊 on 2018/9/6.
  */
 import React from 'react';
-import BottomTabs from '../components/BottomTabs/BottomTabs'
+import BottomTabs from '../components/BottomTabs'
 
 export default class Favorite extends React.Component {
     render() {
