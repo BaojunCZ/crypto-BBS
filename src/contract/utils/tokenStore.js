@@ -7,9 +7,9 @@ export const getTX = () =>
     nervos.appchain.getBlockNumber().then(current => {
         const tx = {
             ...transaction,
-            from: address2,
+            from: address1,
             validUntilBlock: +current + 88,
-            privateKey: privateKey2
+            privateKey: privateKey1
         };
         // const tx = {
         //     ...transaction,

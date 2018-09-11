@@ -27,7 +27,7 @@ export default class Mine extends React.Component {
     }
 
     componentDidMount() {
-        checkPlayer(address2)
+        checkPlayer(address1)
             .then(player => {
                 this.setState({player: player, loading: false})
             })
@@ -56,7 +56,9 @@ export default class Mine extends React.Component {
                     <PartingLine/>
                     <ItemInfo name={'我的帖子'} value={this.state.msgSize} icon={IconBBSMsgs}/>
                     <ItemInfo name={'我的收藏'} value={this.state.favoriteSize} icon={IconBBSFavorite}/>
-                    <PartingLine/>
+                    <div style={{marginTop: 10}}>
+                        <PartingLine/>
+                    </div>
                 </div>
                 <BottomTabs select={3}/>
                 {this._loading()}

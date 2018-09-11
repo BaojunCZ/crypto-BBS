@@ -26,8 +26,7 @@ const Styles = {
         justifyContent: 'space-between',
         paddingLeft: '20px',
         paddingRight: '20px',
-        marginTop: '10px',
-        marginBottom: '10px'
+        marginTop: 10
     },
     Icon: {
         width: 25,
