@@ -8,6 +8,11 @@ import {address1, address2} from "../../contract/test.config";
 import Loading from "react-loading-animation"
 import UserInfo from "./UserInfo"
 import PartingLine from "../../components/PartingLine"
+import ItemInfo from "../../components/ItemInfo"
+import IconBBSMsgs from "../../public/image/icon_bbs_msgs.png";
+import IconBBSFavorite from "../../public/image/icon_bbs_favorite.png"
+import {getPlayerMsgSize, getFavoriteSize} from "../../contract/utils/UserInfoUtils"
+
 
 export default class Mine extends React.Component {
 
@@ -15,7 +20,9 @@ export default class Mine extends React.Component {
         super();
         this.state = {
             player: {name: 'name', icon: '', sex: true},
-            loading: true
+            loading: true,
+            msgSize: '0',
+            favoriteSize: '0',
         }
     }
 
@@ -32,6 +39,12 @@ export default class Mine extends React.Component {
                     alert(err)
                 }
             })
+        getPlayerMsgSize(address1).then(size => {
+            this.setState({msgSize: size})
+        })
+        getFavoriteSize(address1).then(size => {
+            this.setState({favoriteSize: size})
+        })
     }
 
     render() {
@@ -40,6 +53,9 @@ export default class Mine extends React.Component {
                 <div style={Styles.Container}>
                     <UserInfo player={this.state.player}
                               style={Styles.UserInfo}/>
+                    <PartingLine/>
+                    <ItemInfo name={'我的帖子'} value={this.state.msgSize} icon={IconBBSMsgs}/>
+                    <ItemInfo name={'我的收藏'} value={this.state.favoriteSize} icon={IconBBSFavorite}/>
                     <PartingLine/>
                 </div>
                 <BottomTabs select={3}/>
@@ -59,7 +75,6 @@ export default class Mine extends React.Component {
 const Styles = {
     Container: {
         display: 'flex',
-        alignItems: 'center',
         flexDirection: 'column',
 
     },

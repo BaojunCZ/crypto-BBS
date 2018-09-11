@@ -24,6 +24,26 @@ export const getPlayer = (address) => {
     })
 }
 
+export const getPlayerMsgSize = (address) => {
+    return new Promise((resolve, reject) => {
+        getContract().methods.getPlayerMsgSize(address).call().then((res) => {
+            resolve(res)
+        }).catch(err => {
+            reject(err)
+        })
+    })
+}
+
+export const getFavoriteSize = (address) => {
+    return new Promise((resolve, reject) => {
+        getContract().methods.getFavoriteSize(address).call().then((res) => {
+            resolve(res)
+        }).catch(err => {
+            reject(err)
+        })
+    })
+}
+
 export const setName = (name) => {
     return new Promise(((resolve, reject) => {
         getTX().then(tx => {

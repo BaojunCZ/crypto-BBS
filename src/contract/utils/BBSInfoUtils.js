@@ -34,6 +34,13 @@ export const getBBSInfo = async function (attr) {
                     reject(err)
                 })
                 break
+            case "BBSSynopsis":
+                getContract().methods.BBSSynopsis().call().then((BBSSynopsis) => {
+                    resolve(BBSSynopsis)
+                }).catch(err => {
+                    reject(err)
+                })
+                break
             case "msgCount":
                 getContract().methods.getMsgIDSize().call().then((msgCount) => {
                     resolve(msgCount)

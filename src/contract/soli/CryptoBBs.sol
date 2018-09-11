@@ -120,9 +120,14 @@ contract CryptoBBS {
 
     address public Owner;
     uint256 public playerCount;
+    //名字
     string public BBSName;
+    //详细介绍
     string public BBSDescribe;
+    //logo
     string public BBSLogo;
+    //简介
+    string public BBSSynopsis;
 
     uint256[] MsgIDs;
     //地址=>用户
@@ -134,10 +139,13 @@ contract CryptoBBS {
     //address=>禁言
     mapping(address => bool) banned;
 
-    constructor(string _BBSName, string _BBSDescribe, string _BBSLogo) public {
+    constructor(string _BBSName, string _BBSSynopsis, string _BBSDescribe, string _BBSLogo) public {
+        require(bytes(_BBSName).length != 0);
+        require(bytes(_BBSSynopsis).length != 0);
         Owner = msg.sender;
         playerCount = 1;
         BBSName = _BBSName;
+        BBSSynopsis = _BBSSynopsis;
         BBSDescribe = _BBSDescribe;
         BBSLogo = _BBSLogo;
         player[msg.sender].name = "Owner";
@@ -145,7 +153,6 @@ contract CryptoBBS {
         admin[msg.sender] = true;
     }
     //=============================群信息相关========================================
-
     function setBBSName(string name) onlyOwner() public payable {
         BBSName = name;
     }
@@ -156,6 +163,11 @@ contract CryptoBBS {
 
     function setBBSLogo(string logo) onlyOwner() public payable {
         BBSLogo = logo;
+    }
+
+    function setBBSSynopsis(string synopsis) onlyOwner() public payable {
+        require(bytes(synopsis).length <= 20);
+        BBSSynopsis = synopsis;
     }
     //=============================合约持有者（版主）权限相关==========================================
     //合约转移持有者权限
@@ -306,13 +318,21 @@ contract CryptoBBS {
     }
 
     //获取用户帖子id列表
-    function getPlayer(address _address) public view returns (uint256[]){
+    function getPlayerMsg(address _address) public view returns (uint256[]){
         return player[_address].msgID;
+    }
+
+    function getPlayerMsgSize(address _address) public view returns (uint256){
+        return player[_address].msgID.length;
     }
 
     //获取收藏列表
     function getFavorite(address _address) public view returns (uint256[]){
         return player[_address].favorite;
+    }
+
+    function getFavoriteSize(address _address) public view returns (uint256){
+        return player[_address].favorite.length;
     }
 
     modifier notNull(string info){

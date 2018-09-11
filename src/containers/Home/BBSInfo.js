@@ -11,7 +11,8 @@ export default class BBSInfo extends React.Component {
         this.state = {
             src: headIcon,
             name: 'BBS',
-            describe: '',
+            synopsis: '',
+
         }
     }
 
@@ -19,8 +20,8 @@ export default class BBSInfo extends React.Component {
         getBBSInfo('BBSName').then(name => {
             this.setState({name: name})
         })
-        getBBSInfo('BBSDescribe').then(describe => {
-            this.setState({describe: describe})
+        getBBSInfo('BBSSynopsis').then(synopsis => {
+            this.setState({synopsis: synopsis})
         })
         getBBSInfo('BBSLogo').then(src => {
             this.setState({src: src})
@@ -39,7 +40,7 @@ export default class BBSInfo extends React.Component {
                      onError={() => this.setState({src: headIcon})}/>
                 <text
                     style={Styles.Name}>{this.state.name}</text>
-                <text style={Styles.Describe}>{this.state.describe}</text>
+                <text style={Styles.Describe}>{this.state.synopsis}</text>
             </div>
         )
     }

@@ -7,7 +7,12 @@ export default class ItemInfo extends React.Component {
     render() {
         return (
             <div style={Styles.Container}>
-                <text>{this.props.name}</text>
+                <div style={Styles.TitleContainer}>
+                    <img alt={"icon"}
+                         src={this.props.icon}
+                         style={Styles.Icon}/>
+                    <text style={Styles.TitleText}>{this.props.name}</text>
+                </div>
                 <text>{this.props.value}</text>
             </div>
         )
@@ -23,5 +28,17 @@ const Styles = {
         paddingRight: '20px',
         marginTop: '10px',
         marginBottom: '10px'
+    },
+    Icon: {
+        width: 25,
+        height: 25,
+    },
+    TitleContainer: {
+        display: 'flex',
+        alignItems: 'center',
+    },
+    TitleText: {
+        fontSize: 14,
+        marginLeft: 5,
     }
 }
