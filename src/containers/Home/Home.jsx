@@ -18,6 +18,7 @@ export default class Home extends React.Component {
     }
 
     componentDidMount() {
+        document.title = "Crypto-BBS"
         getBBSInfo('playerCount').then(playerCount => {
             this.setState({playerCount: playerCount})
         })

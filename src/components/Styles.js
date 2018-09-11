@@ -16,5 +16,11 @@ exports.CommonStyles = {
         color: '#000',
         borderRadius: '4px',
         fontSize: '14px',
+    }, Loading: {
+        position: 'fixed',
+        left: '45vw',
+        top: '45vw',
+        width: '10vw',
+        height: '10vw'
     }
 }

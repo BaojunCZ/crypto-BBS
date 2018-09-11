@@ -28,13 +28,13 @@ export default class MainPage extends React.Component {
     _render() {
         switch (this.state.select) {
             case 1:
-                return (<Favorite/>)
+                return (<Favorite history={this.props.history}/>)
                 break
             case 2:
-                return (<Home/>)
+                return (<Home history={this.props.history}/>)
                 break
             case 3:
-                return (<Mine/>)
+                return (<Mine history={this.props.history}/>)
                 break
         }
     }

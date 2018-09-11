@@ -26,6 +26,7 @@ export default class Mine extends React.Component {
     }
 
     componentDidMount() {
+        document.title = "我的"
         checkPlayer(address1)
             .then(player => {
                 this.setState({player: player, loading: false})
@@ -76,7 +77,6 @@ const Styles = {
     Container: {
         display: 'flex',
         flexDirection: 'column',
-
     },
     UserInfo: {
         marginTop: 30,

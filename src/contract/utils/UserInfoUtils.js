@@ -44,6 +44,12 @@ export const getFavoriteSize = (address) => {
     })
 }
 
+export const getBalance = (address) => {
+    return new Promise((resolve) => {
+        resolve(window.nervos.appchain.getBalance(address))
+    })
+}
+
 export const setName = (name) => {
     return new Promise(((resolve, reject) => {
         getTX().then(tx => {

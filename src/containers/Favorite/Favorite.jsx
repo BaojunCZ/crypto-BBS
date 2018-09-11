@@ -4,10 +4,15 @@
 import React from 'react';
 
 export default class Favorite extends React.Component {
+
+    componentDidMount() {
+        document.title = "收藏"
+    }
+
     render() {
         return (
             <div>
-                <text>排名</text>
+                <text>收藏</text>
             </div>
         )
     }
