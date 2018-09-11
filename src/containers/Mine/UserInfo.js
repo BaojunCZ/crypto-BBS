@@ -22,7 +22,7 @@ export default class UserInfo extends React.Component {
     }
 
     _initAttrs(props) {
-        this.setState({src: props.player.icon});
+        // this.setState({src: props.player.icon});
     }
 
     render() {

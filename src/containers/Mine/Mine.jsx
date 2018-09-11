@@ -3,7 +3,6 @@
  */
 import React from 'react';
 import {checkPlayer} from "../../utils/CheckPlayer";
-import BottomTabs from '../../components/BottomTabs'
 import {address1, address2} from "../../contract/test.config";
 import Loading from "react-loading-animation"
 import UserInfo from "./UserInfo"
@@ -60,7 +59,6 @@ export default class Mine extends React.Component {
                         <PartingLine/>
                     </div>
                 </div>
-                <BottomTabs select={3}/>
                 {this._loading()}
             </div>
         )

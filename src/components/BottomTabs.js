@@ -19,26 +19,24 @@ export default class BottomTabs extends React.Component {
     render() {
         return (
             <div style={Styles.Container}>
-                <div style={Styles.ButtonContainer}>
-                    <Link to={'/favorite'} style={Styles.ButtonContainer}>
-                        <img alt={'favorite'}
-                             src={this._renderFavorite()}
-                             style={Styles.Icon}/>
-                        <text style={this._renderFavoriteButton()}>收藏</text>
-                    </Link>
+                <div style={Styles.ButtonContainer} onClick={() => this.props.click(1)}>
+                    <img alt={'favorite'}
+                         src={this._renderFavorite()}
+                         style={Styles.Icon}/>
+                    <text style={this._renderFavoriteButton()}>收藏</text>
                 </div>
-                <Link to={'/'} style={Styles.ButtonContainer}>
+                <div to={'/'} style={Styles.ButtonContainer} onClick={() => this.props.click(2)}>
                     <img alt={'sign'}
                          src={this._renderSign()}
                          style={Styles.Icon}/>
                     <text style={this._renderSignButton()}>论坛</text>
-                </Link>
-                <Link to={'/mine'} style={Styles.ButtonContainer}>
+                </div>
+                <div to={'/mine'} style={Styles.ButtonContainer} onClick={() => this.props.click(3)}>
                     <img alt={'mine'}
                          src={this._renderMine()}
                          style={Styles.Icon}/>
                     <text style={this._renderMineButton()}>我的</text>
-                </Link>
+                </div>
             </div>
         )
     }

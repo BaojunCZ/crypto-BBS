@@ -1,6 +1,4 @@
 import React from 'react'
-import BottomTabs from '../../components/BottomTabs'
-import {address1, address2} from '../../contract/test.config'
 import BBSInfo from './BBSInfo'
 import PartingLine from "../../components/PartingLine"
 import ItemInfo from "../../components/ItemInfo"
@@ -43,7 +41,6 @@ export default class Home extends React.Component {
                     src={IconSendMsg}
                     style={Styles.SendMsgButton}
                     onClick={() => this.props.history.push("/write_msg")}/>
-                <BottomTabs select={2}/>
             </div>
         )
     }
