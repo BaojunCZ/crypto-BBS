@@ -5,17 +5,17 @@ const {address1, privateKey1, address2, privateKey2} = require("../test.config")
 
 export const getTX = () =>
     nervos.appchain.getBlockNumber().then(current => {
-        const tx = {
-            ...transaction,
-            from: address1,
-            validUntilBlock: +current + 88,
-            privateKey: privateKey1
-        };
         // const tx = {
         //     ...transaction,
-        //     from: window.neuron.getAccount(),
-        //     validUntilBlock: +current + 88
+        //     from: address1,
+        //     validUntilBlock: +current + 88,
+        //     privateKey: privateKey1
         // };
+        const tx = {
+            ...transaction,
+            from: window.neuron.getAccount(),
+            validUntilBlock: +current + 88
+        };
         return tx;
     });
 

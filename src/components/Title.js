@@ -10,11 +10,13 @@ export default class Title extends React.Component {
             <div style={Styles.Container}>
                 <img alt={'back'}
                      src={back}
-                     style={Styles.Image}/>
+                     style={this.props.leftShow ? Styles.Image : Styles.ImageGone}
+                     onClick={() => this.props.leftClick()}/>
                 <text style={Styles.TitleText}>{this.props.title}</text>
             </div>
         )
     }
+
 }
 
 const Styles = {
@@ -29,6 +31,10 @@ const Styles = {
         width: 25,
         height: 25,
         marginLeft: 20
+    },
+    ImageGone: {
+        width: 0,
+        height: 0,
     },
     TitleText: {
         fontSize: 22,
