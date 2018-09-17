@@ -129,7 +129,7 @@ contract CryptoBBS {
     //简介
     string public BBSSynopsis;
 
-    uint256[] MsgIDs;
+    uint256[] public MsgIDs;
     //地址=>用户
     mapping(address => CryptoBBSDatasets.Player) public player;
     //ID=>帖子
@@ -212,7 +212,7 @@ contract CryptoBBS {
     }
     //=============================管理员权限相关=====================================
     //删帖
-    function deleteMsg(uint256 id) onlyAdmin() isLogin(msg.sender) public payable {
+    function deleteMsg(uint256 id) onlyAdmin() isLogin(msg.sender) msgExist(id) public payable {
         delete data[id];
     }
 
@@ -250,11 +250,6 @@ contract CryptoBBS {
         MsgIDs.push(time);
     }
 
-    //获取页数帖子时间ID列表
-    function getMsgIDs() view public returns (uint256[]){
-        return MsgIDs;
-    }
-
     function getMsgIDSize() public view returns (uint256){
         return MsgIDs.length;
     }
@@ -264,6 +259,10 @@ contract CryptoBBS {
         require(!data[id].like[msg.sender]);
         data[id].likeCount = SafeMath.add(data[id].likeCount, 1);
         data[id].like[msg.sender] = true;
+    }
+
+    function isLike(uint256 id) msgExist(id) isLogin(msg.sender) public view returns (bool){
+        return data[id].like[msg.sender];
     }
 
     //评论

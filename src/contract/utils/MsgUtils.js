@@ -10,3 +10,24 @@ export const sendMsg = (image, info) => {
         })
     })
 }
+
+export const getMsgID = (index) => {
+    return new Promise((resolve, reject) => {
+        getContract().methods.MsgIDs(index).call().then(res => {
+            resolve(res)
+        }).catch(err => {
+            reject(err)
+        })
+    })
+}
+
+export const getMsg = (id) => {
+    return new Promise(((resolve, reject) => {
+        getContract().methods.data(id).call().then(res => {
+            resolve(res)
+        }).catch(err => {
+            reject(err)
+        })
+    }))
+}
+

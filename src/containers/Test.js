@@ -6,11 +6,10 @@ import {
     deploy,
     getNowPage,
     getOwner,
-    sendMessage,
     getPageMsgIDs
 } from "../contract/utils/tokenStore"
 import {initPlayer, setName, getPlayer} from "../contract/utils/UserInfoUtils"
-import {address1, address2} from "../contract/test.config"
+import {sendMsg} from "../contract/utils/MsgUtils"
 
 export default class Test extends React.Component {
 
@@ -73,13 +72,13 @@ export default class Test extends React.Component {
     }
 
     _getPlayer() {
-        getPlayer(address2).then(res => {
+        getPlayer(window.neuron.getAccount()).then(res => {
             console.log(res)
         }).catch(err => console.log(err))
     }
 
     _sendMessage() {
-        sendMessage("1111", "222").then(res => {
+        sendMsg("1111", "222").then(res => {
             console.log(res)
         }).catch(err => console.log(err))
     }

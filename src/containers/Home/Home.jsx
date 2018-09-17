@@ -6,6 +6,8 @@ import {getBBSInfo} from "../../contract/utils/BBSInfoUtils"
 import IconBBSPlayer from "../../public/image/icon_bbs_player.png"
 import IconBBSMsgs from "../../public/image/icon_bbs_msgs.png"
 import IconSendMsg from "../../public/image/ic_button_sendmsg.png"
+import {getMsg, getMsgID} from "../../contract/utils/MsgUtils"
+import MsgItem from "../../containers/MsgItem"
 
 export default class Home extends React.Component {
 
@@ -25,6 +27,12 @@ export default class Home extends React.Component {
         getBBSInfo('msgCount').then(msgCount => {
             this.setState({msgCount: msgCount})
         }).catch(err => console.log(err))
+        getMsgID(1).then(id => {
+            console.log(id)
+            getMsg(id).then(res => {
+                console.log(res)
+            }).catch(err => console.log(err))
+        }).catch(err => console.log(err))
     }
 
     render() {
@@ -37,6 +45,7 @@ export default class Home extends React.Component {
                 <div style={{marginTop: 10}}>
                     <PartingLine/>
                 </div>
+                <MsgItem id={1537182310109}/>
                 <img
                     alt={'add'}
                     src={IconSendMsg}

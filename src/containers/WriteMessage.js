@@ -3,7 +3,6 @@
  */
 import React from 'react';
 import ItemInfo from "../components/ItemInfo"
-import {address1} from "../contract/test.config"
 import IconBBSPlayer from "../public/image/icon_bbs_player.png"
 import IconBalance from "../public/image/icon_balance.png"
 import {getBalance} from "../contract/utils/UserInfoUtils"
@@ -32,7 +31,7 @@ export default class WriteMessage extends React.Component {
 
     componentDidMount() {
         document.title = "发帖"
-        getBalance(address1).then(balance => {
+        getBalance(window.neuron.getAccount()).then(balance => {
             this.setState({balance: balance})
         })
     }
@@ -46,7 +45,7 @@ export default class WriteMessage extends React.Component {
                            this.props.history.goBack();
                        }}/>
                 <PartingLine/>
-                <ItemInfo name={'Address'} value={this._subString(address1)} icon={IconBBSPlayer}/>
+                <ItemInfo name={'Address'} value={this._subString(window.neuron.getAccount())} icon={IconBBSPlayer}/>
                 <ItemInfo name={'余额'} value={this.state.balance} icon={IconBalance}/>
                 <div style={{marginTop: 10}}>
                     <PartingLine/>

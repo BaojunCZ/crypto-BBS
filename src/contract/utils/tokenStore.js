@@ -1,15 +1,14 @@
 const {abi, bytecode, contractAddress} = require("../compiled")
 const nervos = require("../../nervos");
 const transaction = require("../transaction");
-const {address1, privateKey1, address2, privateKey2} = require("../test.config")
 
 export const getTX = () =>
     nervos.appchain.getBlockNumber().then(current => {
         // const tx = {
         //     ...transaction,
-        //     from: address1,
+        //     from: address2,
         //     validUntilBlock: +current + 88,
-        //     privateKey: privateKey1
+        //     privateKey: privateKey2
         // };
         const tx = {
             ...transaction,
@@ -89,7 +88,7 @@ export const deploy = async function (args) {
                         }
                     })
                     .catch(err => {
-                        console.log(err.errorMessage);
+                        console.log(err);
                         reject(err.errorMessage);
                     });
             })
@@ -99,44 +98,6 @@ export const deploy = async function (args) {
             });
     });
 };
-
-export const sendMessage = (imgUrl, info) => {
-    return new Promise(((resolve, reject) => {
-        getTX().then(tx => {
-            getContract().methods.singIn(imgUrl, info).send(tx).then(res => {
-                console.log(res);
-                let hash;
-                if (JSON.stringify(res).indexOf("hash") !== -1) {
-                    hash = res.hash;
-                } else {
-                    hash = res;
-                }
-                if (hash) {
-                    window.nervos.listeners
-                        .listenToTransactionReceipt(hash)
-                        .then(receipt => {
-                            if (!receipt.errorMessage) {
-                                resolve(receipt);
-                            } else {
-                                reject(receipt.errorMessage);
-                            }
-                        })
-                        .catch(err => {
-                            console.log(err);
-                            reject(err);
-                        });
-                } else {
-                    reject("No Transaction Hash Received");
-                }
-            }).catch(err => {
-                reject(err)
-            })
-        }).catch(err => {
-            reject(err)
-        })
-
-    }))
-}
 
 export const getNowPage = () => {
     return new Promise(((resolve, reject) => {

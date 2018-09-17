@@ -2,7 +2,6 @@
  * Created by 包俊 on 2018/9/7.
  */
 import {getTX, getContract, txListener} from './tokenStore'
-import {address1, privateKey1, address2, privateKey2} from "../test.config"
 
 export const initPlayer = async function (name, sex, icon) {
     return new Promise(((resolve, reject) => {

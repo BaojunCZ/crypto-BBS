@@ -3,7 +3,6 @@
  */
 import React from 'react';
 import {checkPlayer} from "../../utils/CheckPlayer";
-import {address1, address} from "../../contract/test.config";
 import Loading from "react-loading-animation"
 import UserInfo from "./UserInfo"
 import PartingLine from "../../components/PartingLine"
@@ -29,17 +28,17 @@ export default class Mine extends React.Component {
 
     componentDidMount() {
         document.title = "我的"
-        checkPlayer(address)
+        checkPlayer(window.neuron.getAccount())
             .then(player => {
                 this.setState({player: player, loading: false, isSignIn: 1})
             })
             .catch(err => {
                 this.setState({loading: false, isSignIn: 2})
             })
-        getPlayerMsgSize(address).then(size => {
+        getPlayerMsgSize(window.neuron.getAccount()).then(size => {
             this.setState({msgSize: size})
         })
-        getFavoriteSize(address).then(size => {
+        getFavoriteSize(window.neuron.getAccount()).then(size => {
             this.setState({favoriteSize: size})
         })
     }
