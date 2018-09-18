@@ -69,3 +69,20 @@ export const favorite = (id) => {
     })
 }
 
+export const discussMsg = (id, info, to) => {
+    return new Promise((resolve, reject) => {
+        getTX().then(tx => {
+            txListener(getContract().methods.discussMsg(id, info, to), tx, resolve, reject)
+        })
+    })
+}
+
+export const getDiscussMsg = (id, index) => {
+    return new Promise((resolve, reject) => {
+        getContract().methods.getDiscussMsg(id, index).call().then(res => {
+            resolve(res)
+        }).catch(err => {
+            reject(err)
+        })
+    })
+}

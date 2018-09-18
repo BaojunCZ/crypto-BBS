@@ -1,16 +1,26 @@
 /**
- * Created by 包俊 on 2018/9/14.
+ * Created by 包俊 on 2018/9/18.
  */
-import React from 'react';
-import {getMsg, getLikeCount, getDiscussMsgLength, isFavorite, favorite} from "../contract/utils/MsgUtils"
+import React from 'react'
 import headIcon from "../public/image/ic_default_head.png";
+import {
+    favorite,
+    getDiscussMsgLength,
+    getLikeCount,
+    getMsg,
+    isFavorite,
+    discussMsg,
+    getDiscussMsg
+} from "../contract/utils/MsgUtils";
+import iconDiscuss from "../public/image/icon_discuss.png";
 import {getPlayer} from "../contract/utils/UserInfoUtils";
-import iconUnLike from "../public/image/icon_like.png";
 import iconLiked from "../public/image/icon_liked.png";
-import iconDiscuss from "../public/image/icon_discuss.png"
+import iconUnLike from "../public/image/icon_like.png";
+import Title from "../components/Title";
+import {CommonStyles} from "../components/Styles";
+import DiscussInfo from "./DiscussInfo"
 
-
-export default class MsgItem extends React.Component {
+export default class MsgDetail extends React.Component {
     constructor() {
         super()
         this.state = {
@@ -24,11 +34,15 @@ export default class MsgItem extends React.Component {
             favoriteCount: 0,
             discussCount: 0,
             isFavorite: 0,
+            discussInfo: '',
+            discussInfos: []
         }
     }
 
     componentDidMount() {
-        getMsg(this.props.id).then(res => {
+        const {id} = this.props.match.params;
+        this.setState({id: id})
+        getMsg(id).then(res => {
             this.setState({
                 imgUrl: res.imgUrl,
                 info: res.info,
@@ -40,23 +54,22 @@ export default class MsgItem extends React.Component {
             })
         }).catch(err => console.log(err))
 
-        getLikeCount(this.props.id).then(res => {
+        getLikeCount(id).then(res => {
             this.setState({favoriteCount: res})
         }).catch(err => console.log(err))
 
-        getDiscussMsgLength(this.props.id).then(res => {
-            this.setState({discussCount: res})
-        }).catch(err => console.log(err))
-
-        isFavorite(this.props.id).then(res => {
+        isFavorite(id).then(res => {
             this.setState({isFavorite: res})
         }).catch(err => console.log(err))
+
+        this._renderDiscussInfo(id)
     }
 
     render() {
         return (
             <div style={Styles.FirstContainer}>
-                <div style={Styles.SecondContainer} onClick={() => this.props.onClick()}>
+                <Title title={'帖子'}/>
+                <div style={Styles.SecondContainer}>
                     <img alt={'head'}
                          src={this.state.icon}
                          style={Styles.Head}
@@ -88,7 +101,13 @@ export default class MsgItem extends React.Component {
                         <text style={Styles.LikeCount}>{this.state.discussCount}</text>
                     </div>
                 </div>
+                {this.state.discussInfos.map(info => (<DiscussInfo info={info}/>))}
                 <div style={Styles.BottomLine}/>
+                <textarea onChange={(e) => this.setState({discussInfo: e.target.value})}
+                          style={Styles.TextAreaDiscuss}/>
+                <div style={Styles.LoadButton}>
+                    <text onClick={() => this._discuss()} style={CommonStyles.ButtonClickAble}>评论</text>
+                </div>
             </div>
         )
     }
@@ -133,12 +152,38 @@ export default class MsgItem extends React.Component {
         }
     }
 
+    _renderDiscussInfo(id) {
+        getDiscussMsgLength(id).then(res => {
+            this.setState({discussCount: res}, () => {
+                let list = []
+                for (let i = 0; i < this.state.discussCount; i++) {
+                    getDiscussMsg(id, i).then(res => {
+                        list = this.state.discussInfos;
+                        list.push(res)
+                        this.setState({discussInfos: list})
+                    }).catch(err => console.log(err))
+                }
+            })
+        }).catch(err => console.log(err))
+
+    }
+
     _favorite() {
         if (this.state.isFavorite == 0) {
-            favorite(this.props.id).then(res => {
+            favorite(this.state.id).then(res => {
                 this.setState({isFavorite: 1})
-                getLikeCount(this.props.id).then(res => {
+                getLikeCount(this.state.id).then(res => {
                     this.setState({favoriteCount: res})
+                }).catch(err => console.log(err))
+            }).catch(err => console.log(err))
+        }
+    }
+
+    _discuss() {
+        if (this.state.discussInfo !== '') {
+            discussMsg(this.state.id, this.state.discussInfo, this.state.writer).then(res => {
+                getDiscussMsgLength(this.state.id).then(res => {
+                    this.setState({discussCount: res})
                 }).catch(err => console.log(err))
             }).catch(err => console.log(err))
         }
@@ -149,6 +194,7 @@ const Styles = {
     FirstContainer: {
         display: 'flex',
         flexDirection: 'column',
+        flex: '1'
     },
     SecondContainer: {
         marginTop: 20,
@@ -220,5 +266,15 @@ const Styles = {
         background: '#E9EBF0',
         height: 5,
         marginTop: 5,
+    },
+    LoadButton: {
+        display: 'flex',
+        alignItem: 'center',
+        justifyContent: 'center',
+    },
+    TextAreaDiscuss: {
+        marginTop: 10,
+        marginLeft: 20,
+        marginRight: 20
     }
 }
