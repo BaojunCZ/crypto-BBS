@@ -37,10 +37,11 @@ export default class Mine extends React.Component {
             })
         getPlayerMsgSize(window.neuron.getAccount()).then(size => {
             this.setState({msgSize: size})
-        })
+        }).catch(err => console.log(err))
         getFavoriteSize(window.neuron.getAccount()).then(size => {
+            alert(size)
             this.setState({favoriteSize: size})
-        })
+        }).catch(err => console.log(err))
     }
 
     render() {

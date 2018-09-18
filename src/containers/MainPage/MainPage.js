@@ -19,7 +19,9 @@ export default class MainPage extends React.Component {
     render() {
         return (
             <div>
-                {this._render()}
+                <div style={{marginBottom: 70}}>
+                    {this._render()}
+                </div>
                 <BottomTabs click={position => this._clickTab(position)}/>
             </div>
         )

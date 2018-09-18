@@ -94,14 +94,15 @@ library CryptoBBSDatasets {
         bool sex;//性别 true 男 false 女,
         string icon;
         uint256[] msgID;//帖子ID
-        uint256[] favorite;//收藏
+        uint256 favoriteSize;
+        mapping(uint256 => uint256) favorite;//index=>id 收藏
+        mapping(uint256 => bool) isFavorite;// id=>bool
     }
 
     struct Message {
         string imgUrl;//图片地址
         string info;//信息
-        mapping(address => bool) like;//赞
-        uint256 likeCount;
+        uint256 favoriteCount;
         address writer;//作者
         uint256 id;//帖子ID
         Discuss[] discuss;//评论
@@ -254,15 +255,8 @@ contract CryptoBBS {
         return MsgIDs.length;
     }
 
-    //点赞
-    function likeMsg(uint256 id) msgExist(id) isLogin(msg.sender) public payable {
-        require(!data[id].like[msg.sender]);
-        data[id].likeCount = SafeMath.add(data[id].likeCount, 1);
-        data[id].like[msg.sender] = true;
-    }
-
-    function isLike(uint256 id) msgExist(id) isLogin(msg.sender) public view returns (bool){
-        return data[id].like[msg.sender];
+    function getLikeCount(uint256 id) public view returns (uint256){
+        return data[id].favoriteCount;
     }
 
     //评论
@@ -313,7 +307,34 @@ contract CryptoBBS {
 
     //收藏
     function favorite(uint256 id) msgExist(id) public payable {
-        player[msg.sender].favorite.push(id);
+        require(!player[msg.sender].isFavorite[id]);
+        player[msg.sender].favorite[player[msg.sender].favoriteSize] = id;
+        player[msg.sender].favoriteSize = SafeMath.add(player[msg.sender].favoriteSize, 1);
+        player[msg.sender].isFavorite[id] = true;
+        data[id].favoriteCount = SafeMath.add(data[id].favoriteCount, 1);
+    }
+
+    //取消收藏
+    function unFavorite(uint256 index, uint256 id) public payable {
+        require(player[msg.sender].favorite[index] == id);
+        delete player[msg.sender].favorite[index];
+        player[msg.sender].isFavorite[id] = false;
+        data[id].favoriteCount = SafeMath.sub(data[id].favoriteCount, 1);
+    }
+
+    //获取收藏列表
+    function getFavorite(uint256 index) public view returns (uint256){
+        return player[msg.sender].favorite[index];
+    }
+
+    //获取收藏列表长度
+    function getFavoriteSize() public view returns (uint256){
+        return player[msg.sender].favoriteSize;
+    }
+
+    //判断是否收藏
+    function isFavorite(uint256 id) public view returns (bool){
+        return player[msg.sender].isFavorite[id];
     }
 
     //获取用户帖子id列表
@@ -323,15 +344,6 @@ contract CryptoBBS {
 
     function getPlayerMsgSize(address _address) public view returns (uint256){
         return player[_address].msgID.length;
-    }
-
-    //获取收藏列表
-    function getFavorite(address _address) public view returns (uint256[]){
-        return player[_address].favorite;
-    }
-
-    function getFavoriteSize(address _address) public view returns (uint256){
-        return player[_address].favorite.length;
     }
 
     modifier notNull(string info){

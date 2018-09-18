@@ -22,12 +22,50 @@ export const getMsgID = (index) => {
 }
 
 export const getMsg = (id) => {
-    return new Promise(((resolve, reject) => {
+    return new Promise((resolve, reject) => {
         getContract().methods.data(id).call().then(res => {
             resolve(res)
         }).catch(err => {
             reject(err)
         })
-    }))
+    })
+}
+
+export const getLikeCount = (id) => {
+    return new Promise((resolve, reject) => {
+        getContract().methods.getLikeCount(id).call().then(res => {
+            resolve(res)
+        }).catch(err => {
+            reject(err)
+        })
+    })
+}
+
+export const getDiscussMsgLength = (id) => {
+    return new Promise((resolve, reject) => {
+        getContract().methods.getDiscussMsgLength(id).call().then(res => {
+            resolve(res)
+        }).catch(err => {
+            reject(err)
+        })
+    })
+}
+
+export const isFavorite = (id) => {
+    return new Promise((resolve, reject) => {
+        getContract().methods.isFavorite(id).call().then(res => {
+            resolve(res)
+        }).catch(err => {
+            reject(err)
+        })
+    })
+}
+
+export const favorite = (id) => {
+    return new Promise((resolve, reject) => {
+        getTX().then(tx => {
+            txListener(getContract().methods.favorite(id), tx, resolve, reject)
+        })
+    })
 }
 

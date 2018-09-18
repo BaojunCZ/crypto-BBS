@@ -34,9 +34,9 @@ export const getPlayerMsgSize = (address) => {
     })
 }
 
-export const getFavoriteSize = (address) => {
+export const getFavoriteSize = () => {
     return new Promise((resolve, reject) => {
-        getContract().methods.getFavoriteSize(address).call().then((res) => {
+        getContract().methods.getFavoriteSize().call().then((res) => {
             resolve(res)
         }).catch(err => {
             reject(err)

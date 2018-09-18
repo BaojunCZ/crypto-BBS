@@ -2,10 +2,11 @@
  * Created by 包俊 on 2018/9/14.
  */
 import React from 'react';
-import {getMsg} from "../contract/utils/MsgUtils"
+import {getMsg, getLikeCount, getDiscussMsgLength, isFavorite, favorite} from "../contract/utils/MsgUtils"
 import headIcon from "../public/image/ic_default_head.png";
 import {getPlayer} from "../contract/utils/UserInfoUtils";
-import iconLike from "../public/image/icon_like.png";
+import iconUnLike from "../public/image/icon_like.png";
+import iconLiked from "../public/image/icon_liked.png";
 import iconDiscuss from "../public/image/icon_discuss.png"
 
 
@@ -17,8 +18,12 @@ export default class MsgItem extends React.Component {
             info: '',
             likeCount: '',
             writer: '',
+            writerName: 'somebody',
             id: '',
             icon: headIcon,
+            favoriteCount: 0,
+            discussCount: 0,
+            isFavorite: 0,
         }
     }
 
@@ -34,6 +39,18 @@ export default class MsgItem extends React.Component {
                 this._renderIcon()
             })
         }).catch(err => console.log(err))
+
+        getLikeCount(this.props.id).then(res => {
+            this.setState({favoriteCount: res})
+        }).catch(err => console.log(err))
+
+        getDiscussMsgLength(this.props.id).then(res => {
+            this.setState({discussCount: res})
+        }).catch(err => console.log(err))
+
+        isFavorite(this.props.id).then(res => {
+            this.setState({isFavorite: res})
+        }).catch(err => console.log(err))
     }
 
     render() {
@@ -45,6 +62,7 @@ export default class MsgItem extends React.Component {
                          style={Styles.Head}
                          onError={() => this.setState({icon: headIcon})}/>
                     <div style={Styles.MsgContainer}>
+                        <text style={Styles.WriterName}>{this.state.writerName}</text>
                         <div>
                             {this._renderImage()}
                         </div>
@@ -53,12 +71,13 @@ export default class MsgItem extends React.Component {
                 </div>
                 <div style={Styles.Line}/>
                 <div style={Styles.LikeDiscuss}>
-                    <div style={Styles.LikeContainer}>
+                    <div style={Styles.LikeContainer} onClick={() => this._favorite()}>
                         <img
                             alt={'like'}
-                            src={iconLike}
+                            src={this._renderFavorite()}
                             style={Styles.LikeIcon}/>
-                        <text style={Styles.LikeText}>赞</text>
+                        <text style={Styles.LikeText}>收藏</text>
+                        <text style={Styles.LikeCount}>{this.state.favoriteCount}</text>
                     </div>
                     <div style={Styles.DiscussContainer}>
                         <img
@@ -66,8 +85,10 @@ export default class MsgItem extends React.Component {
                             src={iconDiscuss}
                             style={Styles.LikeIcon}/>
                         <text style={Styles.LikeText}>评论</text>
+                        <text style={Styles.LikeCount}>{this.state.discussCount}</text>
                     </div>
                 </div>
+                <div style={Styles.BottomLine}/>
             </div>
         )
     }
@@ -78,7 +99,7 @@ export default class MsgItem extends React.Component {
             getPlayer(address).then((player) => {
                 console.log(player)
                 if (player.playerAddress.toLowerCase() === address.toLowerCase()) {
-                    this.setState({icon: player.icon})
+                    this.setState({icon: player.icon, writerName: player.name})
                 }
             }).catch(err => console.log(err))
         }
@@ -104,18 +125,36 @@ export default class MsgItem extends React.Component {
             return null;
         }
     }
+
+    _renderFavorite() {
+        if (this.state.isFavorite == 1) {
+            return iconLiked;
+        } else {
+            return iconUnLike;
+        }
+    }
+
+    _favorite() {
+        if (this.state.isFavorite == 0) {
+            favorite(this.props.id).then(res => {
+                this.setState({isFavorite: 1})
+                getLikeCount(this.props.id).then(res => {
+                    this.setState({favoriteCount: res})
+                }).catch(err => console.log(err))
+            }).catch(err => console.log(err))
+        }
+    }
 }
 
 const Styles = {
     FirstContainer: {
         display: 'flex',
         flexDirection: 'column',
-        marginLeft: 20,
-        marginRight: 20,
     },
     SecondContainer: {
         marginTop: 20,
         display: 'flex',
+        marginLeft: 20,
     }, Head: {
         width: 40,
         height: 40,
@@ -130,6 +169,13 @@ const Styles = {
         display: 'flex',
         flexDirection: 'column',
         marginLeft: 20,
+        marginRight: 20,
+    },
+    WriterName: {
+        fontSize: 18,
+        color: '#456cff',
+        marginBottom: 10,
+        marginTop: 5,
     },
     Image: {
         width: 150,
@@ -142,12 +188,13 @@ const Styles = {
     Line: {
         background: '#f7f7f7',
         height: 2,
-        marginTop: 10
+        marginTop: 5,
+        marginLeft: 80,
     },
     LikeDiscuss: {
         display: 'flex',
         alignItems: 'center',
-        marginLeft: 60,
+        marginLeft: 80,
         marginTop: 10
     },
     LikeContainer: {
@@ -161,9 +208,18 @@ const Styles = {
     LikeText: {
         fontSize: 13
     },
+    LikeCount: {
+        fontSize: 13,
+        marginLeft: 5
+    },
     DiscussContainer: {
         display: 'flex',
         alignItems: 'center',
         marginLeft: 20
     },
+    BottomLine: {
+        background: '#E9EBF0',
+        height: 5,
+        marginTop: 5,
+    }
 }

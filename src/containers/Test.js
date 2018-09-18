@@ -78,7 +78,7 @@ export default class Test extends React.Component {
     }
 
     _sendMessage() {
-        sendMsg("1111", "222").then(res => {
+        sendMsg("https://s1.ax1x.com/2018/09/07/iP1JNF.jpg", "芒果").then(res => {
             console.log(res)
         }).catch(err => console.log(err))
     }

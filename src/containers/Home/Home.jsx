@@ -27,17 +27,14 @@ export default class Home extends React.Component {
         getBBSInfo('msgCount').then(msgCount => {
             this.setState({msgCount: msgCount})
         }).catch(err => console.log(err))
-        getMsgID(1).then(id => {
+        getMsgID(0).then(id => {
             console.log(id)
-            getMsg(id).then(res => {
-                console.log(res)
-            }).catch(err => console.log(err))
         }).catch(err => console.log(err))
     }
 
     render() {
         return (
-            <div>
+            <div style={{overflow: 'auto', overflowX: 'auto'}}>
                 <BBSInfo/>
                 <PartingLine/>
                 <ItemInfo name={'注册人数'} value={this.state.playerCount} icon={IconBBSPlayer}/>
@@ -45,7 +42,8 @@ export default class Home extends React.Component {
                 <div style={{marginTop: 10}}>
                     <PartingLine/>
                 </div>
-                <MsgItem id={1537182310109}/>
+                <MsgItem id={1537255396819}/>
+                <MsgItem id={1537255396819}/>
                 <img
                     alt={'add'}
                     src={IconSendMsg}
