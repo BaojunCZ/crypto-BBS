@@ -6,9 +6,9 @@ export const getTX = () =>
     nervos.appchain.getBlockNumber().then(current => {
         // const tx = {
         //     ...transaction,
-        //     from: address2,
+        //     from: '0x23a659e53b55ca1ba5ce741e12420cb64147f5d7',
         //     validUntilBlock: +current + 88,
-        //     privateKey: privateKey2
+        //     privateKey: '1208A2E6F122F64C2C4C380781A19D68DDD3CE614E3A688526548A0D61ABF0B1'
         // };
         const tx = {
             ...transaction,

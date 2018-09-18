@@ -8,7 +8,8 @@ import {
     getOwner,
     getPageMsgIDs
 } from "../contract/utils/tokenStore"
-import {initPlayer, setName, getPlayer} from "../contract/utils/UserInfoUtils"
+import {getMsg, getLikeCount, getDiscussMsgLength, isFavorite, favorite} from "../contract/utils/MsgUtils"
+import {initPlayer, setName, getPlayer, getFavoriteSize} from "../contract/utils/UserInfoUtils"
 import {sendMsg} from "../contract/utils/MsgUtils"
 
 export default class Test extends React.Component {
@@ -38,6 +39,9 @@ export default class Test extends React.Component {
                 <button style={Styles.Button} onClick={() => this._getPlayer()}>获取用户</button>
                 <button style={Styles.Button} onClick={() => this._getNowPage()}>page</button>
                 <button style={Styles.Button} onClick={() => this._getOwner()}>owner</button>
+                <button style={Styles.Button} onClick={() => this._getFavoriteSize()}>收藏数</button>
+                <button style={Styles.Button} onClick={() => this._favorite()}>收藏</button>
+                <button style={Styles.Button} onClick={() => this._isFavorite()}>是否收藏</button>
             </div>
         )
     }
@@ -106,6 +110,30 @@ export default class Test extends React.Component {
     _getOwner() {
         getOwner().then(address => {
             alert(address)
+        }).catch(err => {
+            console.log(err)
+        })
+    }
+
+    _getFavoriteSize() {
+        getFavoriteSize().then(size => {
+            alert(size)
+        }).catch(err => {
+            console.log(err)
+        })
+    }
+
+    _favorite() {
+        favorite('1537257839638').then(res => {
+            alert("success")
+        }).catch(err => {
+            console.log(err)
+        })
+    }
+
+    _isFavorite() {
+        isFavorite('1537257839638').then(res => {
+            alert(res)
         }).catch(err => {
             console.log(err)
         })

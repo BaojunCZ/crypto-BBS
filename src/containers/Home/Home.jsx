@@ -16,6 +16,7 @@ export default class Home extends React.Component {
         this.state = {
             playerCount: '',
             msgCount: '',
+            msgList: [],
         }
     }
 
@@ -27,9 +28,7 @@ export default class Home extends React.Component {
         getBBSInfo('msgCount').then(msgCount => {
             this.setState({msgCount: msgCount})
         }).catch(err => console.log(err))
-        getMsgID(0).then(id => {
-            console.log(id)
-        }).catch(err => console.log(err))
+        this._renderMsgList()
     }
 
     render() {
@@ -42,8 +41,7 @@ export default class Home extends React.Component {
                 <div style={{marginTop: 10}}>
                     <PartingLine/>
                 </div>
-                <MsgItem id={1537255396819}/>
-                <MsgItem id={1537255396819}/>
+                {this.state.msgList.map(id => (<MsgItem id={id}/>))}
                 <img
                     alt={'add'}
                     src={IconSendMsg}
@@ -51,6 +49,20 @@ export default class Home extends React.Component {
                     onClick={() => this.props.history.push("/write_msg")}/>
             </div>
         )
+    }
+
+    _renderMsgList() {
+        let list = []
+        for (let i = 0; i < 10; i++) {
+            getMsgID(i).then(id => {
+                if (id !== 0) {
+                    list = this.state.msgList;
+                    list.push(id)
+                    this.setState({msgList: list})
+                }
+            }).catch(err => console.log(err))
+        }
+        return list
     }
 
 }
