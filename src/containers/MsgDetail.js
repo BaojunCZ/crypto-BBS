@@ -68,7 +68,11 @@ export default class MsgDetail extends React.Component {
     render() {
         return (
             <div style={Styles.FirstContainer}>
-                <Title title={'帖子'}/>
+                <Title title={'帖子'}
+                       leftShow={true}
+                       leftClick={() => {
+                           this.props.history.goBack();
+                       }}/>
                 <div style={Styles.SecondContainer}>
                     <img alt={'head'}
                          src={this.state.icon}

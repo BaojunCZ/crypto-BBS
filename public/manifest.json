@@ -1,5 +1,5 @@
 {
-  "name": "Crypto BBS",
+  "name": "糖果盒",
   "blockViewer": "https://etherscan.io/",
   "chainSet": {
     "1": "http://121.196.200.225:1337"

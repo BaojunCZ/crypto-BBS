@@ -255,6 +255,21 @@ contract CryptoBBS {
         return MsgIDs.length;
     }
 
+    function getMsgs(uint256 start) public view returns (uint256, uint256, uint256, uint256, uint256){
+        require(start <= MsgIDs.length);
+        require(start > 0);
+        if (start == 1)
+            return (MsgIDs[0], 0, 0, 0, 0);
+        if (start == 2)
+            return (MsgIDs[1], MsgIDs[0], 0, 0, 0);
+        if (start == 3)
+            return (MsgIDs[2], MsgIDs[1], MsgIDs[0], 0, 0);
+        if (start == 4)
+            return (MsgIDs[3], MsgIDs[2], MsgIDs[1], MsgIDs[0], 0);
+        else
+            return (MsgIDs[start - 1], MsgIDs[start - 2], MsgIDs[start - 3], MsgIDs[start - 4], MsgIDs[start - 5]);
+    }
+
     function getLikeCount(uint256 id) public view returns (uint256){
         return data[id].favoriteCount;
     }

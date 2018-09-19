@@ -1,4 +1,4 @@
-const {abi, bytecode, contractAddress} = require("../compiled")
+const {abi, bytecode} = require("../compiled")
 const nervos = require("../../nervos");
 const transaction = require("../transaction");
 
@@ -19,7 +19,7 @@ export const getTX = () =>
     });
 
 export const getContract = function () {
-    return new nervos.appchain.Contract(abi, contractAddress);
+    return new nervos.appchain.Contract(abi, window.BBSAddress);
 };
 
 export const txListener = function (method, tx, resolve, reject) {

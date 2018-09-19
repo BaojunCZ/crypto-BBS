@@ -6,12 +6,11 @@ import {getBBSInfo} from "../../contract/utils/BBSInfoUtils"
 import IconBBSPlayer from "../../public/image/icon_bbs_player.png"
 import IconBBSMsgs from "../../public/image/icon_bbs_msgs.png"
 import IconSendMsg from "../../public/image/ic_button_sendmsg.png"
-import {getMsg, getMsgID} from "../../contract/utils/MsgUtils"
+import {getMsg, getMsgID, getMsgIDs} from "../../contract/utils/MsgUtils"
 import MsgItem from "../../containers/MsgItem"
 import {CommonStyles} from "../../components/Styles";
 
-const everyPage = 10
-let lastPage = 0
+const everyPage = 5
 export default class Home extends React.Component {
 
     constructor() {
@@ -30,10 +29,10 @@ export default class Home extends React.Component {
             this.setState({playerCount: playerCount})
         })
         getBBSInfo('msgCount').then(msgCount => {
-            this.setState({msgCount: msgCount})
-            lastPage = Math.ceil(msgCount / everyPage)
+            this.setState({msgCount: msgCount}, () => {
+                this._renderMsgList()
+            })
         }).catch(err => console.log(err))
-        this._renderMsgList()
     }
 
     render() {
@@ -59,17 +58,26 @@ export default class Home extends React.Component {
     }
 
     _renderMsgList() {
-        let list = []
-        for (let i = (this.state.index - 1) * everyPage; i < this.state.index * everyPage; i++) {
-            getMsgID(i).then(id => {
-                if (id !== 0) {
-                    list = this.state.msgList;
-                    list.push(id)
-                    this.setState({msgList: list})
-                }
-            }).catch(err => console.log(err))
+        let index = 0
+        if (this.state.msgCount <= everyPage) {
+            index = this.state.msgCount;
+        } else {
+            index = this.state.msgCount - (this.state.index - 1) * everyPage
         }
-        return list
+        getMsgIDs(index).then(res => {
+            let list = []
+            if (this.state.msgCount > everyPage) {
+                list = this.state.msgList;
+            }
+            for (let i = 0; i < 5; i++) {
+                if (res[i] != 0)
+                    list.push(res[i])
+            }
+            console.log(list)
+            this.setState({msgList: list}, () => {
+                console.log(this.state.msgList)
+            })
+        }).catch(err => console.log(err))
     }
 
     _renderLoadMore() {

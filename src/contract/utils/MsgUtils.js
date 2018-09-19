@@ -31,6 +31,16 @@ export const getMsg = (id) => {
     })
 }
 
+export const getMsgIDs = (start) => {
+    return new Promise((resolve, reject) => {
+        getContract().methods.getMsgs(start).call().then(res => {
+            resolve(res)
+        }).catch(err => {
+            reject(err)
+        })
+    })
+}
+
 export const getLikeCount = (id) => {
     return new Promise((resolve, reject) => {
         getContract().methods.getLikeCount(id).call().then(res => {
@@ -53,7 +63,7 @@ export const getDiscussMsgLength = (id) => {
 
 export const isFavorite = (id) => {
     return new Promise((resolve, reject) => {
-        getContract().methods.isFavorite(id).call().then(res => {
+        getContract().methods.isFavorite(id).call({from: window.neuron.getAccount()}).then(res => {
             resolve(res)
         }).catch(err => {
             reject(err)
