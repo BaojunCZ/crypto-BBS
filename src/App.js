@@ -8,7 +8,6 @@ class App extends Component {
     render() {
         if (typeof(Storage) !== "undefined") {
             if (localStorage.BBSAddress !== null && localStorage.BBSAddress !== undefined) {
-                alert(localStorage.BBSAddress)
                 window.BBSAddress = localStorage.BBSAddress
             } else {
                 alert(1)

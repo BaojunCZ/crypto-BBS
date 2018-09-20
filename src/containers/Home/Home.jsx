@@ -35,8 +35,7 @@ export default class Home extends React.Component {
             })
         }).catch(err => console.log(err))
         checkPlayer(window.neuron.getAccount())
-            .then(player => {
-            })
+            .then()
             .catch(err => {
                 if (err == '未注册')
                     alert("请先注册，否则只能查看，无法评论与收藏")

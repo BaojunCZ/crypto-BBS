@@ -338,13 +338,13 @@ contract CryptoBBS {
     }
 
     //获取收藏列表
-    function getFavorite(uint256 index) public view returns (uint256){
-        return player[msg.sender].favorite[index];
+    function getFavorite(uint256 index,address _address) public view returns (uint256){
+        return player[_address].favorite[index];
     }
 
     //获取收藏列表长度
-    function getFavoriteSize() public view returns (uint256){
-        return player[msg.sender].favoriteSize;
+    function getFavoriteSize(address _address) public view returns (uint256){
+        return player[_address].favoriteSize;
     }
 
     //判断是否收藏
