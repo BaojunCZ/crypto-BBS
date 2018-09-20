@@ -9,6 +9,7 @@ import IconSendMsg from "../../public/image/ic_button_sendmsg.png"
 import {getMsg, getMsgID, getMsgIDs} from "../../contract/utils/MsgUtils"
 import MsgItem from "../../containers/MsgItem"
 import {CommonStyles} from "../../components/Styles";
+import {checkPlayer} from "../../utils/CheckPlayer";
 
 const everyPage = 5
 export default class Home extends React.Component {
@@ -24,7 +25,7 @@ export default class Home extends React.Component {
     }
 
     componentDidMount() {
-        document.title = "Crypto-BBS"
+        document.title = "芒果社区"
         getBBSInfo('playerCount').then(playerCount => {
             this.setState({playerCount: playerCount})
         })
@@ -33,6 +34,13 @@ export default class Home extends React.Component {
                 this._renderMsgList()
             })
         }).catch(err => console.log(err))
+        checkPlayer(window.neuron.getAccount())
+            .then(player => {
+            })
+            .catch(err => {
+                if (err == '未注册')
+                    alert("请先注册，否则只能查看，无法评论与收藏")
+            })
     }
 
     render() {

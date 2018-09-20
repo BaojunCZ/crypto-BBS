@@ -14,6 +14,7 @@ import {CommonStyles} from "../components/Styles";
 import Loading from "react-loading-animation"
 import {sendMsg} from "../contract/utils/MsgUtils"
 import TextAreaView from "../components/TextAreaView"
+import {checkPlayer} from "../utils/CheckPlayer";
 
 export default class WriteMessage extends React.Component {
 
@@ -73,16 +74,23 @@ export default class WriteMessage extends React.Component {
     }
 
     _send() {
-        if (this.state.imageMsg !== '' || this.state.infoMsg !== '') {
-            this.setState({button: CommonStyles.ButtonUnClickAble, loading: true, buttonText: '发送中...'})
-            sendMsg(this.state.imageMsg, this.state.infoMsg).then(res => {
-                this.props.history.goBack();
-            }).catch(err => {
-                alert(JSON.stringify(err))
+        checkPlayer(window.neuron.getAccount())
+            .then(player => {
+                if (this.state.imageMsg !== '' || this.state.infoMsg !== '') {
+                    this.setState({button: CommonStyles.ButtonUnClickAble, loading: true, buttonText: '发送中...'})
+                    sendMsg(this.state.imageMsg, this.state.infoMsg).then(res => {
+                        this.props.history.goBack();
+                    }).catch(err => {
+                        alert(JSON.stringify(err))
+                    })
+                } else {
+                    alert("请填写帖子内容！")
+                }
             })
-        } else {
-            alert("请填写帖子内容！")
-        }
+            .catch(err => {
+                if (err == '未注册')
+                    alert("请先注册，否则只能查看，无法评论与收藏")
+            })
     }
 
     _loading() {

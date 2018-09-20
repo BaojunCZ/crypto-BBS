@@ -19,6 +19,7 @@ export default class BBSInfo extends React.Component {
     componentDidMount() {
         getBBSInfo('BBSName').then(name => {
             this.setState({name: name})
+            document.title = name
         })
         getBBSInfo('BBSSynopsis').then(synopsis => {
             this.setState({synopsis: synopsis})

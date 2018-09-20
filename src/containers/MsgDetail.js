@@ -10,7 +10,7 @@ import {
     getMsg,
     isFavorite,
     discussMsg,
-    getDiscussMsg
+    getDiscussMsg, sendMsg
 } from "../contract/utils/MsgUtils";
 import iconDiscuss from "../public/image/icon_discuss.png";
 import {getPlayer} from "../contract/utils/UserInfoUtils";
@@ -19,6 +19,7 @@ import iconUnLike from "../public/image/icon_like.png";
 import Title from "../components/Title";
 import {CommonStyles} from "../components/Styles";
 import DiscussInfo from "./DiscussInfo"
+import {checkPlayer} from "../utils/CheckPlayer";
 
 export default class MsgDetail extends React.Component {
     constructor() {
@@ -159,10 +160,10 @@ export default class MsgDetail extends React.Component {
     _renderDiscussInfo(id) {
         getDiscussMsgLength(id).then(res => {
             this.setState({discussCount: res}, () => {
-                let list = []
-                for (let i = 0; i < this.state.discussCount; i++) {
+                let list = this.state.discussInfos
+                let i = this.state.discussInfos.length
+                for (i; i < this.state.discussCount; i++) {
                     getDiscussMsg(id, i).then(res => {
-                        list = this.state.discussInfos;
                         list.push(res)
                         this.setState({discussInfos: list})
                     }).catch(err => console.log(err))
@@ -173,24 +174,39 @@ export default class MsgDetail extends React.Component {
     }
 
     _favorite() {
-        if (this.state.isFavorite == 0) {
-            favorite(this.state.id).then(res => {
-                this.setState({isFavorite: 1})
-                getLikeCount(this.state.id).then(res => {
-                    this.setState({favoriteCount: res})
-                }).catch(err => console.log(err))
-            }).catch(err => console.log(err))
-        }
+        checkPlayer(window.neuron.getAccount())
+            .then(player => {
+                if (this.state.isFavorite == 0) {
+                    favorite(this.state.id).then(res => {
+                        this.setState({isFavorite: 1})
+                        getLikeCount(this.state.id).then(res => {
+                            this.setState({favoriteCount: res})
+                        }).catch(err => console.log(err))
+                    }).catch(err => alert(err))
+                }
+            })
+            .catch(err => {
+                if (err == '未注册')
+                    alert("请先注册，否则只能查看，无法评论与收藏")
+            })
     }
 
     _discuss() {
-        if (this.state.discussInfo !== '') {
-            discussMsg(this.state.id, this.state.discussInfo, this.state.writer).then(res => {
-                getDiscussMsgLength(this.state.id).then(res => {
-                    this.setState({discussCount: res})
-                }).catch(err => console.log(err))
-            }).catch(err => console.log(err))
-        }
+        checkPlayer(window.neuron.getAccount())
+            .then(player => {
+                if (this.state.discussInfo !== '') {
+                    discussMsg(this.state.id, this.state.discussInfo, this.state.writer).then(res => {
+                        getDiscussMsgLength(this.state.id).then(res => {
+                            this.setState({discussCount: res})
+                        }).catch(err => console.log(err))
+                        this._renderDiscussInfo(this.state.id)
+                    }).catch(err => alert(err))
+                }
+            })
+            .catch(err => {
+                if (err == '未注册')
+                    alert("请先注册，否则只能查看，无法评论与收藏")
+            })
     }
 }
 

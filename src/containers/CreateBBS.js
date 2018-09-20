@@ -10,22 +10,22 @@ export default class CreateBBS extends React.Component {
     constructor() {
         super()
         this.state = {
-            contractAddress: window.BBSAddress
+            contractAddress: window.BBSAddress === '' ? '0x4d67eF9E064f831b7B51359ffDBc77dA3eA6c8dD' : window.BBSAddress
         }
     }
 
     render() {
         return (
             <div style={Styles.Container}>
-                <Title title={'糖果盒'}/>
+                <Title title={'芒果社区'}/>
                 <div style={{marginTop: 50}}/>
-                <button style={CommonStyles.ButtonClickAble} onClick={() => this.props.history.push('./new_BBS')}>创建糖果盒
+                <button style={CommonStyles.ButtonClickAble} onClick={() => this.props.history.push('./new_BBS')}>创建芒果
                 </button>
                 <input style={Styles.Input} onChange={(e) => {
                     this.setState({contractAddress: e.target.value})
                 }}
                        value={this.state.contractAddress}/>
-                <button style={Styles.ButtonClickAble} onClick={() => this._toBBS()}>加入糖果盒</button>
+                <button style={Styles.ButtonClickAble} onClick={() => this._toBBS()}>加入芒果</button>
             </div>
         )
     }
