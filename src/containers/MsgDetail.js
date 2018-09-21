@@ -20,6 +20,7 @@ import Title from "../components/Title";
 import {CommonStyles} from "../components/Styles";
 import DiscussInfo from "./DiscussInfo"
 import {checkPlayer} from "../utils/CheckPlayer";
+import Loading from "react-loading-animation"
 
 export default class MsgDetail extends React.Component {
     constructor() {
@@ -36,7 +37,8 @@ export default class MsgDetail extends React.Component {
             discussCount: 0,
             isFavorite: 0,
             discussInfo: '',
-            discussInfos: []
+            discussInfos: [],
+            loading: false
         }
     }
 
@@ -113,6 +115,7 @@ export default class MsgDetail extends React.Component {
                 <div style={Styles.LoadButton}>
                     <text onClick={() => this._discuss()} style={CommonStyles.ButtonClickAble}>评论</text>
                 </div>
+                {this._loading()}
             </div>
         )
     }
@@ -160,6 +163,7 @@ export default class MsgDetail extends React.Component {
     _renderDiscussInfo(id) {
         getDiscussMsgLength(id).then(res => {
             this.setState({discussCount: res}, () => {
+                this.setState({loading: false})
                 let list = this.state.discussInfos
                 let i = this.state.discussInfos.length
                 for (i; i < this.state.discussCount; i++) {
@@ -195,6 +199,7 @@ export default class MsgDetail extends React.Component {
         checkPlayer(window.neuron.getAccount())
             .then(player => {
                 if (this.state.discussInfo !== '') {
+                    this.setState({loading: true})
                     discussMsg(this.state.id, this.state.discussInfo, this.state.writer).then(res => {
                         getDiscussMsgLength(this.state.id).then(res => {
                             this.setState({discussCount: res})
@@ -207,6 +212,13 @@ export default class MsgDetail extends React.Component {
                 if (err == '未注册')
                     alert("请先注册，否则只能查看，无法评论与收藏")
             })
+    }
+
+    _loading() {
+        if (this.state.loading)
+            return (<Loading style={CommonStyles.Loading}/>)
+        else
+            return null
     }
 }
 

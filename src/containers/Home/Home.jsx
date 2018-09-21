@@ -52,8 +52,8 @@ export default class Home extends React.Component {
                 <div style={{marginTop: 10}}>
                     <PartingLine/>
                 </div>
-                {this.state.msgList.map(id => (
-                    <MsgItem id={id} onClick={() => this.props.history.push('/msg/' + id)}/>))}
+                {this.state.msgList.map(data => (
+                    <MsgItem data={data} onClick={() => this.props.history.push('/msg/' + data.id)}/>))}
                 {this._renderLoadMore()}
                 <img
                     alt={'add'}
@@ -77,8 +77,10 @@ export default class Home extends React.Component {
                 list = this.state.msgList;
             }
             for (let i = 0; i < 5; i++) {
-                if (res[i] != 0)
-                    list.push(res[i])
+                if (res[i] != 0) {
+                    let data = {id: res[i], index: -1}
+                    list.push(data)
+                }
             }
             console.log(list)
             this.setState({msgList: list}, () => {

@@ -5,6 +5,7 @@ import React from 'react';
 import {getFavorite, getFavoriteSize} from '../../contract/utils/UserInfoUtils'
 import MsgItem from "../MsgItem";
 import {CommonStyles} from "../../components/Styles";
+import Loading from "react-loading-animation"
 
 const everyPage = 5
 export default class Favorite extends React.Component {
@@ -15,26 +16,24 @@ export default class Favorite extends React.Component {
             msgCount: '',
             msgList: [],
             index: 1,
+            loading: false
         }
     }
 
     componentDidMount() {
         document.title = "收藏"
-        getFavoriteSize().then(size => {
-            this.setState({msgCount: size}, () => {
-                this._renderMsgList()
-            })
-        }).catch(err => {
-            alert("发生异常，请刷新重试")
-        })
+        this._load()
     }
 
     render() {
         return (
             <div>
-                {this.state.msgList.map(id => (
-                    <MsgItem id={id} onClick={() => this.props.history.push('/msg/' + id)}/>))}
+                {this.state.msgList.map(data => (
+                    <MsgItem data={data} onClick={() => this.props.history.push('/msg/' + data.id)}
+                             reload={() => this._load()}
+                             loading={(isShow) => this.setState({loading: isShow})}/>))}
                 {this._renderLoadMore()}
+                {this._loading()}
             </div>
         )
     }
@@ -47,18 +46,22 @@ export default class Favorite extends React.Component {
             index = this.state.msgCount - (this.state.index - 1) * everyPage
         }
         for (let i = index; index - i < 5 && i > 0; i--) {
+            console.log(i - 1)
             getFavorite(i - 1).then(res => {
-                let list = this.state.msgList;
-                list.push(res)
-                if (res != 0)
+                console.log(res)
+                if (res != 0) {
+                    let list = this.state.msgList;
+                    let data = {id: res, index: i - 1}
+                    list.push(data)
                     this.setState({msgList: list})
+                }
             }).catch(err => console.log(err))
         }
     }
 
 
     _renderLoadMore() {
-        if (this.state.index * everyPage > this.state.msgCount) {
+        if (this.state.index * everyPage >= this.state.msgCount) {
             return (
                 <div style={Styles.LoadButton}>
                     <text style={CommonStyles.ButtonUnClickAble}>无更多内容</text>
@@ -79,6 +82,26 @@ export default class Favorite extends React.Component {
         })
     }
 
+    _load() {
+        this.setState({msgList: [], loading: true, index: 1}, () => {
+            getFavoriteSize().then(size => {
+                this.setState({msgCount: size}, () => {
+                    this._renderMsgList()
+                    this.setState({loading: false})
+                })
+            }).catch(err => {
+                this.setState({loading: false})
+                alert("发生异常，请刷新重试")
+            })
+        })
+    }
+
+    _loading() {
+        if (this.state.loading)
+            return (<Loading style={CommonStyles.Loading}/>)
+        else
+            return null
+    }
 }
 
 const Styles = {

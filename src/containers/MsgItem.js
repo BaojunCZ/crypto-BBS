@@ -2,7 +2,7 @@
  * Created by 包俊 on 2018/9/14.
  */
 import React from 'react';
-import {getMsg, getLikeCount, getDiscussMsgLength, isFavorite, favorite} from "../contract/utils/MsgUtils"
+import {getMsg, getLikeCount, getDiscussMsgLength, isFavorite, favorite, unFavorite} from "../contract/utils/MsgUtils"
 import headIcon from "../public/image/ic_default_head.png";
 import {getPlayer} from "../contract/utils/UserInfoUtils";
 import iconUnLike from "../public/image/icon_like.png";
@@ -23,12 +23,12 @@ export default class MsgItem extends React.Component {
             icon: headIcon,
             favoriteCount: 0,
             discussCount: 0,
-            isFavorite: 0,
+            isFavorite: false,
         }
     }
 
     componentDidMount() {
-        getMsg(this.props.id).then(res => {
+        getMsg(this.props.data.id).then(res => {
             this.setState({
                 imgUrl: res.imgUrl,
                 info: res.info,
@@ -40,15 +40,15 @@ export default class MsgItem extends React.Component {
             })
         }).catch(err => console.log(err))
 
-        getLikeCount(this.props.id).then(res => {
+        getLikeCount(this.props.data.id).then(res => {
             this.setState({favoriteCount: res})
         }).catch(err => console.log(err))
 
-        getDiscussMsgLength(this.props.id).then(res => {
+        getDiscussMsgLength(this.props.data.id).then(res => {
             this.setState({discussCount: res})
         }).catch(err => console.log(err))
 
-        isFavorite(this.props.id).then(res => {
+        isFavorite(this.props.data.id).then(res => {
             this.setState({isFavorite: res})
         }).catch(err => console.log(err))
     }
@@ -126,7 +126,7 @@ export default class MsgItem extends React.Component {
     }
 
     _renderFavorite() {
-        if (this.state.isFavorite == 1) {
+        if (this.state.isFavorite) {
             return iconLiked;
         } else {
             return iconUnLike;
@@ -134,15 +134,23 @@ export default class MsgItem extends React.Component {
     }
 
     _favorite() {
-        if (this.state.isFavorite == 0) {
-            favorite(this.props.id).then(res => {
-                this.setState({isFavorite: 1})
-                getLikeCount(this.props.id).then(res => {
+        if (!this.state.isFavorite) {
+            favorite(this.props.data.id).then(res => {
+                this.setState({isFavorite: true})
+                getLikeCount(this.props.data.id).then(res => {
                     this.setState({favoriteCount: res})
                 }).catch(err => console.log(err))
             }).catch(err => console.log(err))
+        } else {
+            if (this.props.data.index !== -1) {
+                this.props.loading(true)
+                unFavorite(this.props.data.index, this.props.data.id).then(res => {
+                    this.props.reload()
+                }).catch(err => console.log(err))
+            }
         }
     }
+
 }
 
 const Styles = {

@@ -79,6 +79,14 @@ export const favorite = (id) => {
     })
 }
 
+export const unFavorite = (index, id) => {
+    return new Promise((resolve, reject) => {
+        getTX().then(tx => {
+            txListener(getContract().methods.unFavorite(index, id), tx, resolve, reject)
+        })
+    })
+}
+
 export const discussMsg = (id, info, to) => {
     return new Promise((resolve, reject) => {
         getTX().then(tx => {
