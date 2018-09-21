@@ -152,6 +152,10 @@ contract CryptoBBSWithOutAdmin {
         player[msg.sender].synopsis = "First Player";
     }
     //=============================群信息相关========================================
+    function setOwner(address _address) onlyOwner() public payable {
+        Owner = _address;
+    }
+
     function setBBSName(string name) onlyOwner() public payable {
         require(bytes(name).length <= 30);
         BBSName = name;

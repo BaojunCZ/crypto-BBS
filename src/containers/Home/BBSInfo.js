@@ -2,7 +2,7 @@
  * Created by 包俊 on 2018/9/9.
  */
 import React from 'react'
-import headIcon from "../../public/image/ic_default_head.png";
+import headIcon from "../../public/image/icon_default.jpg";
 import {getBBSInfo, setBBSLogo, setBBSName, setBBSSynopsis} from "../../contract/utils/BBSInfoUtils"
 
 export default class BBSInfo extends React.Component {

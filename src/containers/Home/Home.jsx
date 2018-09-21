@@ -25,7 +25,7 @@ export default class Home extends React.Component {
     }
 
     componentDidMount() {
-        document.title = "芒果社区"
+        document.title = "芒果"
         getBBSInfo('playerCount').then(playerCount => {
             this.setState({playerCount: playerCount})
         })
