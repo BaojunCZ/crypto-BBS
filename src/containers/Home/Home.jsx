@@ -38,14 +38,14 @@ export default class Home extends React.Component {
             .then()
             .catch(err => {
                 if (err == '未注册')
-                    alert("请先注册，否则只能查看，无法评论与收藏")
+                    alert("请先注册，否则只能查看，无法发帖，评论与收藏")
             })
     }
 
     render() {
         return (
             <div style={{overflow: 'auto', overflowX: 'auto'}}>
-                <BBSInfo/>
+                <BBSInfo history={this.props.history}/>
                 <PartingLine/>
                 <ItemInfo name={'注册人数'} value={this.state.playerCount} icon={IconBBSPlayer}/>
                 <ItemInfo name={'帖子总数'} value={this.state.msgCount} icon={IconBBSMsgs}/>

@@ -54,7 +54,16 @@ export default class Mine extends React.Component {
                     <div>
                         <div style={Styles.Container}>
                             <UserInfo player={this.state.player}
-                                      style={Styles.UserInfo}/>
+                                      style={Styles.UserInfo}
+                                      reLoad={() => {
+                                          checkPlayer(window.neuron.getAccount())
+                                              .then(player => {
+                                                  this.setState({player: player, loading: false, isSignIn: 1})
+                                              })
+                                              .catch(err => {
+                                                  this.setState({loading: false, isSignIn: 2})
+                                              })
+                                      }}/>
                             <PartingLine/>
                             <ItemInfo name={'我的帖子'} value={this.state.msgSize} icon={IconBBSMsgs}/>
                             <ItemInfo name={'我的收藏'} value={this.state.favoriteSize} icon={IconBBSFavorite}/>

@@ -1,4 +1,4 @@
-const {abi, bytecode} = require("../compiled")
+const {abi, bytecode} = require("../constantNoAdmin")
 const nervos = require("../../nervos");
 const transaction = require("../transaction");
 
@@ -21,6 +21,14 @@ export const getTX = () =>
 export const getContract = function () {
     return new nervos.appchain.Contract(abi, window.BBSAddress);
 };
+
+export const TXManager = (method) => {
+    return new Promise((resolve, reject) => {
+        getTX().then(tx => {
+            txListener(method, tx, resolve, reject)
+        })
+    })
+}
 
 export const txListener = function (method, tx, resolve, reject) {
     method
@@ -98,26 +106,6 @@ export const deploy = async function (args) {
             });
     });
 };
-
-export const getNowPage = () => {
-    return new Promise(((resolve, reject) => {
-        getContract().methods.nowPage().call().then((id) => {
-            resolve(id)
-        }).catch(err => {
-            reject(err)
-        })
-    }))
-}
-
-export const getPageMsgIDs = (ID) => {
-    return new Promise(((resolve, reject) => {
-        getContract().methods.pageMsgIDs(ID).call().then((id) => {
-            resolve(id)
-        }).catch(err => {
-            reject(err)
-        })
-    }))
-}
 
 export const getOwner = () => {
     return new Promise(((resolve, reject) => {

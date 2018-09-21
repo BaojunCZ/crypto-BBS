@@ -1,13 +1,13 @@
 /**
  * Created by 包俊 on 2018/9/7.
  */
-import {getTX, getContract, txListener} from './tokenStore'
+import {getTX, getContract, txListener, TXManager} from './tokenStore'
 
-export const initPlayer = async function (name, sex, icon) {
+export const initPlayer = async function (name, sex, icon, synopsis) {
     return new Promise(((resolve, reject) => {
         getTX().then(tx => {
             console.log(tx)
-            txListener(getContract().methods.initPlayer(name, sex, icon), tx, resolve, reject);
+            txListener(getContract().methods.initPlayer(name, sex, icon, synopsis), tx, resolve, reject);
         }).catch(err => {
             reject(err)
         })
@@ -61,41 +61,7 @@ export const getBalance = (address) => {
 }
 
 export const setName = (name) => {
-    return new Promise(((resolve, reject) => {
-        getTX().then(tx => {
-            getContract().methods.setName(name).send(tx).then(res => {
-                console.log(res);
-                let hash;
-                if (JSON.stringify(res).indexOf("hash") !== -1) {
-                    hash = res.hash;
-                } else {
-                    hash = res;
-                }
-                if (hash) {
-                    window.nervos.listeners
-                        .listenToTransactionReceipt(hash)
-                        .then(receipt => {
-                            if (!receipt.errorMessage) {
-                                resolve(receipt);
-                            } else {
-                                reject(receipt.errorMessage);
-                            }
-                        })
-                        .catch(err => {
-                            console.log(err);
-                            reject(err);
-                        });
-                } else {
-                    reject("No Transaction Hash Received");
-                }
-            }).catch(err => {
-                reject(err)
-            })
-        }).catch(err => {
-            reject(err)
-        })
-
-    }))
+    return TXManager(getContract().methods.setName(name))
 }
 
 export const setSex = (sex) => {

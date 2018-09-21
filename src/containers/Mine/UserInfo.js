@@ -3,6 +3,7 @@
  */
 import React from 'react'
 import headIcon from "../../public/image/ic_default_head.png"
+import {setName} from "../../contract/utils/UserInfoUtils";
 
 export default class UserInfo extends React.Component {
 
@@ -33,8 +34,18 @@ export default class UserInfo extends React.Component {
                      style={Styles.Head}
                      onError={() => this.setState({src: headIcon})}/>
                 <text
-                    style={Styles.Name}>{this.props.player.sex ? this.props.player.name + ' ♂' : this.props.player.name + ' ♀'}</text>
+                    style={Styles.Name}
+                    onClick={() => {
+                        let info = prompt("请输入昵称")
+                        if (info !== '' && info.length <= 10) {
+                            setName(info).then(res => {
+                                this.props.reLoad()
+                            }).catch(err => console.log(err))
+                        }
+                    }}>
+                    {this.props.player.sex ? this.props.player.name + ' ♂' : this.props.player.name + ' ♀'}</text>
                 <text style={Styles.Address}>{this.props.player.playerAddress}</text>
+                <text style={Styles.Address}>{this.props.player.synopsis}</text>
             </div>
         )
     }

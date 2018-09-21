@@ -11,7 +11,6 @@ import Loading from "react-loading-animation"
 import {deploy} from "../contract/utils/tokenStore"
 
 export default class NewBBS extends React.Component {
-
     constructor(props) {
         super(props);
         this.state = {
@@ -21,22 +20,24 @@ export default class NewBBS extends React.Component {
             logo: '',
             synopsis: '',
             descr: '',
+            title: '',
         }
     }
-
 
     render() {
         return (
             <div>
-                <Title title={'新建糖果盒'}
+                <Title title={this.state.title}
                        leftShow={true}
                        leftClick={() => {
                            this.props.history.goBack();
                        }}/>
                 <TextAreaView image={IconPic}
-                              text={'糖果名'}
-                              tip={'（必填）'}
+                              text={'社区名'}
+                              tip={'（必填，10字以内）'}
                               isLong={false}
+                              maxLength={10}
+                              rows={1}
                               inputValue={(value) => this.setState({name: value})}/>
                 <TextAreaView image={IconPic}
                               text={'logo'}
@@ -47,6 +48,8 @@ export default class NewBBS extends React.Component {
                               text={'简介'}
                               tip={'（必填，20字以内）'}
                               isLong={false}
+                              maxLength={20}
+                              rows={1}
                               inputValue={(value) => this.setState({synopsis: value})}/>
                 <TextAreaView image={IconMsg}
                               text={'公告'}
@@ -64,7 +67,7 @@ export default class NewBBS extends React.Component {
     _send() {
         if (this.state.name !== '' && this.state.synopsis !== '') {
             this.setState({buttonText: '创建中', button: CommonStyles.ButtonUnClickAble, loading: true})
-            deploy([this.state.name, this.state.synopsis, this.state.logo, this.state.descr]).then(res => {
+            deploy([this.state.name, this.state.synopsis, this.state.descr, this.state.logo]).then(res => {
                 window.BBSAddress = res.contractAddress;
                 localStorage.setItem('BBSAddress', window.BBSAddress)
                 alert(localStorage.BBSAddress)

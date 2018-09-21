@@ -19,7 +19,7 @@ export default class CreateBBS extends React.Component {
             <div style={Styles.Container}>
                 <Title title={'芒果社区'}/>
                 <div style={{marginTop: 50}}/>
-                <button style={CommonStyles.ButtonClickAble} onClick={() => this.props.history.push('./new_BBS')}>创建芒果
+                <button style={CommonStyles.ButtonClickAble} onClick={() => this.props.history.push('/new_BBS')}>创建芒果
                 </button>
                 <input style={Styles.Input} onChange={(e) => {
                     this.setState({contractAddress: e.target.value})

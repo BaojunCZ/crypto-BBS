@@ -18,6 +18,7 @@ export default class SignIn extends React.Component {
             button: CommonStyles.ButtonClickAble,
             loading: false,
             heaPortrait: '',
+            synopsis: '',
             sex: true,
         }
     }
@@ -29,13 +30,22 @@ export default class SignIn extends React.Component {
                        leftShow={false}/>
                 <TextAreaView image={IconPic}
                               text={'昵称'}
+                              tip={'（必填，10字以内）'}
                               isLong={false}
+                              maxLength={10}
+                              rows={1}
                               inputValue={(value) => this.setState({userName: value})}/>
                 <TextAreaView image={IconPic}
                               text={'头像'}
                               tip={'（请输入图片地址）'}
                               isLong={false}
                               inputValue={(value) => this.setState({heaPortrait: value})}/>
+                <TextAreaView image={IconPic}
+                              text={'简介'}
+                              tip={'（80字以内）'}
+                              maxLength={80}
+                              isLong={true}
+                              inputValue={(value) => this.setState({synopsis: value})}/>
                 <form style={Styles.SexRadio}>
                     <input type="radio" name="sex" defaultChecked value={true} checked={this.state.sex}
                            onChange={() => this.setState({sex: true})}/>男
@@ -53,7 +63,7 @@ export default class SignIn extends React.Component {
     _loginIn() {
         if (this.state.userName !== '') {
             this.setState({loading: true})
-            initPlayer(this.state.userName, this.state.sex, this.state.heaPortrait).then(res => {
+            initPlayer(this.state.userName, this.state.sex, this.state.heaPortrait, this.state.synopsis).then(res => {
                 this.props.history.push("/main")
             }).catch(err => {
                 alert(err)

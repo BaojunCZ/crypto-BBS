@@ -14,9 +14,13 @@ export default class TextAreaView extends React.Component {
                     <text style={Styles.ButtonText}>{this.props.text}</text>
                     <text style={Styles.ButtonTextTip}>{this.props.tip}</text>
                 </div>
-                <textarea style={this.props.isLong ? Styles.TextInput : Styles.ImageInput} onChange={e => {
-                    this.props.inputValue(e.target.value)
-                }}/>
+                <textarea style={this.props.isLong ? Styles.TextInput : Styles.ImageInput}
+                          onChange={e => {
+                              this.props.inputValue(e.target.value)
+                          }}
+                          maxLength={this.props.maxLength !== undefined ? this.props.maxLength : null}
+                          rows={this.props.rows !== undefined ? this.props.rows : null}
+                />
             </div>
         )
     }
@@ -46,7 +50,7 @@ const Styles = {
         fontSize: 14,
     },
     ImageInput: {
-        marginTop: 8
+        marginTop: 8,
     },
     TextInput: {
         marginTop: 8,

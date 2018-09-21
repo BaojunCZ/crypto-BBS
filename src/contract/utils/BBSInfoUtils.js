@@ -1,7 +1,7 @@
 /**
  * Created by 包俊 on 2018/9/9.
  */
-import {getTX, getContract, txListener} from './tokenStore'
+import {getTX, getContract, txListener, TXManager} from './tokenStore'
 
 export const getBBSInfo = async function (attr) {
     return new Promise(((resolve, reject) => {
@@ -50,4 +50,15 @@ export const getBBSInfo = async function (attr) {
                 break
         }
     }))
+}
+
+export const setBBSLogo = (logo) => {
+    return TXManager(getContract().methods.setBBSLogo(logo))
+}
+
+export const setBBSName = (name) => {
+    return TXManager(getContract().methods.setBBSName(name))
+}
+export const setBBSSynopsis = (synopsis) => {
+    return TXManager(getContract().methods.setBBSSynopsis(synopsis))
 }

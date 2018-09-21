@@ -3,7 +3,7 @@
  */
 import React from 'react'
 import headIcon from "../../public/image/ic_default_head.png";
-import {getBBSInfo} from "../../contract/utils/BBSInfoUtils"
+import {getBBSInfo, setBBSLogo, setBBSName, setBBSSynopsis} from "../../contract/utils/BBSInfoUtils"
 
 export default class BBSInfo extends React.Component {
     constructor() {
@@ -38,10 +38,45 @@ export default class BBSInfo extends React.Component {
                 <img alt={'head'}
                      src={this.state.src}
                      style={Styles.Head}
-                     onError={() => this.setState({src: headIcon})}/>
+                     onError={() => this.setState({src: headIcon})}
+                     onClick={() => {
+                         let info = prompt("请输入图片地址")
+                         if (info !== '') {
+                             setBBSLogo(info).then(res => {
+                                 getBBSInfo('BBSLogo').then(src => {
+                                     this.setState({src: src})
+                                 })
+                             }).catch(err => console.log(err))
+                         }
+                     }}/>
                 <text
-                    style={Styles.Name}>{this.state.name}</text>
-                <text style={Styles.Describe}>{this.state.synopsis}</text>
+                    style={Styles.Name}
+                    onClick={() => {
+                        let info = prompt("请输入社区名称")
+                        if (info !== '' && info.length <= 10) {
+                            setBBSName(info).then(res => {
+                                console.log(res)
+                                getBBSInfo('BBSName').then(name => {
+                                    this.setState({name: name})
+                                    document.title = name
+                                })
+                            }).catch(err => console.log(err))
+                        }
+                    }}>{this.state.name}</text>
+                <text style={Styles.Address}>{window.BBSAddress}</text>
+                <text style={Styles.Synopsis}
+                      onClick={() => {
+                          let info = prompt("请输入社区简介")
+                          if (info !== '' && info.length <= 20) {
+                              setBBSSynopsis(info).then(res => {
+                                  console.log(res)
+                                  getBBSInfo('BBSSynopsis').then(synopsis => {
+                                      this.setState({synopsis: synopsis})
+                                  })
+                              }).catch(err => console.log(err))
+                          }
+                      }}>{this.state.synopsis}
+                </text>
             </div>
         )
     }
@@ -77,10 +112,17 @@ const Styles = {
         fontSize: 18,
         color: '#ffffff',
     },
-    Describe: {
+    Address: {
         fontSize: 12,
         color: '#ffffff',
-        marginTop: '10px',
+        marginTop: '5px',
+        marginLeft: '20px',
+        marginRight: '20px',
+    },
+    Synopsis: {
+        fontSize: 12,
+        color: '#ffffff',
+        marginTop: '5px',
         marginLeft: '20px',
         marginRight: '20px',
     }
