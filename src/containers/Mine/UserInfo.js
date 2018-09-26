@@ -3,7 +3,7 @@
  */
 import React from 'react'
 import headIcon from "../../public/image/icon_default.jpg"
-import {setName} from "../../contract/utils/UserInfoUtils";
+import {setName, setSynopsis, setIcon} from "../../contract/utils/UserInfoUtils";
 
 export default class UserInfo extends React.Component {
 
@@ -23,6 +23,7 @@ export default class UserInfo extends React.Component {
     }
 
     _initAttrs(props) {
+        console.log(props.player)
         this.setState({src: props.player.icon});
     }
 
@@ -32,7 +33,15 @@ export default class UserInfo extends React.Component {
                 <img alt={'head'}
                      src={this.state.src}
                      style={Styles.Head}
-                     onError={() => this.setState({src: headIcon})}/>
+                     onError={() => this.setState({src: headIcon})}
+                     onClick={() => {
+                         let info = prompt("请输入图片地址")
+                         if (info !== '' && info.length > 0) {
+                             setIcon(info).then(res => {
+                                 this.props.reLoad()
+                             }).catch(err => console.log(err))
+                         }
+                     }}/>
                 <text
                     style={Styles.Name}
                     onClick={() => {
@@ -45,7 +54,15 @@ export default class UserInfo extends React.Component {
                     }}>
                     {this.props.player.sex ? this.props.player.name + ' ♂' : this.props.player.name + ' ♀'}</text>
                 <text style={Styles.Address}>{this.props.player.playerAddress}</text>
-                <text style={Styles.Address}>{this.props.player.synopsis}</text>
+                <text style={Styles.Address}
+                      onClick={() => {
+                          let info = prompt("请输入简介")
+                          if (info !== '' && info.length <= 20) {
+                              setSynopsis(info).then(res => {
+                                  this.props.reLoad()
+                              }).catch(err => console.log(err))
+                          }
+                      }}>{this.props.player.synopsis}</text>
             </div>
         )
     }

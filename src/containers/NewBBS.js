@@ -6,6 +6,8 @@ import Title from "../components/Title";
 import IconPic from "../public/image/icon_image.png";
 import TextAreaView from "../components/TextAreaView";
 import IconMsg from "../public/image/icon_bbs_msgs.png";
+import IconName from "../public/image/icon_bbs_name.png";
+import IconBoard from "../public/image/icon_bbs_board.png";
 import {CommonStyles} from "../components/Styles";
 import Loading from "react-loading-animation"
 import {deploy} from "../contract/utils/tokenStore"
@@ -20,19 +22,18 @@ export default class NewBBS extends React.Component {
             logo: '',
             synopsis: '',
             descr: '',
-            title: '',
         }
     }
 
     render() {
         return (
             <div>
-                <Title title={this.state.title}
+                <Title title={'新建'}
                        leftShow={true}
                        leftClick={() => {
                            this.props.history.goBack();
                        }}/>
-                <TextAreaView image={IconPic}
+                <TextAreaView image={IconName}
                               text={'社区名'}
                               tip={'（必填，10字以内）'}
                               isLong={false}
@@ -51,7 +52,7 @@ export default class NewBBS extends React.Component {
                               maxLength={20}
                               rows={1}
                               inputValue={(value) => this.setState({synopsis: value})}/>
-                <TextAreaView image={IconMsg}
+                <TextAreaView image={IconBoard}
                               text={'公告'}
                               isLong={true}
                               inputValue={(value) => this.setState({descr: value})}/>

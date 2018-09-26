@@ -10,7 +10,6 @@ class App extends Component {
             if (localStorage.BBSAddress !== null && localStorage.BBSAddress !== undefined) {
                 window.BBSAddress = localStorage.BBSAddress
             } else {
-                alert(1)
                 window.BBSAddress = '0x4d67eF9E064f831b7B51359ffDBc77dA3eA6c8dD'
                 localStorage.BBSAddress = '0x4d67eF9E064f831b7B51359ffDBc77dA3eA6c8dD'
             }

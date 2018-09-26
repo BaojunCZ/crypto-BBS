@@ -64,6 +64,14 @@ export const setName = (name) => {
     return TXManager(getContract().methods.setName(name))
 }
 
+export const setIcon = (icon) => {
+    return TXManager(getContract().methods.setIcon(icon))
+}
+
+export const setSynopsis = (synopsis) => {
+    return TXManager(getContract().methods.setSynopsis(synopsis))
+}
+
 export const setSex = (sex) => {
     return new Promise(((resolve, reject) => {
         getTX().then(tx => {

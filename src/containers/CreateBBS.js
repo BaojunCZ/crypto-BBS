@@ -19,13 +19,13 @@ export default class CreateBBS extends React.Component {
             <div style={Styles.Container}>
                 <Title title={'芒果'}/>
                 <div style={{marginTop: 50}}/>
-                <button style={CommonStyles.ButtonClickAble} onClick={() => this.props.history.push('/new_BBS')}>创建社区
-                </button>
+                <text style={CommonStyles.ButtonClickAble} onClick={() => this.props.history.push('/new_BBS')}>创建社区
+                </text>
                 <input style={Styles.Input} onChange={(e) => {
                     this.setState({contractAddress: e.target.value})
                 }}
                        value={this.state.contractAddress}/>
-                <button style={Styles.ButtonClickAble} onClick={() => this._toBBS()}>加入社区</button>
+                <text style={Styles.ButtonClickAble} onClick={() => this._toBBS()}>加入社区</text>
             </div>
         )
     }
@@ -50,7 +50,7 @@ const Styles = {
     },
     ButtonClickAble: {
         marginTop: 20,
-        backgroundColor: '#2e6da4',
+        backgroundColor: '#03c58b',
         padding: '6px 12px',
         color: '#fff',
         borderRadius: '4px',

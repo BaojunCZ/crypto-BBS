@@ -4,7 +4,7 @@
 exports.CommonStyles = {
     ButtonClickAble: {
         marginTop: 20,
-        backgroundColor: '#2e6da4',
+        backgroundColor: '#03c58b',
         padding: '6px 12px',
         color: '#fff',
         borderRadius: '4px',
