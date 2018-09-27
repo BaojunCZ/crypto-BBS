@@ -21,7 +21,7 @@ export default class Home extends React.Component {
             msgCount: '',
             msgList: [],
             index: 1,
-            synopsis: ''
+            describe: ''
         }
     }
 
@@ -35,8 +35,8 @@ export default class Home extends React.Component {
                 this._renderMsgList()
             })
         }).catch(err => console.log(err))
-        getBBSInfo('BBSSynopsis').then(synopsis => {
-            this.setState({synopsis: synopsis})
+        getBBSInfo('BBSDescribe').then(describe => {
+            this.setState({describe: describe})
         }).catch(err => console.log(err))
         checkPlayer(window.neuron.getAccount())
             .then()
