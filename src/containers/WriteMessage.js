@@ -81,7 +81,8 @@ export default class WriteMessage extends React.Component {
                     sendMsg(this.state.imageMsg, this.state.infoMsg).then(res => {
                         this.props.history.goBack();
                     }).catch(err => {
-                        alert(JSON.stringify(err))
+                        alert('失败')
+                        this.setState({loading: false,button: CommonStyles.ButtonClickAble,buttonText: '发送'})
                     })
                 } else {
                     alert("请填写帖子内容！")
