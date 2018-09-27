@@ -34,6 +34,16 @@ export const getPlayerMsgSize = (address) => {
     })
 }
 
+export const getPlayerMsg = (index) => {
+    return new Promise((resolve, reject) => {
+        getContract().methods.getPlayerMsg(index, window.neuron.getAccount()).call().then(res => {
+            resolve(res)
+        }).catch(err => {
+            reject(err)
+        })
+    })
+}
+
 export const getFavoriteSize = () => {
     return new Promise((resolve, reject) => {
         getContract().methods.getFavoriteSize(window.neuron.getAccount()).call({from: window.neuron.getAccount()}).then((res) => {

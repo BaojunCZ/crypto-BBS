@@ -48,6 +48,13 @@ export const getBBSInfo = async function (attr) {
                     reject(err)
                 })
                 break
+            case "Owner":
+                getContract().methods.Owner().call().then((msgCount) => {
+                    resolve(msgCount)
+                }).catch(err => {
+                    reject(err)
+                })
+                break
         }
     }))
 }

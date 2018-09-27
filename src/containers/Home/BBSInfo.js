@@ -12,7 +12,7 @@ export default class BBSInfo extends React.Component {
             src: headIcon,
             name: 'BBS',
             synopsis: '',
-
+            Owner: '',
         }
     }
 
@@ -30,6 +30,9 @@ export default class BBSInfo extends React.Component {
         getBBSInfo('playerCount').then(playerCount => {
             this.setState({playerCount: playerCount})
         })
+        getBBSInfo('Owner').then(owner => {
+            this.setState({Owner: owner})
+        })
     }
 
     render() {
@@ -40,45 +43,56 @@ export default class BBSInfo extends React.Component {
                      style={Styles.Head}
                      onError={() => this.setState({src: headIcon})}
                      onClick={() => {
-                         let info = prompt("请输入图片地址")
-                         if (info !== '') {
-                             setBBSLogo(info).then(res => {
-                                 getBBSInfo('BBSLogo').then(src => {
-                                     this.setState({src: src})
-                                 })
-                             }).catch(err => console.log(err))
+                         if (this._isOwner()) {
+                             let info = prompt("请输入图片地址")
+                             if (info !== null) {
+                                 setBBSLogo(info).then(res => {
+                                     getBBSInfo('BBSLogo').then(src => {
+                                         this.setState({src: src})
+                                     })
+                                 }).catch(err => console.log(err))
+                             }
                          }
                      }}/>
                 <text
                     style={Styles.Name}
                     onClick={() => {
-                        let info = prompt("请输入社区名称")
-                        if (info !== '' && info.length <= 10) {
-                            setBBSName(info).then(res => {
-                                console.log(res)
-                                getBBSInfo('BBSName').then(name => {
-                                    this.setState({name: name})
-                                    document.title = name
-                                })
-                            }).catch(err => console.log(err))
+                        if (this._isOwner()) {
+                            let info = prompt("请输入社区名称")
+                            if (info !== null && info.length <= 10) {
+                                setBBSName(info).then(res => {
+                                    console.log(res)
+                                    getBBSInfo('BBSName').then(name => {
+                                        this.setState({name: name})
+                                        document.title = name
+                                    })
+                                }).catch(err => console.log(err))
+                            }
                         }
                     }}>{this.state.name}</text>
                 <text style={Styles.Address}>{window.BBSAddress}</text>
                 <text style={Styles.Synopsis}
                       onClick={() => {
-                          let info = prompt("请输入社区简介")
-                          if (info !== '' && info.length <= 20) {
-                              setBBSSynopsis(info).then(res => {
-                                  console.log(res)
-                                  getBBSInfo('BBSSynopsis').then(synopsis => {
-                                      this.setState({synopsis: synopsis})
-                                  })
-                              }).catch(err => console.log(err))
+                          if (this._isOwner()) {
+                              let info = prompt("请输入社区简介")
+                              console.log(info)
+                              if (info !== null && info.length <= 20) {
+                                  setBBSSynopsis(info).then(res => {
+                                      console.log(res)
+                                      getBBSInfo('BBSSynopsis').then(synopsis => {
+                                          this.setState({synopsis: synopsis})
+                                      })
+                                  }).catch(err => console.log(err))
+                              }
                           }
                       }}>{this.state.synopsis}
                 </text>
             </div>
         )
+    }
+
+    _isOwner() {
+        return window.neuron.getAccount() === this.state.Owner
     }
 }
 

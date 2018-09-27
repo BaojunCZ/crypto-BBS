@@ -317,8 +317,8 @@ contract CryptoBBSWithOutAdmin {
     }
 
     //获取用户帖子id列表
-    function getPlayerMsg(address _address) public view returns (uint256[]){
-        return player[_address].msgID;
+    function getPlayerMsg(uint256 index, address _address) public view returns (uint256){
+        return player[_address].msgID[index];
     }
 
     function getPlayerMsgSize(address _address) public view returns (uint256){

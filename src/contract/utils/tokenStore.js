@@ -106,13 +106,3 @@ export const deploy = async function (args) {
             });
     });
 };
-
-export const getOwner = () => {
-    return new Promise(((resolve, reject) => {
-        getContract().methods.Owner().call().then((address) => {
-            resolve(address)
-        }).catch(err => {
-            reject(err)
-        })
-    }))
-}

@@ -2,9 +2,10 @@
  * Created by 包俊 on 2018/9/5.
  */
 import React from "react";
-import {deploy, getOwner} from "../contract/utils/tokenStore"
+import {deploy} from "../contract/utils/tokenStore"
 import {favorite, isFavorite, sendMsg} from "../contract/utils/MsgUtils"
 import {getFavoriteSize, getPlayer, initPlayer, setName} from "../contract/utils/UserInfoUtils"
+import {getBBSInfo} from "../contract/utils/BBSInfoUtils"
 
 export default class Test extends React.Component {
 
@@ -77,7 +78,7 @@ export default class Test extends React.Component {
     }
 
     _getOwner() {
-        getOwner().then(address => {
+        getBBSInfo("Owner").then(address => {
             alert(address)
         }).catch(err => {
             console.log(err)
