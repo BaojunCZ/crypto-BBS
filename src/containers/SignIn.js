@@ -64,8 +64,7 @@ export default class SignIn extends React.Component {
         if (this.state.userName !== '' && this.state.synopsis !== '') {
             this.setState({loading: true})
             initPlayer(this.state.userName, this.state.sex, this.state.heaPortrait, this.state.synopsis).then(res => {
-                alert("success")
-                this.props.history.push("/main")
+                this.props.setStatus()
             }).catch(err => {
                 alert(err)
                 this.setState({loading: false})

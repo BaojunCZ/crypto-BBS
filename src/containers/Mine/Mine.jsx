@@ -82,7 +82,7 @@ export default class Mine extends React.Component {
                 break
             case 2:
                 return (
-                    <SignIn history={this.props.history}/>
+                    <SignIn history={this.props.history} setStatus={() => this.componentDidMount()}/>
                 )
                 break
         }
