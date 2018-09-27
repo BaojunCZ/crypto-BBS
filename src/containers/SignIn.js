@@ -42,7 +42,7 @@ export default class SignIn extends React.Component {
                               inputValue={(value) => this.setState({heaPortrait: value})}/>
                 <TextAreaView image={IconPic}
                               text={'简介'}
-                              tip={'（80字以内）'}
+                              tip={'（必填，80字以内）'}
                               maxLength={80}
                               isLong={true}
                               inputValue={(value) => this.setState({synopsis: value})}/>
@@ -61,9 +61,10 @@ export default class SignIn extends React.Component {
     }
 
     _loginIn() {
-        if (this.state.userName !== '') {
+        if (this.state.userName !== '' && this.state.synopsis !== '') {
             this.setState({loading: true})
             initPlayer(this.state.userName, this.state.sex, this.state.heaPortrait, this.state.synopsis).then(res => {
+                alert("success")
                 this.props.history.push("/main")
             }).catch(err => {
                 alert(err)
@@ -71,7 +72,7 @@ export default class SignIn extends React.Component {
             })
         }
         else
-            alert('请输入昵称')
+            alert('请输入必填项')
     }
 
     _loading() {

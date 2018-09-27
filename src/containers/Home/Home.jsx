@@ -21,6 +21,7 @@ export default class Home extends React.Component {
             msgCount: '',
             msgList: [],
             index: 1,
+            synopsis: ''
         }
     }
 
@@ -33,6 +34,9 @@ export default class Home extends React.Component {
             this.setState({msgCount: msgCount}, () => {
                 this._renderMsgList()
             })
+        }).catch(err => console.log(err))
+        getBBSInfo('BBSSynopsis').then(synopsis => {
+            this.setState({synopsis: synopsis})
         }).catch(err => console.log(err))
         checkPlayer(window.neuron.getAccount())
             .then()
@@ -49,6 +53,13 @@ export default class Home extends React.Component {
                 <PartingLine/>
                 <ItemInfo name={'注册人数'} value={this.state.playerCount} icon={IconBBSPlayer}/>
                 <ItemInfo name={'帖子总数'} value={this.state.msgCount} icon={IconBBSMsgs}/>
+                <div style={{marginTop: 10}}>
+                    <PartingLine/>
+                </div>
+                <div style={Styles.BoardContainer}>
+                    <text>公告:</text>
+                    <text style={Styles.BoardText}>{this.state.synopsis}</text>
+                </div>
                 <div style={{marginTop: 10}}>
                     <PartingLine/>
                 </div>
@@ -71,6 +82,7 @@ export default class Home extends React.Component {
         } else {
             index = this.state.msgCount - (this.state.index - 1) * everyPage
         }
+        console.log("index>>>" + index)
         getMsgIDs(index).then(res => {
             let list = []
             if (this.state.msgCount > everyPage) {
@@ -125,5 +137,15 @@ const Styles = {
         display: 'flex',
         alignItem: 'center',
         justifyContent: 'center',
+    },
+    BoardContainer: {
+        display: 'flex',
+        flexDirection: 'column',
+        marginLeft: 20,
+        marginRight: 20,
+        marginTop: 10,
+    },
+    BoardText: {
+        fontSize: 14,
     }
 }

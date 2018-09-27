@@ -146,7 +146,10 @@ export default class MsgItem extends React.Component {
                 this.props.loading(true)
                 unFavorite(this.props.data.index, this.props.data.id).then(res => {
                     this.props.reload()
-                }).catch(err => console.log(err))
+                }).catch(err => {
+                    this.props.loading(false)
+                    console.log(err)
+                })
             }
         }
     }

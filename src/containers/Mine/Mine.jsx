@@ -101,7 +101,7 @@ export default class Mine extends React.Component {
                 console.log(res)
                 if (res != 0) {
                     let list = this.state.msgList;
-                    let data = {id: res, index: i - 1}
+                    let data = {id: res, index: -1}
                     list.push(data)
                     this.setState({msgList: list})
                 }
