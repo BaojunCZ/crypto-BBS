@@ -1,7 +1,20 @@
 /**
  * Created by 包俊 on 2018/9/9.
  */
-import {getTX, getContract, txListener, TXManager} from './tokenStore'
+import {getContract, TXManager} from './tokenStore'
+
+const {abi, bytecode} = require("../constantNoAdmin")
+
+export const getBBSName = async function (address) {
+    return new Promise(((resolve, reject) => {
+        let contract = new window.nervos.appchain.Contract(abi, address);
+        contract.methods.BBSName().call().then((BBSName) => {
+            resolve(BBSName)
+        }).catch(err => {
+            reject(err)
+        })
+    }))
+}
 
 export const getBBSInfo = async function (attr) {
     return new Promise(((resolve, reject) => {
