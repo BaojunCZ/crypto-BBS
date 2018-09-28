@@ -3,10 +3,10 @@
  */
 import {getTX, getContract, txListener} from './tokenStore'
 
-export const sendMsg = (image, info) => {
+export const sendMsg = (image, info, url) => {
     return new Promise((resolve, reject) => {
         getTX().then(tx => {
-            txListener(getContract().methods.sendMessage(image, info), tx, resolve, reject)
+            txListener(getContract().methods.sendMessage(image, info, url), tx, resolve, reject)
         })
     })
 }

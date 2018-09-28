@@ -28,6 +28,7 @@ export default class MsgDetail extends React.Component {
         this.state = {
             imgUrl: '',
             info: '',
+            url: '',
             likeCount: '',
             writer: '',
             writerName: 'somebody',
@@ -49,6 +50,7 @@ export default class MsgDetail extends React.Component {
             this.setState({
                 imgUrl: res.imgUrl,
                 info: res.info,
+                url: res.url,
                 likeCount: res.likeCount,
                 writer: res.writer,
                 id: res.id
@@ -76,7 +78,7 @@ export default class MsgDetail extends React.Component {
                        leftClick={() => {
                            this.props.history.goBack();
                        }}/>
-                <div style={Styles.SecondContainer}>
+                <div style={Styles.SecondContainer} onClick={() => this._link()}>
                     <img alt={'head'}
                          src={this.state.icon}
                          style={Styles.Head}
@@ -146,7 +148,7 @@ export default class MsgDetail extends React.Component {
 
     _renderInfo() {
         if (this.state.info !== '') {
-            return (<text style={Styles.Info}>{this.state.info}</text>)
+            return (<text style={this.state.url === '' ? Styles.Info : Styles.InfoLink}>{this.state.info}</text>)
         } else {
             return null;
         }
@@ -214,6 +216,12 @@ export default class MsgDetail extends React.Component {
             })
     }
 
+    _link() {
+        if (this.state.url !== '') {
+            window.location.href = this.state.url
+        }
+    }
+
     _loading() {
         if (this.state.loading)
             return (<Loading style={CommonStyles.Loading}/>)
@@ -261,6 +269,12 @@ const Styles = {
     Info: {
         marginBottom: 10,
         fontSize: 15,
+    },
+    InfoLink: {
+        marginBottom: 10,
+        fontSize: 15,
+        color: '#456fff',
+        textDecoration: 'underline',
     },
     Line: {
         background: '#f7f7f7',

@@ -66,6 +66,11 @@ export const setBBSLogo = (logo) => {
 export const setBBSName = (name) => {
     return TXManager(getContract().methods.setBBSName(name))
 }
+
 export const setBBSSynopsis = (synopsis) => {
     return TXManager(getContract().methods.setBBSSynopsis(synopsis))
+}
+
+export const setBBSDescribe = (describe) => {
+    return TXManager(getContract().methods.setBBSDescribe(describe))
 }

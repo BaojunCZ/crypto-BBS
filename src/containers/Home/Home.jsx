@@ -56,7 +56,7 @@ export default class Home extends React.Component {
                 <div style={{marginTop: 10}}>
                     <PartingLine/>
                 </div>
-                <div style={Styles.BoardContainer}>
+                <div style={Styles.BoardContainer} onClick={() => this.props.history.push('./setBoard')}>
                     <text>公告:</text>
                     <text style={Styles.BoardText}>{this.state.describe}</text>
                 </div>

@@ -16,6 +16,7 @@ export default class MsgItem extends React.Component {
         this.state = {
             imgUrl: '',
             info: '',
+            url: '',
             likeCount: '',
             writer: '',
             writerName: 'somebody',
@@ -32,6 +33,7 @@ export default class MsgItem extends React.Component {
             this.setState({
                 imgUrl: res.imgUrl,
                 info: res.info,
+                url: res.url,
                 likeCount: res.likeCount,
                 writer: res.writer,
                 id: res.id
@@ -110,7 +112,8 @@ export default class MsgItem extends React.Component {
                 <img alt={"img"}
                      src={this.state.imgUrl}
                      style={Styles.Image}
-                     onError={() => this.setState({imgUrl: ''})}/>
+                     onError={() => this.setState({imgUrl: ''})}
+                     onClick={() => this._link()}/>
             )
         } else {
             return null
@@ -119,9 +122,16 @@ export default class MsgItem extends React.Component {
 
     _renderInfo() {
         if (this.state.info !== '') {
-            return (<text style={Styles.Info}>{this.state.info}</text>)
+            return (<text style={this.state.url === '' ? Styles.Info : Styles.InfoLink}
+                          onClick={() => this._link()}>{this.state.info}</text>)
         } else {
             return null;
+        }
+    }
+
+    _link() {
+        if (this.state.url !== '') {
+            window.location.href = this.state.url
         }
     }
 
@@ -194,6 +204,12 @@ const Styles = {
     Info: {
         marginBottom: 10,
         fontSize: 15,
+    },
+    InfoLink: {
+        marginBottom: 10,
+        fontSize: 15,
+        color: '#456fff',
+        textDecoration: 'underline',
     },
     Line: {
         background: '#f7f7f7',

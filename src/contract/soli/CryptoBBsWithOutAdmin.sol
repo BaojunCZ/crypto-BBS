@@ -102,6 +102,7 @@ library CryptoBBSDatasets {
     struct Message {
         string imgUrl;//图片地址
         string info;//信息
+        string url;//跳转网页地址
         uint256 favoriteCount;
         address writer;//作者
         uint256 id;//帖子ID
@@ -188,13 +189,14 @@ contract CryptoBBSWithOutAdmin {
     //=============================发帖评论相关=======================================
 
     //发帖
-    function sendMessage(string imgUrl, string info) isLogin(msg.sender) public payable {
+    function sendMessage(string imgUrl, string info, string url) isLogin(msg.sender) public payable {
         require(bytes(imgUrl).length != 0 || bytes(info).length != 0);
         uint256 time = now;
         //帖子内容
         data[time].writer = msg.sender;
         data[time].info = info;
         data[time].imgUrl = imgUrl;
+        data[time].url = url;
         data[time].id = time;
         //用户数据
         player[msg.sender].msgID.push(time);

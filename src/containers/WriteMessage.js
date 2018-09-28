@@ -27,6 +27,7 @@ export default class WriteMessage extends React.Component {
             buttonText: '确定',
             imageMsg: '',
             infoMsg: '',
+            url: '',
         }
     }
 
@@ -60,6 +61,10 @@ export default class WriteMessage extends React.Component {
                               text={'文字'}
                               isLong={true}
                               inputValue={(value) => this.setState({infoMsg: value})}/>
+                <TextAreaView image={IconMsg}
+                              text={'跳转网址'}
+                              isLong={false}
+                              inputValue={(value) => this.setState({url: value})}/>
                 <div style={Styles.ButtonContainer}>
                     <text style={this.state.button}
                           onClick={() => this._send()}>{this.state.buttonText}</text>
@@ -78,11 +83,11 @@ export default class WriteMessage extends React.Component {
             .then(player => {
                 if (this.state.imageMsg !== '' || this.state.infoMsg !== '') {
                     this.setState({button: CommonStyles.ButtonUnClickAble, loading: true, buttonText: '发送中...'})
-                    sendMsg(this.state.imageMsg, this.state.infoMsg).then(res => {
+                    sendMsg(this.state.imageMsg, this.state.infoMsg, this.state.url).then(res => {
                         this.props.history.goBack();
                     }).catch(err => {
                         alert('失败')
-                        this.setState({loading: false,button: CommonStyles.ButtonClickAble,buttonText: '发送'})
+                        this.setState({loading: false, button: CommonStyles.ButtonClickAble, buttonText: '发送'})
                     })
                 } else {
                     alert("请填写帖子内容！")
