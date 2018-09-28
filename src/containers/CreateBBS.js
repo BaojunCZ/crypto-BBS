@@ -4,13 +4,14 @@
 import React from "react"
 import {CommonStyles} from "../components/Styles";
 import Title from "../components/Title";
+import {defaultContract} from "../contract/constantNoAdmin"
 
 export default class CreateBBS extends React.Component {
 
     constructor() {
         super()
         this.state = {
-            contractAddress: window.BBSAddress === '' ? '0x4d67eF9E064f831b7B51359ffDBc77dA3eA6c8dD' : window.BBSAddress
+            contractAddress: window.BBSAddress === '' ? defaultContract : window.BBSAddress
         }
     }
 
@@ -33,6 +34,7 @@ export default class CreateBBS extends React.Component {
     _toBBS() {
         if (this.state.contractAddress !== '') {
             window.BBSAddress = this.state.contractAddress;
+            localStorage.BBSAddress = this.state.contractAddress
             this.props.history.push('./main')
         }
     }
