@@ -58,7 +58,7 @@ export default class Home extends React.Component {
                 </div>
                 <div style={Styles.BoardContainer}>
                     <text>公告:</text>
-                    <text style={Styles.BoardText}>{this.state.synopsis}</text>
+                    <text style={Styles.BoardText}>{this.state.describe}</text>
                 </div>
                 <div style={{marginTop: 10}}>
                     <PartingLine/>

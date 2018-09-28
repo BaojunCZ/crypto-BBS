@@ -2,7 +2,7 @@
  * Created by 包俊 on 2018/9/6.
  */
 import React from 'react'
-import headIcon from "../../public/image/icon_default.jpg"
+import headIcon from "../../public/image/icon.png"
 import {setName, setSynopsis, setIcon} from "../../contract/utils/UserInfoUtils";
 
 export default class UserInfo extends React.Component {
