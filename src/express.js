@@ -12,4 +12,8 @@ app.all('*', function (req, res, next) {
 
 app.use(express.static('build'));
 
+app.get('*', function (req, res) {
+    res.sendFile('/build/index.html');
+});
+
 app.listen(3030);
