@@ -46,7 +46,8 @@ export default class CreateBBS extends React.Component {
                 }}
                        value={this.state.contractAddress}/>
                 <text style={Styles.ButtonClickAble} onClick={() => this._toBBS()}>加入社区</text>
-
+                <a href={'https://github.com/BaojunCZ/crypto-BBS'}
+                   style={Styles.Link}>Github源码</a>
             </div>
         )
     }
@@ -91,5 +92,10 @@ const Styles = {
         width: '80vw',
         marginTop: 20,
         marginBottom: 20
+    },
+    Link: {
+        display: 'flex',
+        position: 'fixed',
+        bottom: 30,
     }
 }
