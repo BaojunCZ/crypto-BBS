@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import {getMsg, getLikeCount, getDiscussMsgLength, isFavorite, favorite, unFavorite} from "../contract/utils/MsgUtils"
-import headIcon from "../public/image/icon_default.jpg";
+import headIcon from "../public/image/icon.png";
 import {getPlayer} from "../contract/utils/UserInfoUtils";
 import iconUnLike from "../public/image/icon_like.png";
 import iconLiked from "../public/image/icon_liked.png";
