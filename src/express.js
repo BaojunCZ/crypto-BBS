@@ -1,6 +1,5 @@
 let express = require('express');
 let app = express();
-let path = require('path')
 
 app.all('*', function (req, res, next) {
     res.set({
@@ -11,7 +10,8 @@ app.all('*', function (req, res, next) {
     next();
 });
 
-app.use(express.static(path.join(__dirname, '../build')));
+app.use(express.static('build'));
+// app.use(express.static('../build', express.static('build')));
 
 // app.use('/', function (req, res) {
 //     res.sendFile(path.join(__dirname, '../build/index.html'));
