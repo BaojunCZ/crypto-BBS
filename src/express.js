@@ -11,10 +11,6 @@ app.all('*', function (req, res, next) {
 });
 
 app.use(express.static('build'));
-// app.use(express.static('../build', express.static('build')));
-
-// app.use('/', function (req, res) {
-//     res.sendFile(path.join(__dirname, '../build/index.html'));
-// });
+// app.use(express.static(path.join(__dirname, '../build')))
 
 app.listen(3030);
