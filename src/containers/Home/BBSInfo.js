@@ -4,6 +4,8 @@
 import React from 'react'
 import headIcon from "../../public/image/icon_default.jpg";
 import {getBBSInfo, setBBSLogo, setBBSName, setBBSSynopsis} from "../../contract/utils/BBSInfoUtils"
+import SetNameDialog from "../../components/Dialog/SetNameDialog";
+import SetSynopsisDialog from "../../components/Dialog/SetSynopsisDialog"
 
 export default class BBSInfo extends React.Component {
     constructor() {
@@ -13,6 +15,8 @@ export default class BBSInfo extends React.Component {
             name: 'BBS',
             synopsis: '',
             Owner: '',
+            nameDisplay: 'none',
+            synopsisDisplay: 'none'
         }
     }
 
@@ -58,37 +62,50 @@ export default class BBSInfo extends React.Component {
                     style={Styles.Name}
                     onClick={() => {
                         if (this._isOwner()) {
-                            let info = prompt("请输入社区名称")
-                            if (info !== null && info.length <= 10) {
-                                setBBSName(info).then(res => {
-                                    console.log(res)
-                                    getBBSInfo('BBSName').then(name => {
-                                        this.setState({name: name})
-                                        document.title = name
-                                    })
-                                }).catch(err => console.log(err))
-                            }
+                            this.setState({nameDisplay: 'block'})
                         }
                     }}>{this.state.name}</text>
                 <text style={Styles.Address}>{window.BBSAddress}</text>
                 <text style={Styles.Synopsis}
                       onClick={() => {
-                          if (this._isOwner()) {
-                              let info = prompt("请输入社区简介")
-                              console.log(info)
-                              if (info !== null && info.length <= 20) {
-                                  setBBSSynopsis(info).then(res => {
-                                      console.log(res)
-                                      getBBSInfo('BBSSynopsis').then(synopsis => {
-                                          this.setState({synopsis: synopsis})
-                                      })
-                                  }).catch(err => console.log(err))
-                              }
-                          }
+                          this.setState({synopsisDisplay: 'block'})
                       }}>{this.state.synopsis}
                 </text>
+                <SetNameDialog display={this.state.nameDisplay}
+                               close={() => this.setState({nameDisplay: 'none'})}
+                               setName={(name) => this._setName(name)}
+                               title={'社区名'}/>
+                <SetSynopsisDialog display={this.state.synopsisDisplay}
+                                   close={() => this.setState({synopsisDisplay: 'none'})}
+                                   setSynopsis={(synopsis) => this._setSynopsis(synopsis)}
+                                   title={'简介'}/>
             </div>
         )
+    }
+
+    _setName(name) {
+        if (name !== '' && name.length <= 10) {
+            this.setState({nameDisplay: 'none'})
+            setBBSName(name).then(res => {
+                console.log(res)
+                getBBSInfo('BBSName').then(name => {
+                    this.setState({name: name})
+                    document.title = name
+                })
+            }).catch(err => console.log(err))
+        }
+    }
+
+    _setSynopsis(synopsis) {
+        if (synopsis !== null && synopsis.length <= 20) {
+            this.setState({synopsisDisplay: 'none'})
+            setBBSSynopsis(synopsis).then(res => {
+                console.log(res)
+                getBBSInfo('BBSSynopsis').then(synopsis => {
+                    this.setState({synopsis: synopsis})
+                })
+            }).catch(err => console.log(err))
+        }
     }
 
     _isOwner() {

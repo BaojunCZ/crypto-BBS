@@ -5,6 +5,9 @@ import React from 'react'
 import headIcon from "../../public/image/icon.png"
 import {setIcon, setName, setSynopsis} from "../../contract/utils/UserInfoUtils";
 import IconDialog from "../../components/Dialog/IconDialog";
+import SetNameDialog from "../../components/Dialog/SetNameDialog"
+import SetSynopsisDialog from "../../components/Dialog/SetSynopsisDialog";
+import {getBBSInfo, setBBSSynopsis} from "../../contract/utils/BBSInfoUtils";
 
 export default class UserInfo extends React.Component {
 
@@ -12,7 +15,9 @@ export default class UserInfo extends React.Component {
         super()
         this.state = {
             src: headIcon,
-            display: 'none'
+            iconDisplay: 'none',
+            nameDisplay: 'none',
+            synopsisDisplay: 'none'
         }
     }
 
@@ -37,40 +42,57 @@ export default class UserInfo extends React.Component {
                      style={Styles.Head}
                      onError={() => headIcon}
                      onClick={() => {
-                         this.setState({display: 'block'})
+                         this.setState({iconDisplay: 'block'})
                      }}/>
                 <text
                     style={Styles.Name}
                     onClick={() => {
-                        let info = prompt("请输入昵称")
-                        if (info !== '' && info.length <= 10) {
-                            setName(info).then(res => {
-                                this.props.reLoad()
-                            }).catch(err => console.log(err))
-                        }
+                        this.setState({nameDisplay: 'block'})
                     }}>
                     {this.props.player.sex ? this.props.player.name + ' ♂' : this.props.player.name + ' ♀'}</text>
                 <text style={Styles.Address}>{this.props.player.playerAddress}</text>
                 <text style={Styles.Address}
                       onClick={() => {
-                          let info = prompt("请输入简介")
-                          if (info !== '' && info.length <= 20) {
-                              setSynopsis(info).then(res => {
-                                  this.props.reLoad()
-                              }).catch(err => console.log(err))
-                          }
+                          this.setState({synopsisDisplay: 'block'})
                       }}>{this.props.player.synopsis}</text>
-                <IconDialog display={this.state.display}
+                <IconDialog display={this.state.iconDisplay}
                             select={(icon => {
-                                this.setState({display: 'none', src: icon})
+                                this.setState({iconDisplay: 'none', src: icon})
                                 setIcon(icon).then(res => {
                                 }).catch(err => console.log(err))
                             })}
-                            close={() => this.setState({display: 'none'})}/>
+                            close={() => this.setState({iconDisplay: 'none'})}/>
+                <SetNameDialog display={this.state.nameDisplay}
+                               close={() => this.setState({nameDisplay: 'none'})}
+                               setName={(name) => this._setName(name)}
+                               title={'昵称'}/>
+                <SetSynopsisDialog display={this.state.synopsisDisplay}
+                                   close={() => this.setState({synopsisDisplay: 'none'})}
+                                   setSynopsis={(synopsis) => this._setSynopsis(synopsis)}
+                                   title={'简介'}/>
             </div>
         )
     }
 
+    _setName(name) {
+        if (name !== '' && name.length <= 10) {
+            this.setState({nameDisplay: 'none'})
+            this.props.loading(true)
+            setName(name).then(res => {
+                this.props.reLoad()
+            }).catch(err => alert(err))
+        }
+    }
+
+    _setSynopsis(synopsis) {
+        if (synopsis !== null && synopsis.length <= 20) {
+            this.setState({synopsisDisplay: 'none'})
+            this.props.loading(true)
+            setSynopsis(synopsis).then(res => {
+                this.props.reLoad()
+            }).catch(err => console.log(err))
+        }
+    }
 }
 
 const Styles = {

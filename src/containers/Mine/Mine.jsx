@@ -64,7 +64,8 @@ export default class Mine extends React.Component {
                                           .catch(err => {
                                               this.setState({loading: false, isSignIn: 2})
                                           })
-                                  }}/>
+                                  }}
+                                  loading={(loading) => this.setState({loading: loading})}/>
                         <PartingLine/>
                         <ItemInfo name={'我的帖子'} value={this.state.msgSize} icon={IconBBSMsgs}/>
                         <ItemInfo name={'我的收藏'} value={this.state.favoriteSize} icon={IconBBSFavorite}/>

@@ -50,8 +50,8 @@ export default class SignIn extends React.Component {
                 </div>
                 <TextAreaView image={IconPic}
                               text={'简介'}
-                              tip={'（必填，80字以内）'}
-                              maxLength={80}
+                              tip={'（必填，20字以内）'}
+                              maxLength={20}
                               isLong={true}
                               inputValue={(value) => this.setState({synopsis: value})}/>
                 <form style={Styles.SexRadio}>

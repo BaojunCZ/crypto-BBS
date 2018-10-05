@@ -54,6 +54,6 @@ const Styles = {
     },
     TextInput: {
         marginTop: 8,
-        height: '30vw'
+        height: '10vw'
     },
 }

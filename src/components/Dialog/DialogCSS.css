@@ -12,9 +12,42 @@
 .popBox-content {
     position: fixed;
     left: 50%;
-    top: 50%;
+    top: 40%;
     transform: translate(-50%, -50%);
     background-color: #fff;
     z-index: 999;
     border-radius: 10px;
+}
+
+.popBox-icon-root-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+
+.popBox-icon-close-text {
+    text-align: center;
+    margin-top: 8px;
+}
+
+.popBox-name-root-container {
+    margin-bottom: 8px;
+    margin-top: 8px;
+    width: 80vw;
+    height: 30vw;
+}
+
+.popBox-name-button text {
+    margin-top: 10px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #000;
+}
+
+.popBox-synopsis-root-container {
+    margin-bottom: 18px;
+    width: 80vw;
+    height: auto;
 }

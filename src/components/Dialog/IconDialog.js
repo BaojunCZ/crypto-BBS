@@ -7,22 +7,18 @@ import {aviationIcons, fruitIcons, marineIcons, musicIcons} from '../Icons.js'
 require('./DialogCSS.css')
 
 export default class IconDialog extends React.Component {
-    constructor() {
-        super();
-        this.state = {}
-    }
 
     render() {
         return (
             <div style={{display: this.props.display}}>
                 <div className='popBox-mask'/>
                 <div className='popBox-content'>
-                    <div style={Styles.Container}>
+                    <div className={'popBox-icon-root-container'}>
                         {this._renderIcons(fruitIcons)}
                         {this._renderIcons(aviationIcons)}
                         {this._renderIcons(marineIcons)}
                         {this._renderIcons(musicIcons)}
-                        <text style={Styles.CloseText}
+                        <text className={'popBox-icon-close-text'}
                               onClick={() => this.props.close()}>关闭
                         </text>
                     </div>
@@ -48,16 +44,6 @@ export default class IconDialog extends React.Component {
 }
 
 const Styles = {
-    Container: {
-        display: 'flex',
-        flexDirection: 'column',
-        marginBottom: 8,
-        marginTop: 8
-    },
-    CloseText: {
-        textAlign: 'center',
-        marginTop: 8
-    },
     IconImg: {
         width: 40,
         height: 40,
