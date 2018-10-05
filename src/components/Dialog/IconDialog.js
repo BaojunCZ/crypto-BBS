@@ -18,10 +18,10 @@ export default class IconDialog extends React.Component {
                 <div className='popBox-mask'/>
                 <div className='popBox-content'>
                     <div style={Styles.Container}>
-                        {this._renderFruitIcons()}
-                        {this._renderAviationIcons()}
-                        {this._renderMarineIcons()}
-                        {this._renderMusicIcons()}
+                        {this._renderIcons(fruitIcons)}
+                        {this._renderIcons(aviationIcons)}
+                        {this._renderIcons(marineIcons)}
+                        {this._renderIcons(musicIcons)}
                         <text style={Styles.CloseText}
                               onClick={() => this.props.close()}>关闭
                         </text>
@@ -31,58 +31,13 @@ export default class IconDialog extends React.Component {
         )
     }
 
-    _renderFruitIcons() {
+    _renderIcons(icons) {
         let items = [];
-        fruitIcons.map((icon, index, icons) => {
+        icons.map((icon, index, icons) => {
             items.push(<img alt={'icon'}
                             src={icon}
                             style={Styles.IconImg}
-                            onClick={() => this.props.select({name: 'fruit', index: index})}/>)
-        })
-        return (
-            <div style={Styles.IconImgContainer}>
-                {items}
-            </div>
-        )
-    }
-
-    _renderAviationIcons() {
-        let items = [];
-        aviationIcons.map((icon, index, icons) => {
-            items.push(<img alt={'icon'}
-                            src={icon}
-                            style={Styles.IconImg}
-                            onClick={() => this.props.select({name: 'aviation', index: index})}/>)
-        })
-        return (
-            <div style={Styles.IconImgContainer}>
-                {items}
-            </div>
-        )
-    }
-
-    _renderMarineIcons() {
-        let items = [];
-        marineIcons.map((icon, index, icons) => {
-            items.push(<img alt={'icon'}
-                            src={icon}
-                            style={Styles.IconImg}
-                            onClick={() => this.props.select({name: 'marine', index: index})}/>)
-        })
-        return (
-            <div style={Styles.IconImgContainer}>
-                {items}
-            </div>
-        )
-    }
-
-    _renderMusicIcons() {
-        let items = [];
-        musicIcons.map((icon, index, icons) => {
-            items.push(<img alt={'icon'}
-                            src={icon}
-                            style={Styles.IconImg}
-                            onClick={() => this.props.select({name: 'music', index: index})}/>)
+                            onClick={() => this.props.select(icon)}/>)
         })
         return (
             <div style={Styles.IconImgContainer}>

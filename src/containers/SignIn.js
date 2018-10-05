@@ -10,7 +10,6 @@ import IconPic from "../public/image/icon_image.png";
 import defaultIcon from "../public/image/icon.png"
 import TextAreaView from "../components/TextAreaView"
 import IconDialog from "../components/Dialog/IconDialog"
-import {aviationIcons, fruitIcons, marineIcons, musicIcons} from '../components/Icons'
 
 export default class SignIn extends React.Component {
 
@@ -20,7 +19,7 @@ export default class SignIn extends React.Component {
             userName: '',
             button: CommonStyles.ButtonClickAble,
             loading: false,
-            headPortrait: '',
+            headPortrait: defaultIcon,
             synopsis: '',
             sex: true,
             display: 'none'
@@ -47,7 +46,7 @@ export default class SignIn extends React.Component {
                         <text style={Styles.ButtonText}>{"头像"}</text>
                         <text style={Styles.ButtonTextTip}>{"（点击头像设置）"}</text>
                     </div>
-                    <img alt={'icon'} src={this._renderIcon()} style={Styles.HeadIcon}/>
+                    <img alt={'icon'} src={this.state.headPortrait} style={Styles.HeadIcon}/>
                 </div>
                 <TextAreaView image={IconPic}
                               text={'简介'}
@@ -77,7 +76,7 @@ export default class SignIn extends React.Component {
     _loginIn() {
         if (this.state.userName !== '' && this.state.synopsis !== '') {
             this.setState({loading: true})
-            initPlayer(this.state.userName, this.state.sex, JSON.stringify(this.state.headPortrait), this.state.synopsis).then(res => {
+            initPlayer(this.state.userName, this.state.sex, this.state.headPortrait, this.state.synopsis).then(res => {
                 this.props.setStatus()
             }).catch(err => {
                 alert(err)
@@ -86,29 +85,6 @@ export default class SignIn extends React.Component {
         }
         else
             alert('请输入必填项')
-    }
-
-    _renderIcon() {
-        if (this.state.headPortrait === '') {
-            return defaultIcon
-        } else if (this.state.headPortrait.name !== undefined) {
-            switch (this.state.headPortrait.name) {
-                case 'fruit':
-                    return fruitIcons[this.state.headPortrait.index]
-                    break
-                case 'aviation':
-                    return aviationIcons[this.state.headPortrait.index]
-                    break
-                case 'marine':
-                    return marineIcons[this.state.headPortrait.index]
-                    break
-                case 'music':
-                    return musicIcons[this.state.headPortrait.index]
-                    break
-            }
-        } else {
-            return this.state.headPortrait
-        }
     }
 
     _setIcon() {

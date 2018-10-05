@@ -3,15 +3,16 @@
  */
 import React from 'react'
 import headIcon from "../../public/image/icon.png"
-import {setName, setSynopsis, setIcon} from "../../contract/utils/UserInfoUtils";
-import {aviationIcons, fruitIcons, marineIcons, musicIcons} from "../../components/Icons";
+import {setIcon, setName, setSynopsis} from "../../contract/utils/UserInfoUtils";
+import IconDialog from "../../components/Dialog/IconDialog";
 
 export default class UserInfo extends React.Component {
 
     constructor() {
         super()
         this.state = {
-            src: headIcon
+            src: headIcon,
+            display: 'none'
         }
     }
 
@@ -34,14 +35,9 @@ export default class UserInfo extends React.Component {
                 <img alt={'head'}
                      src={this.state.src}
                      style={Styles.Head}
-                     onError={() => this._renderIcon()}
+                     onError={() => headIcon}
                      onClick={() => {
-                         let info = prompt("请输入图片地址")
-                         if (info !== '' && info.length > 0) {
-                             setIcon(info).then(res => {
-                                 this.props.reLoad()
-                             }).catch(err => console.log(err))
-                         }
+                         this.setState({display: 'block'})
                      }}/>
                 <text
                     style={Styles.Name}
@@ -64,34 +60,17 @@ export default class UserInfo extends React.Component {
                               }).catch(err => console.log(err))
                           }
                       }}>{this.props.player.synopsis}</text>
+                <IconDialog display={this.state.display}
+                            select={(icon => {
+                                this.setState({display: 'none', src: icon})
+                                setIcon(icon).then(res => {
+                                }).catch(err => console.log(err))
+                            })}
+                            close={() => this.setState({display: 'none'})}/>
             </div>
         )
     }
 
-    _renderIcon() {
-        alert(this.state.headPortrait)
-        if (this.state.headPortrait === '' || this.state.headPortrait === undefined) {
-            return headIcon
-        } else if (JSON.parse(this.state.headPortrait).name !== undefined) {
-            let head = JSON.parse(this.state.headPortrait)
-            switch (head.name) {
-                case 'fruit':
-                    return fruitIcons[head.index]
-                    break
-                case 'aviation':
-                    return aviationIcons[head.index]
-                    break
-                case 'marine':
-                    return marineIcons[head.index]
-                    break
-                case 'music':
-                    return musicIcons[head.index]
-                    break
-            }
-        } else {
-            return this.state.headPortrait
-        }
-    }
 }
 
 const Styles = {
