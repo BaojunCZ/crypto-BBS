@@ -1,0 +1,20 @@
+.popBox-mask {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: .6;
+    z-index: 999;
+    background-color: #000;
+}
+
+.popBox-content {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    z-index: 999;
+    border-radius: 10px;
+}

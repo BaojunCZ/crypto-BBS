@@ -4,6 +4,7 @@
 import React from 'react'
 import headIcon from "../../public/image/icon.png"
 import {setName, setSynopsis, setIcon} from "../../contract/utils/UserInfoUtils";
+import {aviationIcons, fruitIcons, marineIcons, musicIcons} from "../../components/Icons";
 
 export default class UserInfo extends React.Component {
 
@@ -33,7 +34,7 @@ export default class UserInfo extends React.Component {
                 <img alt={'head'}
                      src={this.state.src}
                      style={Styles.Head}
-                     onError={() => this.setState({src: headIcon})}
+                     onError={() => this._renderIcon()}
                      onClick={() => {
                          let info = prompt("请输入图片地址")
                          if (info !== '' && info.length > 0) {
@@ -67,6 +68,30 @@ export default class UserInfo extends React.Component {
         )
     }
 
+    _renderIcon() {
+        alert(this.state.headPortrait)
+        if (this.state.headPortrait === '' || this.state.headPortrait === undefined) {
+            return headIcon
+        } else if (JSON.parse(this.state.headPortrait).name !== undefined) {
+            let head = JSON.parse(this.state.headPortrait)
+            switch (head.name) {
+                case 'fruit':
+                    return fruitIcons[head.index]
+                    break
+                case 'aviation':
+                    return aviationIcons[head.index]
+                    break
+                case 'marine':
+                    return marineIcons[head.index]
+                    break
+                case 'music':
+                    return musicIcons[head.index]
+                    break
+            }
+        } else {
+            return this.state.headPortrait
+        }
+    }
 }
 
 const Styles = {

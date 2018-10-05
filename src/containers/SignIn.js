@@ -7,7 +7,10 @@ import Loading from "react-loading-animation"
 import Title from "../components/Title"
 import {CommonStyles} from "../components/Styles";
 import IconPic from "../public/image/icon_image.png";
+import defaultIcon from "../public/image/icon.png"
 import TextAreaView from "../components/TextAreaView"
+import IconDialog from "../components/Dialog/IconDialog"
+import {aviationIcons, fruitIcons, marineIcons, musicIcons} from '../components/Icons'
 
 export default class SignIn extends React.Component {
 
@@ -17,9 +20,10 @@ export default class SignIn extends React.Component {
             userName: '',
             button: CommonStyles.ButtonClickAble,
             loading: false,
-            heaPortrait: '',
+            headPortrait: '',
             synopsis: '',
             sex: true,
+            display: 'none'
         }
     }
 
@@ -35,11 +39,16 @@ export default class SignIn extends React.Component {
                               maxLength={10}
                               rows={1}
                               inputValue={(value) => this.setState({userName: value})}/>
-                <TextAreaView image={IconPic}
-                              text={'头像'}
-                              tip={'（请输入图片地址）'}
-                              isLong={false}
-                              inputValue={(value) => this.setState({heaPortrait: value})}/>
+                <div style={Styles.HeadContainer} onClick={() => this._setIcon()}>
+                    <div style={Styles.ButtonImageContainer}>
+                        <img alt={'img'}
+                             src={IconPic}
+                             style={Styles.ButtonImage}/>
+                        <text style={Styles.ButtonText}>{"头像"}</text>
+                        <text style={Styles.ButtonTextTip}>{"（点击头像设置）"}</text>
+                    </div>
+                    <img alt={'icon'} src={this._renderIcon()} style={Styles.HeadIcon}/>
+                </div>
                 <TextAreaView image={IconPic}
                               text={'简介'}
                               tip={'（必填，80字以内）'}
@@ -56,6 +65,11 @@ export default class SignIn extends React.Component {
                     <text style={this.state.button} onClick={() => this._loginIn()}>确定</text>
                 </div>
                 {this._loading()}
+                <IconDialog display={this.state.display}
+                            select={(icon => {
+                                this.setState({display: 'none', headPortrait: icon})
+                            })}
+                            close={() => this.setState({display: 'none'})}/>
             </div>
         )
     }
@@ -63,7 +77,7 @@ export default class SignIn extends React.Component {
     _loginIn() {
         if (this.state.userName !== '' && this.state.synopsis !== '') {
             this.setState({loading: true})
-            initPlayer(this.state.userName, this.state.sex, this.state.heaPortrait, this.state.synopsis).then(res => {
+            initPlayer(this.state.userName, this.state.sex, JSON.stringify(this.state.headPortrait), this.state.synopsis).then(res => {
                 this.props.setStatus()
             }).catch(err => {
                 alert(err)
@@ -72,6 +86,33 @@ export default class SignIn extends React.Component {
         }
         else
             alert('请输入必填项')
+    }
+
+    _renderIcon() {
+        if (this.state.headPortrait === '') {
+            return defaultIcon
+        } else if (this.state.headPortrait.name !== undefined) {
+            switch (this.state.headPortrait.name) {
+                case 'fruit':
+                    return fruitIcons[this.state.headPortrait.index]
+                    break
+                case 'aviation':
+                    return aviationIcons[this.state.headPortrait.index]
+                    break
+                case 'marine':
+                    return marineIcons[this.state.headPortrait.index]
+                    break
+                case 'music':
+                    return musicIcons[this.state.headPortrait.index]
+                    break
+            }
+        } else {
+            return this.state.headPortrait
+        }
+    }
+
+    _setIcon() {
+        this.setState({display: 'block'})
     }
 
     _loading() {
@@ -110,5 +151,28 @@ const Styles = {
     SexRadio: {
         marginTop: 20,
         marginLeft: 20
-    }
+    },
+    HeadContainer: {
+        marginLeft: 20,
+        marginTop: 20,
+    },
+    HeadIcon: {
+        width: 60,
+        marginTop: 10
+    },
+    ButtonImageContainer: {
+        display: 'flex',
+        alignItems: 'center'
+    },
+    ButtonImage: {
+        width: 30,
+        height: 30,
+    },
+    ButtonText: {
+        fontSize: 16,
+        marginLeft: 5
+    },
+    ButtonTextTip: {
+        fontSize: 14,
+    },
 }
