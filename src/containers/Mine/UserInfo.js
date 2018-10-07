@@ -7,7 +7,6 @@ import {setIcon, setName, setSynopsis} from "../../contract/utils/UserInfoUtils"
 import IconDialog from "../../components/Dialog/IconDialog";
 import SetNameDialog from "../../components/Dialog/SetNameDialog"
 import SetSynopsisDialog from "../../components/Dialog/SetSynopsisDialog";
-import {getBBSInfo, setBBSSynopsis} from "../../contract/utils/BBSInfoUtils";
 
 export default class UserInfo extends React.Component {
 

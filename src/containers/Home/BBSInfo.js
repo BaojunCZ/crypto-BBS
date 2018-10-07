@@ -6,6 +6,8 @@ import headIcon from "../../public/image/icon_default.jpg";
 import {getBBSInfo, setBBSLogo, setBBSName, setBBSSynopsis} from "../../contract/utils/BBSInfoUtils"
 import SetNameDialog from "../../components/Dialog/SetNameDialog";
 import SetSynopsisDialog from "../../components/Dialog/SetSynopsisDialog"
+import {setIcon} from "../../contract/utils/UserInfoUtils";
+import IconDialog from "../../components/Dialog/IconDialog";
 
 export default class BBSInfo extends React.Component {
     constructor() {
@@ -15,6 +17,7 @@ export default class BBSInfo extends React.Component {
             name: 'BBS',
             synopsis: '',
             Owner: '',
+            iconDisplay: 'none',
             nameDisplay: 'none',
             synopsisDisplay: 'none'
         }
@@ -48,14 +51,7 @@ export default class BBSInfo extends React.Component {
                      onError={() => this.setState({src: headIcon})}
                      onClick={() => {
                          if (this._isOwner()) {
-                             let info = prompt("请输入图片地址")
-                             if (info !== null) {
-                                 setBBSLogo(info).then(res => {
-                                     getBBSInfo('BBSLogo').then(src => {
-                                         this.setState({src: src})
-                                     })
-                                 }).catch(err => console.log(err))
-                             }
+                             this.setState({iconDisplay: 'block'})
                          }
                      }}/>
                 <text
@@ -71,6 +67,13 @@ export default class BBSInfo extends React.Component {
                           this.setState({synopsisDisplay: 'block'})
                       }}>{this.state.synopsis}
                 </text>
+                <IconDialog display={this.state.iconDisplay}
+                            select={(icon => {
+                                this.setState({iconDisplay: 'none', src: icon})
+                                setBBSLogo(icon).then(res => {
+                                }).catch(err => console.log(err))
+                            })}
+                            close={() => this.setState({iconDisplay: 'none'})}/>
                 <SetNameDialog display={this.state.nameDisplay}
                                close={() => this.setState({nameDisplay: 'none'})}
                                setName={(name) => this._setName(name)}

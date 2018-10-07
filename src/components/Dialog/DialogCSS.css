@@ -26,6 +26,12 @@
     margin-top: 8px;
 }
 
+.popBox-icon-tip-container {
+    margin-top: 10px;
+    margin-left: 8px;
+    font-size: 15px;
+}
+
 .popBox-icon-close-text {
     text-align: center;
     margin-top: 8px;

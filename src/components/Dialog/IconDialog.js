@@ -2,11 +2,19 @@
  * Created by 包俊 on 2018/10/3.
  */
 import React from 'react';
+import {CommonStyles} from '../Styles'
 import {aviationIcons, fruitIcons, marineIcons, musicIcons} from '../Icons.js'
 
 require('./DialogCSS.css')
 
 export default class IconDialog extends React.Component {
+
+    constructor() {
+        super()
+        this.state = {
+            input: ''
+        }
+    }
 
     render() {
         return (
@@ -18,6 +26,18 @@ export default class IconDialog extends React.Component {
                         {this._renderIcons(aviationIcons)}
                         {this._renderIcons(marineIcons)}
                         {this._renderIcons(musicIcons)}
+                        <text className={'popBox-icon-tip-container '}>请输入图片地址</text>
+                        <div style={Styles.IconInputContainer}>
+                            <input style={Styles.IconInput}
+                                   onChange={e => this.setState({input: e.target.value})}/>
+                            <text style={CommonStyles.ButtonClickAble}
+                                  onClick={() => {
+                                      if (this.state.input !== '') {
+                                          this.props.select(this.state.input)
+                                      }
+                                  }}>确定
+                            </text>
+                        </div>
                         <text className={'popBox-icon-close-text'}
                               onClick={() => this.props.close()}>关闭
                         </text>
@@ -53,5 +73,12 @@ const Styles = {
         display: 'flex',
         marginTop: 8,
         marginRight: 8,
+    },
+    IconInputContainer: {
+        marginTop: 5,
+        marginLeft: 10
+    },
+    IconInput: {
+        marginRight: 20
     }
 }
