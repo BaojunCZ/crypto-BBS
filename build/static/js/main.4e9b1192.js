@@ -7673,7 +7673,7 @@ assert.equal = function assertEqual(l, r, msg) {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return setIcon; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return setSynopsis; });
 /* unused harmony export setSex */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__ = __webpack_require__(65);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tokenStore__ = __webpack_require__(33);
 function _asyncToGenerator(fn){return function(){var gen=fn.apply(this,arguments);return new Promise(function(resolve,reject){function step(key,arg){try{var info=gen[key](arg);var value=info.value;}catch(error){reject(error);return;}if(info.done){resolve(value);}else{return Promise.resolve(value).then(function(value){step("next",value);},function(err){step("throw",err);});}}return step("next");});};}/**
@@ -8692,8 +8692,8 @@ module.exports = Method;
 /***/ (function(module, exports, __webpack_require__) {
 
 var Buffer = __webpack_require__(3).Buffer
-var Transform = __webpack_require__(73).Transform
-var StringDecoder = __webpack_require__(67).StringDecoder
+var Transform = __webpack_require__(75).Transform
+var StringDecoder = __webpack_require__(69).StringDecoder
 var inherits = __webpack_require__(1)
 
 function CipherBase (hashMode) {
@@ -8968,7 +8968,7 @@ util.inherits = __webpack_require__(1);
 /*</replacement>*/
 
 var Readable = __webpack_require__(111);
-var Writable = __webpack_require__(66);
+var Writable = __webpack_require__(68);
 
 util.inherits(Duplex, Readable);
 
@@ -9898,7 +9898,7 @@ var createPath = function createPath(location) {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TXManager; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return txListener; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return deploy; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__ = __webpack_require__(65);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__);
 function _asyncToGenerator(fn){return function(){var gen=fn.apply(this,arguments);return new Promise(function(resolve,reject){function step(key,arg){try{var info=gen[key](arg);var value=info.value;}catch(error){reject(error);return;}if(info.done){resolve(value);}else{return Promise.resolve(value).then(function(value){step("next",value);},function(err){step("throw",err);});}}return step("next");});};}var _require=__webpack_require__(47),abi=_require.abi,bytecode=_require.bytecode;var nervos=__webpack_require__(215);var transaction=__webpack_require__(416);var getTX=function getTX(){return nervos.appchain.getBlockNumber().then(function(current){// const tx = {
 //     ...transaction,
@@ -10654,7 +10654,7 @@ Url.prototype.parseHost = function() {
 exports = module.exports = __webpack_require__(111);
 exports.Stream = exports;
 exports.Readable = exports;
-exports.Writable = __webpack_require__(66);
+exports.Writable = __webpack_require__(68);
 exports.Duplex = __webpack_require__(22);
 exports.Transform = __webpack_require__(114);
 exports.PassThrough = __webpack_require__(255);
@@ -10863,9 +10863,9 @@ module.exports = PromiEvent;
 "use strict";
 
 var inherits = __webpack_require__(1)
-var MD5 = __webpack_require__(72)
-var RIPEMD160 = __webpack_require__(74)
-var sha = __webpack_require__(75)
+var MD5 = __webpack_require__(74)
+var RIPEMD160 = __webpack_require__(76)
+var sha = __webpack_require__(77)
 var Base = __webpack_require__(19)
 
 function Hash (hash) {
@@ -11068,7 +11068,7 @@ base.Node = __webpack_require__(350);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return setBBSName; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return setBBSSynopsis; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return setBBSDescribe; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__ = __webpack_require__(65);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tokenStore__ = __webpack_require__(33);
 function _asyncToGenerator(fn){return function(){var gen=fn.apply(this,arguments);return new Promise(function(resolve,reject){function step(key,arg){try{var info=gen[key](arg);var value=info.value;}catch(error){reject(error);return;}if(info.done){resolve(value);}else{return Promise.resolve(value).then(function(value){step("next",value);},function(err){step("throw",err);});}}return step("next");});};}/**
@@ -11500,7 +11500,7 @@ exports.getHashes = function () {
   return hashes
 }
 
-var p = __webpack_require__(76)
+var p = __webpack_require__(78)
 exports.pbkdf2 = p.pbkdf2
 exports.pbkdf2Sync = p.pbkdf2Sync
 
@@ -11825,7 +11825,7 @@ module.exports.AES = AES
 /***/ (function(module, exports, __webpack_require__) {
 
 var Buffer = __webpack_require__(3).Buffer
-var MD5 = __webpack_require__(72)
+var MD5 = __webpack_require__(74)
 
 /* eslint-disable camelcase */
 function EVP_BytesToKey (password, salt, keyBits, ivLen) {
@@ -11893,8 +11893,8 @@ curve.edwards = __webpack_require__(330);
 /* WEBPACK VAR INJECTION */(function(Buffer) {var asn1 = __webpack_require__(345)
 var aesid = __webpack_require__(357)
 var fixProc = __webpack_require__(358)
-var ciphers = __webpack_require__(78)
-var compat = __webpack_require__(76)
+var ciphers = __webpack_require__(80)
+var compat = __webpack_require__(78)
 module.exports = parseKeys
 
 function parseKeys (buffer) {
@@ -12126,6 +12126,26 @@ exports.default = signer;
 
 /***/ }),
 /* 58 */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAAC8CAMAAAAKNRF7AAAC/VBMVEUAAABoaGhFSElFSElFSElISEhFSElFSElESEhDS0tFSUlFSEk/Tk5FSEhFSElFSElFSElFSElESElFSElFSElFSUlESElHR0dFSElFSElFSElFSElDRkpERkZFSElFSEhFSUlFR0lFSElFSElFR0lFSEhFR0pESElFSEhESElFSElFR0lESElESEhGR0hFSUhFSElFSElFSElFSElFSEhFSElFSEhESktESEhFSElFSEhFR0lFSElFSElFSUlAQEBFSElFSElFR0hFSEhFT0tDXVFESUlET0xCYVNCZVRCaVZEV09CbFdCa1hER0lCaFVDXFJEUkxEV09EWU9FUEv62EFFSEn6rCgimFc7t3f+/v5GSUn6rin610BNTkj11EH6zjv6sSpRUUj60z361kD60Dz6yTj6uS/5qyhJSkhnY0f9+eT854swq2pFSkpLTEj62kdQTkeMgEbQt0PMs0P6vjL6ti399dAqoWFuaEd7c0ZbV0ZWUkasmkRkWUPx0UH6wTPEjjLooivvpin+/fY6tXY5s3Q1r28mnVz73VZDXFFgXkhXVkeBeEaxnkSqmERsXkH61T/6zDr6xDX6syz6ryn1qSn999n87rH854b73l1CZVUpiFQzcVD620xETUpESUl3cEeUhkaikkWIfEX62UTBq0PjxUL41kHrzEF/aD6Mbzz6xzeqfzenfjf6vDHXmS7gnS3+/vv88sL85Hj74GcufFL63FEwd1E5ZU87Xk1eXEimlUW4pETWvEPbvkLuz0GfejivgjXspCr++/D988n865/86ZP74m4+lmkupmZBdlwil1c9WUxDT0tzbEeZikW/qUTFrkPnyULfwkJ1Y0CHbD2YdjrPlDDcnC3++uz87af865w7rnM8qHA9nWw+kGdAgGBCalckkVYmj1U1a0+Pg0adjkXTuUJxYEGWdTq4iDS7iTPAizLKkjDUly/99Mv88bz86pg/hGEsglNCUkzixUJ7Zj+Rcjvinyw9mms/imTNtEPatz6QcTyBI4P4AAAAVXRSTlMAAv337QX05jsPG8kJXeqA4tqUKvulMgv63oZuFxPwtpB1Y1hFQjjOxcKwoZ1KJiHWs1XSqFAuHr2sTZiJeWkEuop8Zz/4e/nz6NXJsHlSUDvm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"
+
+/***/ }),
+/* 59 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Styles__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Styles___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Styles__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Icons_js__ = __webpack_require__(418);
+var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}/**
+ * Created by 包俊 on 2018/10/3.
+ */__webpack_require__(86);var IconDialog=function(_React$Component){_inherits(IconDialog,_React$Component);function IconDialog(){_classCallCheck(this,IconDialog);var _this=_possibleConstructorReturn(this,(IconDialog.__proto__||Object.getPrototypeOf(IconDialog)).call(this));_this.state={input:''};return _this;}_createClass(IconDialog,[{key:'render',value:function render(){var _this2=this;return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div',{style:{display:this.props.display}},__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div',{className:'popBox-mask'}),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div',{className:'popBox-content'},__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div',{className:'popBox-icon-root-container'},this._renderIcons(__WEBPACK_IMPORTED_MODULE_2__Icons_js__["b" /* fruitIcons */]),this._renderIcons(__WEBPACK_IMPORTED_MODULE_2__Icons_js__["a" /* aviationIcons */]),this._renderIcons(__WEBPACK_IMPORTED_MODULE_2__Icons_js__["c" /* marineIcons */]),this._renderIcons(__WEBPACK_IMPORTED_MODULE_2__Icons_js__["d" /* musicIcons */]),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('text',{className:'popBox-icon-tip-container '},'\u8BF7\u8F93\u5165\u56FE\u7247\u5730\u5740'),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div',{style:Styles.IconInputContainer},__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input',{style:Styles.IconInput,onChange:function onChange(e){return _this2.setState({input:e.target.value});}}),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('text',{style:__WEBPACK_IMPORTED_MODULE_1__Styles__["CommonStyles"].ButtonClickAble,onClick:function onClick(){if(_this2.state.input!==''){_this2.props.select(_this2.state.input);}}},'\u786E\u5B9A')),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('text',{className:'popBox-icon-close-text',onClick:function onClick(){return _this2.props.close();}},'\u5173\u95ED'))));}},{key:'_renderIcons',value:function _renderIcons(icons){var _this3=this;var items=[];icons.map(function(icon,index,icons){items.push(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img',{alt:'icon',src:icon,style:Styles.IconImg,onClick:function onClick(){return _this3.props.select(icon);}}));});return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div',{style:Styles.IconImgContainer},items);}}]);return IconDialog;}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);/* harmony default export */ __webpack_exports__["a"] = (IconDialog);var Styles={IconImg:{width:40,height:40,marginLeft:8},IconImgContainer:{display:'flex',marginTop:8,marginRight:8},IconInputContainer:{marginTop:5,marginLeft:10},IconInput:{marginRight:20}};
+
+/***/ }),
+/* 60 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12136,7 +12156,7 @@ exports.default = signer;
  */var checkPlayer=function checkPlayer(address){return new Promise(function(resolve,reject){Object(__WEBPACK_IMPORTED_MODULE_0__contract_utils_UserInfoUtils__["d" /* getPlayer */])(address).then(function(player){console.log(player);if(player.playerAddress.toLowerCase()===address.toLowerCase()){resolve(player);}else{reject("未注册");}}).catch(function(err){reject(err);});});};
 
 /***/ }),
-/* 59 */
+/* 61 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12221,18 +12241,18 @@ var createTransitionManager = function createTransitionManager() {
 /* harmony default export */ __webpack_exports__["a"] = (createTransitionManager);
 
 /***/ }),
-/* 60 */
+/* 62 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_Router__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_Router__ = __webpack_require__(63);
 // Written in this round about way for babel-transform-imports
 
 
 /* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_Router__["a" /* default */]);
 
 /***/ }),
-/* 61 */
+/* 63 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12351,7 +12371,7 @@ Router.childContextTypes = {
 /* harmony default export */ __webpack_exports__["a"] = (Router);
 
 /***/ }),
-/* 62 */
+/* 64 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12431,14 +12451,14 @@ var matchPath = function matchPath(pathname) {
 /* harmony default export */ __webpack_exports__["a"] = (matchPath);
 
 /***/ }),
-/* 63 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(213);
 
 
 /***/ }),
-/* 64 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var ClientRequest = __webpack_require__(248)
@@ -12529,7 +12549,7 @@ http.METHODS = [
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ }),
-/* 65 */
+/* 67 */
 /***/ (function(module, exports) {
 
 // Copyright Joyent, Inc. and other Node contributors.
@@ -12837,7 +12857,7 @@ function isUndefined(arg) {
 
 
 /***/ }),
-/* 66 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13531,7 +13551,7 @@ Writable.prototype._destroy = function (err, cb) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11), __webpack_require__(252).setImmediate, __webpack_require__(5)))
 
 /***/ }),
-/* 67 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13833,7 +13853,7 @@ function simpleEnd(buf) {
 }
 
 /***/ }),
-/* 68 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13880,7 +13900,7 @@ exports.XMLHttpRequestEventTarget = XMLHttpRequestEventTarget;
 //# sourceMappingURL=xml-http-request-event-target.js.map
 
 /***/ }),
-/* 69 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13925,7 +13945,7 @@ var Subscription = __webpack_require__(49).subscription;
 var formatters = __webpack_require__(7).formatters;
 var errors = __webpack_require__(7).errors;
 var promiEvent = __webpack_require__(37);
-var abi = __webpack_require__(70);
+var abi = __webpack_require__(72);
 
 
 /**
@@ -14792,7 +14812,7 @@ module.exports = Contract;
 
 
 /***/ }),
-/* 70 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -15109,7 +15129,7 @@ module.exports = coder;
 
 
 /***/ }),
-/* 71 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var A = __webpack_require__(290);
@@ -15302,7 +15322,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 72 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15455,7 +15475,7 @@ module.exports = MD5
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2).Buffer))
 
 /***/ }),
-/* 73 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Copyright Joyent, Inc. and other Node contributors.
@@ -15481,7 +15501,7 @@ module.exports = MD5
 
 module.exports = Stream;
 
-var EE = __webpack_require__(65).EventEmitter;
+var EE = __webpack_require__(67).EventEmitter;
 var inherits = __webpack_require__(1);
 
 inherits(Stream, EE);
@@ -15588,7 +15608,7 @@ Stream.prototype.pipe = function(dest, options) {
 
 
 /***/ }),
-/* 74 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15758,7 +15778,7 @@ module.exports = RIPEMD160
 
 
 /***/ }),
-/* 75 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var exports = module.exports = function SHA (algorithm) {
@@ -15779,7 +15799,7 @@ exports.sha512 = __webpack_require__(125)
 
 
 /***/ }),
-/* 76 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports.pbkdf2 = __webpack_require__(301)
@@ -15787,7 +15807,7 @@ exports.pbkdf2Sync = __webpack_require__(131)
 
 
 /***/ }),
-/* 77 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15801,7 +15821,7 @@ exports.EDE = __webpack_require__(308);
 
 
 /***/ }),
-/* 78 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var ciphers = __webpack_require__(309)
@@ -15820,7 +15840,7 @@ exports.listCiphers = exports.getCiphers = getCiphers
 
 
 /***/ }),
-/* 79 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var modeModules = {
@@ -15844,7 +15864,7 @@ module.exports = modes
 
 
 /***/ }),
-/* 80 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var bn = __webpack_require__(4);
@@ -15891,7 +15911,7 @@ function getr(priv) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2).Buffer))
 
 /***/ }),
-/* 81 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var hash = exports;
@@ -15912,7 +15932,7 @@ hash.ripemd160 = hash.ripemd.ripemd160;
 
 
 /***/ }),
-/* 82 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15933,30 +15953,10 @@ exports.default = (wallet) => (transaction) => {
 
 
 /***/ }),
-/* 83 */
+/* 85 */
 /***/ (function(module, exports) {
 
 module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADIEAYAAAD9yHLdAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAZiS0dEAAAAAAAA+UO7fwAAAAlwSFlzAAAASAAAAEgARslrPgAAHKRJREFUeNrt3XucjdX+B/C1t1uYzGAwLhljGJch90S5pJAOlZQ4pZwo1SmSXCrXOQqRfk5OpZyiQ73iRIioUHLLXT/kfotcRohcZ2bv3x/fPr9pJsOznn1Zz7P35/169fr0YvZ41rNnnrWf9az1XUoRERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERGFlMf0AYRGfLxk8+aStWtLVq0qGRcnWaiQ6SMlokjh90uePi3500+SO3dKLl8uuXWr6SMlpZRSRYtK9uoluWKFZFaWJN5QJpPJdEoePiw5dqxktWqKwgF3DIMGSaanS5r+gWAymUy7iQ+8M2ZIJicrCqYmTSR37JA0/YYzmUxmqPLCBUl8UPZ6FdnRp4/k5cuSpt9YJpPJDHd++aUknt3SNYweLWn6jWMymUyn5A8/SCYkKIdw2Cys4cMlhw0L7vc9cEBy82bJn3+W/PVX0y0mokiBZ7RlykjiWUaDBpL58gXn38F1rEULyai/jnXpIhloD33unCRmN9Svb7plRBTtSpWS7NlT8scfJQO93s2fL+lx2I1A2CQlSaIHtXsiP/xQsnx50y0iIrq6/Pklsfwg0Otfv36mW2TI3Lk5T4TVzMyUHDjQdAuIiAKTkiJp984EIy+VKpluSZjcdpu1E5M7fT7JBx4w3QIiouDCUNeePZK618cpU0y3IEwwLU33BAX74ToRkdOkpkrqDm1lZEhG7J1IYqIk7iSsnphNmyS5oIaIosWzz0rqftDGbNaI8+KL9k5I69amj5yIKLwKFpTcvVvS6vUSxRsjzuLFeidi40bTR0xEZFbv3pK6H7wx4uN6GHrCbIGovxUjIrKoYkVJ3aH/rl1DfWRheqZwww2SRYrove6LL8JzfERETnXwoCSm+VpVvXqojyxMHUiFCvZe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"
-
-/***/ }),
-/* 84 */
-/***/ (function(module, exports) {
-
-module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAAC8CAMAAAAKNRF7AAAC/VBMVEUAAABoaGhFSElFSElFSElISEhFSElFSElESEhDS0tFSUlFSEk/Tk5FSEhFSElFSElFSElFSElESElFSElFSElFSUlESElHR0dFSElFSElFSElFSElDRkpERkZFSElFSEhFSUlFR0lFSElFSElFR0lFSEhFR0pESElFSEhESElFSElFR0lESElESEhGR0hFSUhFSElFSElFSElFSElFSEhFSElFSEhESktESEhFSElFSEhFR0lFSElFSElFSUlAQEBFSElFSElFR0hFSEhFT0tDXVFESUlET0xCYVNCZVRCaVZEV09CbFdCa1hER0lCaFVDXFJEUkxEV09EWU9FUEv62EFFSEn6rCgimFc7t3f+/v5GSUn6rin610BNTkj11EH6zjv6sSpRUUj60z361kD60Dz6yTj6uS/5qyhJSkhnY0f9+eT854swq2pFSkpLTEj62kdQTkeMgEbQt0PMs0P6vjL6ti399dAqoWFuaEd7c0ZbV0ZWUkasmkRkWUPx0UH6wTPEjjLooivvpin+/fY6tXY5s3Q1r28mnVz73VZDXFFgXkhXVkeBeEaxnkSqmERsXkH61T/6zDr6xDX6syz6ryn1qSn999n87rH854b73l1CZVUpiFQzcVD620xETUpESUl3cEeUhkaikkWIfEX62UTBq0PjxUL41kHrzEF/aD6Mbzz6xzeqfzenfjf6vDHXmS7gnS3+/vv88sL85Hj74GcufFL63FEwd1E5ZU87Xk1eXEimlUW4pETWvEPbvkLuz0GfejivgjXspCr++/D988n865/86ZP74m4+lmkupmZBdlwil1c9WUxDT0tzbEeZikW/qUTFrkPnyULfwkJ1Y0CHbD2YdjrPlDDcnC3++uz87af865w7rnM8qHA9nWw+kGdAgGBCalckkVYmj1U1a0+Pg0adjkXTuUJxYEGWdTq4iDS7iTPAizLKkjDUly/99Mv88bz86pg/hGEsglNCUkzixUJ7Zj+Rcjvinyw9mms/imTNtEPatz6QcTyBI4P4AAAAVXRSTlMAAv337QX05jsPG8kJXeqA4tqUKvulMgv63oZuFxPwtpB1Y1hFQjjOxcKwoZ1KJiHWs1XSqFAuHr2sTZiJeWkEuop8Zz/4e/nz6NXJsHlSUDvm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"
-
-/***/ }),
-/* 85 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Styles__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Styles___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Styles__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Icons_js__ = __webpack_require__(418);
-var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}/**
- * Created by 包俊 on 2018/10/3.
- */__webpack_require__(86);var IconDialog=function(_React$Component){_inherits(IconDialog,_React$Component);function IconDialog(){_classCallCheck(this,IconDialog);var _this=_possibleConstructorReturn(this,(IconDialog.__proto__||Object.getPrototypeOf(IconDialog)).call(this));_this.state={input:''};return _this;}_createClass(IconDialog,[{key:'render',value:function render(){var _this2=this;return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div',{style:{display:this.props.display}},__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div',{className:'popBox-mask'}),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div',{className:'popBox-content'},__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div',{className:'popBox-icon-root-container'},this._renderIcons(__WEBPACK_IMPORTED_MODULE_2__Icons_js__["b" /* fruitIcons */]),this._renderIcons(__WEBPACK_IMPORTED_MODULE_2__Icons_js__["a" /* aviationIcons */]),this._renderIcons(__WEBPACK_IMPORTED_MODULE_2__Icons_js__["c" /* marineIcons */]),this._renderIcons(__WEBPACK_IMPORTED_MODULE_2__Icons_js__["d" /* musicIcons */]),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('text',{className:'popBox-icon-tip-container '},'\u8BF7\u8F93\u5165\u56FE\u7247\u5730\u5740'),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div',{style:Styles.IconInputContainer},__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input',{style:Styles.IconInput,onChange:function onChange(e){return _this2.setState({input:e.target.value});}}),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('text',{style:__WEBPACK_IMPORTED_MODULE_1__Styles__["CommonStyles"].ButtonClickAble,onClick:function onClick(){if(_this2.state.input!==''){_this2.props.select(_this2.state.input);}}},'\u786E\u5B9A')),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('text',{className:'popBox-icon-close-text',onClick:function onClick(){return _this2.props.close();}},'\u5173\u95ED'))));}},{key:'_renderIcons',value:function _renderIcons(icons){var _this3=this;var items=[];icons.map(function(icon,index,icons){items.push(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img',{alt:'icon',src:icon,style:Styles.IconImg,onClick:function onClick(){return _this3.props.select(icon);}}));});return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div',{style:Styles.IconImgContainer},items);}}]);return IconDialog;}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);/* harmony default export */ __webpack_exports__["a"] = (IconDialog);var Styles={IconImg:{width:40,height:40,marginLeft:8},IconImgContainer:{display:'flex',marginTop:8,marginRight:8},IconInputContainer:{marginTop:5,marginLeft:10},IconInput:{marginRight:20}};
 
 /***/ }),
 /* 86 */
@@ -15994,7 +15994,7 @@ var _createClass=function(){function defineProperties(target,props){for(var i=0;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__contract_utils_MsgUtils__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__public_image_icon_png__ = __webpack_require__(84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__public_image_icon_png__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__public_image_icon_png___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__public_image_icon_png__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__contract_utils_UserInfoUtils__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__public_image_icon_like_png__ = __webpack_require__(164);
@@ -16248,7 +16248,7 @@ function doResolve(fn, promise) {
 /* unused harmony reexport Redirect */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Route__ = __webpack_require__(96);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_7__Route__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__Router__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__Router__ = __webpack_require__(62);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_8__Router__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__StaticRouter__ = __webpack_require__(199);
 /* unused harmony reexport StaticRouter */
@@ -16618,7 +16618,7 @@ Link.contextTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__matchPath__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__matchPath__ = __webpack_require__(64);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -22875,7 +22875,7 @@ var Duplex;
 Readable.ReadableState = ReadableState;
 
 /*<replacement>*/
-var EE = __webpack_require__(65).EventEmitter;
+var EE = __webpack_require__(67).EventEmitter;
 
 var EElistenerCount = function (emitter, type) {
   return emitter.listeners(type).length;
@@ -23005,7 +23005,7 @@ function ReadableState(options, stream) {
   this.decoder = null;
   this.encoding = null;
   if (options.encoding) {
-    if (!StringDecoder) StringDecoder = __webpack_require__(67).StringDecoder;
+    if (!StringDecoder) StringDecoder = __webpack_require__(69).StringDecoder;
     this.decoder = new StringDecoder(options.encoding);
     this.encoding = options.encoding;
   }
@@ -23161,7 +23161,7 @@ Readable.prototype.isPaused = function () {
 
 // backwards compatibility.
 Readable.prototype.setEncoding = function (enc) {
-  if (!StringDecoder) StringDecoder = __webpack_require__(67).StringDecoder;
+  if (!StringDecoder) StringDecoder = __webpack_require__(69).StringDecoder;
   this._readableState.decoder = new StringDecoder(enc);
   this._readableState.encoding = enc;
   return this;
@@ -23859,7 +23859,7 @@ function indexOf(xs, x) {
 /* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(65).EventEmitter;
+module.exports = __webpack_require__(67).EventEmitter;
 
 
 /***/ }),
@@ -24191,7 +24191,7 @@ function extend() {
 /* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var http = __webpack_require__(64)
+var http = __webpack_require__(66)
 var url = __webpack_require__(34)
 
 var https = module.exports
@@ -24539,10 +24539,10 @@ var Net = __webpack_require__(50);
 
 var ENS = __webpack_require__(269);
 var Personal = __webpack_require__(122);
-var BaseContract = __webpack_require__(69);
+var BaseContract = __webpack_require__(71);
 var Iban = __webpack_require__(106);
 var Accounts = __webpack_require__(288);
-var abi = __webpack_require__(70);
+var abi = __webpack_require__(72);
 
 var getNetworkType = __webpack_require__(369);
 var formatter = helpers.formatters;
@@ -25231,7 +25231,7 @@ module.exports = Personal;
 "use strict";
 
 var Buffer = __webpack_require__(3).Buffer
-var Transform = __webpack_require__(73).Transform
+var Transform = __webpack_require__(75).Transform
 var inherits = __webpack_require__(1)
 
 function throwIfNotStringOrBuffer (val, prefix) {
@@ -25744,9 +25744,9 @@ var Legacy = __webpack_require__(299)
 var Base = __webpack_require__(19)
 var Buffer = __webpack_require__(3).Buffer
 var md5 = __webpack_require__(127)
-var RIPEMD160 = __webpack_require__(74)
+var RIPEMD160 = __webpack_require__(76)
 
-var sha = __webpack_require__(75)
+var sha = __webpack_require__(77)
 
 var ZEROS = Buffer.alloc(128)
 
@@ -25806,7 +25806,7 @@ module.exports = function createHmac (alg, key) {
 /* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var MD5 = __webpack_require__(72)
+var MD5 = __webpack_require__(74)
 
 module.exports = function (buffer) {
   return new MD5().update(buffer).digest()
@@ -25876,8 +25876,8 @@ module.exports = defaultEncoding
 /***/ (function(module, exports, __webpack_require__) {
 
 var md5 = __webpack_require__(127)
-var rmd160 = __webpack_require__(74)
-var sha = __webpack_require__(75)
+var rmd160 = __webpack_require__(76)
+var sha = __webpack_require__(77)
 
 var checkParameters = __webpack_require__(129)
 var defaultEncoding = __webpack_require__(130)
@@ -28052,7 +28052,7 @@ module.exports = withPublic;
 /***/ (function(module, exports, __webpack_require__) {
 
 var BN = __webpack_require__(4);
-var Bytes = __webpack_require__(71);
+var Bytes = __webpack_require__(73);
 
 var fromBN = function fromBN(bn) {
   return "0x" + bn.toString("hex");
@@ -32083,12 +32083,12 @@ goog.object.extend(exports, proto);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_Title__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_Styles__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_Styles___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_Styles__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__public_image_icon_image_png__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__public_image_icon_image_png__ = __webpack_require__(85);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__public_image_icon_image_png___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__public_image_icon_image_png__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__public_image_icon_png__ = __webpack_require__(84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__public_image_icon_png__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__public_image_icon_png___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__public_image_icon_png__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_TextAreaView__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_Dialog_IconDialog__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_Dialog_IconDialog__ = __webpack_require__(59);
 var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}/**
  * Created by 包俊 on 2018/9/6.
  */var SignIn=function(_React$Component){_inherits(SignIn,_React$Component);function SignIn(){_classCallCheck(this,SignIn);var _this=_possibleConstructorReturn(this,(SignIn.__proto__||Object.getPrototypeOf(SignIn)).call(this));_this.state={userName:'',button:__WEBPACK_IMPORTED_MODULE_4__components_Styles__["CommonStyles"].ButtonClickAble,loading:false,headPortrait:__WEBPACK_IMPORTED_MODULE_6__public_image_icon_png___default.a,synopsis:'',sex:true,display:'none'};return _this;}_createClass(SignIn,[{key:"render",value:function render(){var _this2=this;return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div",{style:Styles.Container},__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_Title__["a" /* default */],{title:'注册',leftShow:false}),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__components_TextAreaView__["a" /* default */],{image:__WEBPACK_IMPORTED_MODULE_5__public_image_icon_image_png___default.a,text:'昵称',tip:'（必填，10字以内）',isLong:false,maxLength:10,rows:1,inputValue:function inputValue(value){return _this2.setState({userName:value});}}),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div",{style:Styles.HeadContainer,onClick:function onClick(){return _this2._setIcon();}},__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div",{style:Styles.ButtonImageContainer},__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img",{alt:'img',src:__WEBPACK_IMPORTED_MODULE_5__public_image_icon_image_png___default.a,style:Styles.ButtonImage}),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("text",{style:Styles.ButtonText},"头像"),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("text",{style:Styles.ButtonTextTip},"（点击头像设置）")),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img",{alt:'icon',src:this.state.headPortrait,style:Styles.HeadIcon})),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__components_TextAreaView__["a" /* default */],{image:__WEBPACK_IMPORTED_MODULE_5__public_image_icon_image_png___default.a,text:'简介',tip:'（必填，20字以内）',maxLength:20,isLong:true,inputValue:function inputValue(value){return _this2.setState({synopsis:value});}}),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("form",{style:Styles.SexRadio},__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input",{type:"radio",name:"sex",defaultChecked:true,value:true,checked:this.state.sex,onChange:function onChange(){return _this2.setState({sex:true});}}),"\u7537",__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input",{type:"radio",name:"sex",value:false,checked:!this.state.sex,onChange:function onChange(){return _this2.setState({sex:false});}}),"\u5973"),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div",{style:Styles.ButtonContainer},__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("text",{style:this.state.button,onClick:function onClick(){return _this2._loginIn();}},"\u786E\u5B9A")),this._loading(),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_8__components_Dialog_IconDialog__["a" /* default */],{display:this.state.display,select:function select(icon){_this2.setState({display:'none',headPortrait:icon});},close:function close(){return _this2.setState({display:'none'});}}));}},{key:"_loginIn",value:function _loginIn(){var _this3=this;if(this.state.userName!==''&&this.state.synopsis!==''){this.setState({loading:true});Object(__WEBPACK_IMPORTED_MODULE_1__contract_utils_UserInfoUtils__["g" /* initPlayer */])(this.state.userName,this.state.sex,this.state.headPortrait,this.state.synopsis).then(function(res){_this3.props.setStatus();}).catch(function(err){alert(err);_this3.setState({loading:false});});}else alert('请输入必填项');}},{key:"_setIcon",value:function _setIcon(){this.setState({display:'block'});}},{key:"_loading",value:function _loading(){if(this.state.loading)return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_loading_animation___default.a,{style:__WEBPACK_IMPORTED_MODULE_4__components_Styles__["CommonStyles"].Loading});else return null;}}]);return SignIn;}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);/* harmony default export */ __webpack_exports__["a"] = (SignIn);var Styles={Container:{display:'flex',flexDirection:'column'},Title:{fontSize:24,marginTop:50,color:'#2E313E'},UserName:{display:'flex',marginTop:70},UserText:{fontSize:14},UserInput:{marginLeft:10},ButtonContainer:{display:'flex',alignItems:'center',justifyContent:'center'},SexRadio:{marginTop:20,marginLeft:20},HeadContainer:{marginLeft:20,marginTop:20},HeadIcon:{width:60,marginTop:10},ButtonImageContainer:{display:'flex',alignItems:'center'},ButtonImage:{width:30,height:30},ButtonText:{fontSize:16,marginLeft:5},ButtonTextTip:{fontSize:14}};
@@ -33568,7 +33568,7 @@ var history=__WEBPACK_IMPORTED_MODULE_2_history_createBrowserHistory___default()
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(62);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -33718,7 +33718,7 @@ module.exports = ReactPropTypesSecret;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PathUtils__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__createTransitionManager__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__createTransitionManager__ = __webpack_require__(61);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__DOMUtils__ = __webpack_require__(94);
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
@@ -34022,7 +34022,7 @@ var createBrowserHistory = function createBrowserHistory() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PathUtils__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__createTransitionManager__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__createTransitionManager__ = __webpack_require__(61);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__DOMUtils__ = __webpack_require__(94);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -34341,7 +34341,7 @@ var createHashHistory = function createHashHistory() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_warning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__PathUtils__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__createTransitionManager__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__createTransitionManager__ = __webpack_require__(61);
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -34512,7 +34512,7 @@ var createMemoryHistory = function createMemoryHistory() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(62);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -34588,7 +34588,7 @@ HashRouter.propTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(63);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -35004,7 +35004,7 @@ Redirect.contextTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_history__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Router__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Router__ = __webpack_require__(63);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
@@ -35180,7 +35180,7 @@ StaticRouter.childContextTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_warning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_invariant__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_invariant__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__matchPath__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__matchPath__ = __webpack_require__(64);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -35275,7 +35275,7 @@ Switch.propTypes = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_matchPath__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_matchPath__ = __webpack_require__(64);
 // Written in this round about way for babel-transform-imports
 
 
@@ -49875,7 +49875,7 @@ var objectKeys = Object.keys || function (obj) {
 
 var errors = __webpack_require__(7).errors;
 var XHR2 = __webpack_require__(246).XMLHttpRequest // jshint ignore: line
-var http = __webpack_require__(64);
+var http = __webpack_require__(66);
 var https = __webpack_require__(116);
 
 
@@ -49975,7 +49975,7 @@ function __export(m) {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(__webpack_require__(247));
-var xml_http_request_event_target_1 = __webpack_require__(68);
+var xml_http_request_event_target_1 = __webpack_require__(70);
 exports.XMLHttpRequestEventTarget = xml_http_request_event_target_1.XMLHttpRequestEventTarget;
 //# sourceMappingURL=index.js.map
 
@@ -50004,13 +50004,13 @@ var __assign = (this && this.__assign) || Object.assign || function(t) {
     return t;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var http = __webpack_require__(64);
+var http = __webpack_require__(66);
 var https = __webpack_require__(116);
 var os = __webpack_require__(258);
 var url = __webpack_require__(34);
 var progress_event_1 = __webpack_require__(259);
 var errors_1 = __webpack_require__(260);
-var xml_http_request_event_target_1 = __webpack_require__(68);
+var xml_http_request_event_target_1 = __webpack_require__(70);
 var xml_http_request_upload_1 = __webpack_require__(261);
 var Cookie = __webpack_require__(262);
 var XMLHttpRequest = /** @class */ (function (_super) {
@@ -51501,7 +51501,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var xml_http_request_event_target_1 = __webpack_require__(68);
+var xml_http_request_event_target_1 = __webpack_require__(70);
 var XMLHttpRequestUpload = /** @class */ (function (_super) {
     __extends(XMLHttpRequestUpload, _super);
     function XMLHttpRequestUpload() {
@@ -55656,7 +55656,7 @@ module.exports = config;
 
 
 var _ = __webpack_require__(6);
-var Contract = __webpack_require__(69);
+var Contract = __webpack_require__(71);
 var namehash = __webpack_require__(121);
 var PromiEvent = __webpack_require__(37);
 var REGISTRY_ABI = __webpack_require__(285);
@@ -60000,7 +60000,7 @@ var Account = __webpack_require__(289);
 var Hash = __webpack_require__(155);
 var RLP = __webpack_require__(154);
 var Nat = __webpack_require__(153);
-var Bytes = __webpack_require__(71);
+var Bytes = __webpack_require__(73);
 var cryp = (typeof global === 'undefined') ? __webpack_require__(52) : __webpack_require__(52);
 var scryptsy = __webpack_require__(365);
 var uuid = __webpack_require__(367);
@@ -60511,7 +60511,7 @@ module.exports = Accounts;
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
-var Bytes = __webpack_require__(71);
+var Bytes = __webpack_require__(73);
 var Nat = __webpack_require__(153);
 var elliptic = __webpack_require__(9);
 var rlp = __webpack_require__(154);
@@ -60641,7 +60641,7 @@ module.exports = {
 /* 291 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(66);
+module.exports = __webpack_require__(68);
 
 
 /***/ }),
@@ -61164,8 +61164,8 @@ module.exports = function (password, salt, iterations, keylen, digest, callback)
 /***/ (function(module, exports, __webpack_require__) {
 
 var DES = __webpack_require__(303)
-var aes = __webpack_require__(78)
-var aesModes = __webpack_require__(79)
+var aes = __webpack_require__(80)
+var aesModes = __webpack_require__(81)
 var desModes = __webpack_require__(318)
 var ebtk = __webpack_require__(54)
 
@@ -61237,7 +61237,7 @@ exports.listCiphers = exports.getCiphers = getCiphers
 /***/ (function(module, exports, __webpack_require__) {
 
 var CipherBase = __webpack_require__(19)
-var des = __webpack_require__(77)
+var des = __webpack_require__(79)
 var inherits = __webpack_require__(1)
 var Buffer = __webpack_require__(3).Buffer
 
@@ -61709,7 +61709,7 @@ Cipher.prototype._finalDecrypt = function _finalDecrypt() {
 var assert = __webpack_require__(12);
 var inherits = __webpack_require__(1);
 
-var des = __webpack_require__(77);
+var des = __webpack_require__(79);
 var utils = des.utils;
 var Cipher = des.Cipher;
 
@@ -61931,7 +61931,7 @@ proto._update = function _update(inp, inOff, out, outOff) {
 var assert = __webpack_require__(12);
 var inherits = __webpack_require__(1);
 
-var des = __webpack_require__(77);
+var des = __webpack_require__(79);
 var Cipher = des.Cipher;
 var DES = des.DES;
 
@@ -61987,7 +61987,7 @@ EDE.prototype._unpad = DES.prototype._unpad;
 /* 309 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var MODES = __webpack_require__(79)
+var MODES = __webpack_require__(81)
 var AuthCipher = __webpack_require__(135)
 var Buffer = __webpack_require__(3).Buffer
 var StreamCipher = __webpack_require__(136)
@@ -62381,7 +62381,7 @@ module.exports = GHASH
 
 var AuthCipher = __webpack_require__(135)
 var Buffer = __webpack_require__(3).Buffer
-var MODES = __webpack_require__(79)
+var MODES = __webpack_require__(81)
 var StreamCipher = __webpack_require__(136)
 var Transform = __webpack_require__(19)
 var aes = __webpack_require__(53)
@@ -62772,7 +62772,7 @@ function formatReturnValue(bn, enc) {
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var createHash = __webpack_require__(38)
-var stream = __webpack_require__(73)
+var stream = __webpack_require__(75)
 var inherits = __webpack_require__(1)
 var sign = __webpack_require__(324)
 var verify = __webpack_require__(359)
@@ -62871,7 +62871,7 @@ module.exports = {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {// much of this based on https://github.com/indutny/self-signed/blob/gh-pages/lib/rsa.js
 var createHmac = __webpack_require__(126)
-var crt = __webpack_require__(80)
+var crt = __webpack_require__(82)
 var EC = __webpack_require__(9).ec
 var BN = __webpack_require__(4)
 var parseKeys = __webpack_require__(56)
@@ -65112,7 +65112,7 @@ Point.prototype.mixedAdd = Point.prototype.add;
 
 var curves = exports;
 
-var hash = __webpack_require__(81);
+var hash = __webpack_require__(83);
 var elliptic = __webpack_require__(9);
 
 var assert = elliptic.utils.assert;
@@ -66736,7 +66736,7 @@ EC.prototype.getKeyRecoveryParam = function(e, signature, Q, enc) {
 "use strict";
 
 
-var hash = __webpack_require__(81);
+var hash = __webpack_require__(83);
 var utils = __webpack_require__(140);
 var assert = __webpack_require__(12);
 
@@ -66982,7 +66982,7 @@ KeyPair.prototype.inspect = function inspect() {
 "use strict";
 
 
-var hash = __webpack_require__(81);
+var hash = __webpack_require__(83);
 var elliptic = __webpack_require__(9);
 var utils = elliptic.utils;
 var assert = utils.assert;
@@ -68658,7 +68658,7 @@ var findProc = /Proc-Type: 4,ENCRYPTED[\n\r]+DEK-Info: AES-((?:128)|(?:192)|(?:2
 var startRegex = /^-----BEGIN ((?:.* KEY)|CERTIFICATE)-----/m
 var fullRegex = /^-----BEGIN ((?:.* KEY)|CERTIFICATE)-----([0-9A-z\n\r\+\/\=]+)-----END \1-----$/m
 var evp = __webpack_require__(54)
-var ciphers = __webpack_require__(78)
+var ciphers = __webpack_require__(80)
 module.exports = function (okey, password) {
   var key = okey.toString()
   var match = key.match(findProc)
@@ -68933,7 +68933,7 @@ var mgf = __webpack_require__(150);
 var xor = __webpack_require__(151);
 var bn = __webpack_require__(4);
 var withPublic = __webpack_require__(152);
-var crt = __webpack_require__(80);
+var crt = __webpack_require__(82);
 
 var constants = {
   RSA_PKCS1_OAEP_PADDING: 4,
@@ -69031,7 +69031,7 @@ function nonZero(len, crypto) {
 var mgf = __webpack_require__(150);
 var xor = __webpack_require__(151);
 var bn = __webpack_require__(4);
-var crt = __webpack_require__(80);
+var crt = __webpack_require__(82);
 var createHash = __webpack_require__(38);
 var withPublic = __webpack_require__(152);
 module.exports = function privateDecrypt(private_key, enc, reverse) {
@@ -69264,7 +69264,7 @@ module.exports = __webpack_require__(366)
 /* 366 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(Buffer) {var pbkdf2Sync = __webpack_require__(76).pbkdf2Sync
+/* WEBPACK VAR INJECTION */(function(Buffer) {var pbkdf2Sync = __webpack_require__(78).pbkdf2Sync
 
 var MAX_VALUE = 0x7fffffff
 
@@ -75102,7 +75102,7 @@ const signer_1 = __importStar(__webpack_require__(57));
 const rpc = __importStar(__webpack_require__(406));
 const personal = __importStar(__webpack_require__(408));
 const listener_1 = __importDefault(__webpack_require__(409));
-const addPrivateKey_1 = __importDefault(__webpack_require__(82));
+const addPrivateKey_1 = __importDefault(__webpack_require__(84));
 const contract_1 = __importDefault(__webpack_require__(410));
 const proxy_1 = __importDefault(__webpack_require__(411));
 const validators_1 = __importDefault(__webpack_require__(414));
@@ -76021,9 +76021,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const signer_1 = __importDefault(__webpack_require__(57));
-const addPrivateKey_1 = __importDefault(__webpack_require__(82));
+const addPrivateKey_1 = __importDefault(__webpack_require__(84));
 const _ = __importStar(__webpack_require__(6));
-const Contract = __webpack_require__(69);
+const Contract = __webpack_require__(71);
 const Method = __webpack_require__(18);
 const utils = __webpack_require__(8);
 const { formatters } = __webpack_require__(7);
@@ -76185,7 +76185,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const addPrivateKey_1 = __importDefault(__webpack_require__(82));
+const addPrivateKey_1 = __importDefault(__webpack_require__(84));
 const parsers_1 = __webpack_require__(413);
 exports.sendTransactionHandler = {
     apply: function (target, thisArg, argumentsList) {
@@ -76232,7 +76232,7 @@ exports.default = {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var ABICoder = __webpack_require__(70);
+var ABICoder = __webpack_require__(72);
 exports.LogParser = (log, abi) => {
     if (typeof log === 'string')
         return log;
@@ -76338,7 +76338,7 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADIEAYAAAD9
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_Title__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__public_image_icon_bbs_msgs_png__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__public_image_icon_bbs_msgs_png___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__public_image_icon_bbs_msgs_png__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__public_image_icon_image_png__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__public_image_icon_image_png__ = __webpack_require__(85);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__public_image_icon_image_png___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__public_image_icon_image_png__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_Styles__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_Styles___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__components_Styles__);
@@ -76346,7 +76346,7 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADIEAYAAAD9
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_react_loading_animation___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_react_loading_animation__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__contract_utils_MsgUtils__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_TextAreaView__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__utils_CheckPlayer__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__utils_CheckPlayer__ = __webpack_require__(60);
 var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}/**
  * Created by 包俊 on 2018/9/11.
  */var WriteMessage=function(_React$Component){_inherits(WriteMessage,_React$Component);function WriteMessage(){_classCallCheck(this,WriteMessage);var _this=_possibleConstructorReturn(this,(WriteMessage.__proto__||Object.getPrototypeOf(WriteMessage)).call(this));_this.state={balance:'...',button:__WEBPACK_IMPORTED_MODULE_9__components_Styles__["CommonStyles"].ButtonClickAble,loading:false,buttonText:'确定',imageMsg:'',infoMsg:'',url:''};return _this;}_createClass(WriteMessage,[{key:"componentDidMount",value:function componentDidMount(){var _this2=this;document.title="发帖";Object(__WEBPACK_IMPORTED_MODULE_4__contract_utils_UserInfoUtils__["a" /* getBalance */])(window.neuron.getAccount()).then(function(balance){_this2.setState({balance:balance});});}},{key:"render",value:function render(){var _this3=this;return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div",null,__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__components_Title__["a" /* default */],{title:'发帖',leftShow:true,leftClick:function leftClick(){_this3.props.history.goBack();}}),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__components_PartingLine__["a" /* default */],null),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_ItemInfo__["a" /* default */],{name:'Address',value:this._subString(window.neuron.getAccount()),icon:__WEBPACK_IMPORTED_MODULE_2__public_image_icon_bbs_player_png___default.a}),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_ItemInfo__["a" /* default */],{name:'余额',value:this.state.balance,icon:__WEBPACK_IMPORTED_MODULE_3__public_image_icon_balance_png___default.a}),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div",{style:{marginTop:10}},__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__components_PartingLine__["a" /* default */],null)),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_12__components_TextAreaView__["a" /* default */],{image:__WEBPACK_IMPORTED_MODULE_8__public_image_icon_image_png___default.a,text:'图片',tip:'（请输入图片地址）',isLong:false,inputValue:function inputValue(value){return _this3.setState({imageMsg:value});}}),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_12__components_TextAreaView__["a" /* default */],{image:__WEBPACK_IMPORTED_MODULE_7__public_image_icon_bbs_msgs_png___default.a,text:'文字',isLong:true,inputValue:function inputValue(value){return _this3.setState({infoMsg:value});}}),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_12__components_TextAreaView__["a" /* default */],{image:__WEBPACK_IMPORTED_MODULE_7__public_image_icon_bbs_msgs_png___default.a,text:'跳转网址',isLong:false,inputValue:function inputValue(value){return _this3.setState({url:value});}}),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div",{style:Styles.ButtonContainer},__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("text",{style:this.state.button,onClick:function onClick(){return _this3._send();}},this.state.buttonText)),this._loading());}},{key:"_subString",value:function _subString(address){return address.substring(0,8)+"..."+address.slice(address.length-8);}},{key:"_send",value:function _send(){var _this4=this;Object(__WEBPACK_IMPORTED_MODULE_13__utils_CheckPlayer__["a" /* checkPlayer */])(window.neuron.getAccount()).then(function(player){if(_this4.state.imageMsg!==''||_this4.state.infoMsg!==''){_this4.setState({button:__WEBPACK_IMPORTED_MODULE_9__components_Styles__["CommonStyles"].ButtonUnClickAble,loading:true,buttonText:'发送中...'});Object(__WEBPACK_IMPORTED_MODULE_11__contract_utils_MsgUtils__["i" /* sendMsg */])(_this4.state.imageMsg,_this4.state.infoMsg,_this4.state.url).then(function(res){_this4.props.history.goBack();}).catch(function(err){alert('失败');_this4.setState({loading:false,button:__WEBPACK_IMPORTED_MODULE_9__components_Styles__["CommonStyles"].ButtonClickAble,buttonText:'发送'});});}else{alert("请填写帖子内容！");}}).catch(function(err){if(err=='未注册')alert("请先注册，否则只能查看，无法评论与收藏");});}},{key:"_loading",value:function _loading(){if(this.state.loading)return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_10_react_loading_animation___default.a,{style:__WEBPACK_IMPORTED_MODULE_9__components_Styles__["CommonStyles"].Loading});else return null;}}]);return WriteMessage;}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);/* harmony default export */ __webpack_exports__["a"] = (WriteMessage);var Styles={TitleContainer:{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center',marginTop:20,marginBottom:20},Title:{color:'#2E313E',fontSize:20},ButtonContainer:{display:'flex',alignItems:'center',justifyContent:'center'}};
@@ -76393,7 +76393,7 @@ var _createClass=function(){function defineProperties(target,props){for(var i=0;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__containers_MsgItem__ = __webpack_require__(89);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_Styles__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_Styles___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__components_Styles__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__utils_CheckPlayer__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__utils_CheckPlayer__ = __webpack_require__(60);
 var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}var everyPage=5;var Home=function(_React$Component){_inherits(Home,_React$Component);function Home(){_classCallCheck(this,Home);var _this=_possibleConstructorReturn(this,(Home.__proto__||Object.getPrototypeOf(Home)).call(this));_this.state={playerCount:'',msgCount:'',msgList:[],index:1,describe:''};return _this;}_createClass(Home,[{key:'componentDidMount',value:function componentDidMount(){var _this2=this;document.title="芒果";Object(__WEBPACK_IMPORTED_MODULE_4__contract_utils_BBSInfoUtils__["a" /* getBBSInfo */])('playerCount').then(function(playerCount){_this2.setState({playerCount:playerCount});});Object(__WEBPACK_IMPORTED_MODULE_4__contract_utils_BBSInfoUtils__["a" /* getBBSInfo */])('msgCount').then(function(msgCount){_this2.setState({msgCount:msgCount},function(){_this2._renderMsgList();});}).catch(function(err){return console.log(err);});Object(__WEBPACK_IMPORTED_MODULE_4__contract_utils_BBSInfoUtils__["a" /* getBBSInfo */])('BBSDescribe').then(function(describe){_this2.setState({describe:describe});}).catch(function(err){return console.log(err);});Object(__WEBPACK_IMPORTED_MODULE_11__utils_CheckPlayer__["a" /* checkPlayer */])(window.neuron.getAccount()).then().catch(function(err){if(err=='未注册')alert("请先注册，否则只能查看，无法发帖，评论与收藏");});}},{key:'render',value:function render(){var _this3=this;return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div',{style:{overflow:'auto',overflowX:'auto'}},__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__BBSInfo__["a" /* default */],{history:this.props.history}),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__components_PartingLine__["a" /* default */],null),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_ItemInfo__["a" /* default */],{name:'注册人数',value:this.state.playerCount,icon:__WEBPACK_IMPORTED_MODULE_5__public_image_icon_bbs_player_png___default.a}),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_ItemInfo__["a" /* default */],{name:'帖子总数',value:this.state.msgCount,icon:__WEBPACK_IMPORTED_MODULE_6__public_image_icon_bbs_msgs_png___default.a}),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div',{style:{marginTop:10}},__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__components_PartingLine__["a" /* default */],null)),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div',{style:Styles.BoardContainer,onClick:function onClick(){return _this3.props.history.push('./setBoard');}},__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('text',null,'\u516C\u544A:'),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('text',{style:Styles.BoardText},this.state.describe)),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div',{style:{marginTop:10}},__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__components_PartingLine__["a" /* default */],null)),this.state.msgList.map(function(data){return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_9__containers_MsgItem__["a" /* default */],{data:data,onClick:function onClick(){return _this3.props.history.push('/msg/'+data.id);}});}),this._renderLoadMore(),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img',{alt:'add',src:__WEBPACK_IMPORTED_MODULE_7__public_image_ic_button_sendmsg_png___default.a,style:Styles.SendMsgButton,onClick:function onClick(){return _this3.props.history.push("/write_msg");}}));}},{key:'_renderMsgList',value:function _renderMsgList(){var _this4=this;var index=0;if(this.state.msgCount<=everyPage){index=this.state.msgCount;}else{index=this.state.msgCount-(this.state.index-1)*everyPage;}console.log("index>>>"+index);Object(__WEBPACK_IMPORTED_MODULE_8__contract_utils_MsgUtils__["g" /* getMsgIDs */])(index).then(function(res){var list=[];if(_this4.state.msgCount>everyPage){list=_this4.state.msgList;}for(var i=0;i<5;i++){if(res[i]!=0){var data={id:res[i],index:-1};list.push(data);}}console.log(list);_this4.setState({msgList:list},function(){console.log(_this4.state.msgList);});}).catch(function(err){return console.log(err);});}},{key:'_renderLoadMore',value:function _renderLoadMore(){var _this5=this;if(this.state.index*everyPage>this.state.msgCount){return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div',{style:Styles.LoadButton},__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('text',{style:__WEBPACK_IMPORTED_MODULE_10__components_Styles__["CommonStyles"].ButtonUnClickAble},'\u65E0\u66F4\u591A\u5185\u5BB9'));}else{return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div',{style:Styles.LoadButton},__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('text',{onClick:function onClick(){return _this5._loadMore();},style:__WEBPACK_IMPORTED_MODULE_10__components_Styles__["CommonStyles"].ButtonClickAble},'\u52A0\u8F7D\u66F4\u591A'));}}},{key:'_loadMore',value:function _loadMore(){var _this6=this;this.setState({index:this.state.index+1},function(){_this6._renderMsgList();});}}]);return Home;}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);/* harmony default export */ __webpack_exports__["a"] = (Home);var Styles={SendMsgButton:{width:40,height:40,position:'fixed',bottom:80,right:20},LoadButton:{display:'flex',alignItem:'center',justifyContent:'center'},BoardContainer:{display:'flex',flexDirection:'column',marginLeft:20,marginRight:20,marginTop:10},BoardText:{fontSize:14}};
 
 /***/ }),
@@ -76409,7 +76409,7 @@ var _createClass=function(){function defineProperties(target,props){for(var i=0;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_Dialog_SetNameDialog__ = __webpack_require__(161);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_Dialog_SetSynopsisDialog__ = __webpack_require__(163);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__contract_utils_UserInfoUtils__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_Dialog_IconDialog__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_Dialog_IconDialog__ = __webpack_require__(59);
 var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}/**
  * Created by 包俊 on 2018/9/9.
  */var BBSInfo=function(_React$Component){_inherits(BBSInfo,_React$Component);function BBSInfo(){_classCallCheck(this,BBSInfo);var _this=_possibleConstructorReturn(this,(BBSInfo.__proto__||Object.getPrototypeOf(BBSInfo)).call(this));_this.state={src:__WEBPACK_IMPORTED_MODULE_1__public_image_icon_default_jpg___default.a,name:'BBS',synopsis:'',Owner:'',iconDisplay:'none',nameDisplay:'none',synopsisDisplay:'none'};return _this;}_createClass(BBSInfo,[{key:"componentDidMount",value:function componentDidMount(){var _this2=this;Object(__WEBPACK_IMPORTED_MODULE_2__contract_utils_BBSInfoUtils__["a" /* getBBSInfo */])('BBSName').then(function(name){_this2.setState({name:name});document.title=name;});Object(__WEBPACK_IMPORTED_MODULE_2__contract_utils_BBSInfoUtils__["a" /* getBBSInfo */])('BBSSynopsis').then(function(synopsis){_this2.setState({synopsis:synopsis});});Object(__WEBPACK_IMPORTED_MODULE_2__contract_utils_BBSInfoUtils__["a" /* getBBSInfo */])('BBSLogo').then(function(src){_this2.setState({src:src});});Object(__WEBPACK_IMPORTED_MODULE_2__contract_utils_BBSInfoUtils__["a" /* getBBSInfo */])('playerCount').then(function(playerCount){_this2.setState({playerCount:playerCount});});Object(__WEBPACK_IMPORTED_MODULE_2__contract_utils_BBSInfoUtils__["a" /* getBBSInfo */])('Owner').then(function(owner){_this2.setState({Owner:owner});});}},{key:"render",value:function render(){var _this3=this;return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div",{style:Styles.Container},__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img",{alt:'head',src:this.state.src,style:Styles.Head,onError:function onError(){return _this3.setState({src:__WEBPACK_IMPORTED_MODULE_1__public_image_icon_default_jpg___default.a});},onClick:function onClick(){if(_this3._isOwner()){_this3.setState({iconDisplay:'block'});}}}),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("text",{style:Styles.Name,onClick:function onClick(){if(_this3._isOwner()){_this3.setState({nameDisplay:'block'});}}},this.state.name),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("text",{style:Styles.Address},window.BBSAddress),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("text",{style:Styles.Synopsis,onClick:function onClick(){_this3.setState({synopsisDisplay:'block'});}},this.state.synopsis),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__components_Dialog_IconDialog__["a" /* default */],{display:this.state.iconDisplay,select:function select(icon){_this3.setState({iconDisplay:'none',src:icon});Object(__WEBPACK_IMPORTED_MODULE_2__contract_utils_BBSInfoUtils__["d" /* setBBSLogo */])(icon).then(function(res){}).catch(function(err){return console.log(err);});},close:function close(){return _this3.setState({iconDisplay:'none'});}}),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_Dialog_SetNameDialog__["a" /* default */],{display:this.state.nameDisplay,close:function close(){return _this3.setState({nameDisplay:'none'});},setName:function setName(name){return _this3._setName(name);},title:'社区名'}),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_Dialog_SetSynopsisDialog__["a" /* default */],{display:this.state.synopsisDisplay,close:function close(){return _this3.setState({synopsisDisplay:'none'});},setSynopsis:function setSynopsis(synopsis){return _this3._setSynopsis(synopsis);},title:'简介'}));}},{key:"_setName",value:function _setName(name){var _this4=this;if(name!==''&&name.length<=10){this.setState({nameDisplay:'none'});Object(__WEBPACK_IMPORTED_MODULE_2__contract_utils_BBSInfoUtils__["e" /* setBBSName */])(name).then(function(res){console.log(res);Object(__WEBPACK_IMPORTED_MODULE_2__contract_utils_BBSInfoUtils__["a" /* getBBSInfo */])('BBSName').then(function(name){_this4.setState({name:name});document.title=name;});}).catch(function(err){return console.log(err);});}}},{key:"_setSynopsis",value:function _setSynopsis(synopsis){var _this5=this;if(synopsis!==null&&synopsis.length<=20){this.setState({synopsisDisplay:'none'});Object(__WEBPACK_IMPORTED_MODULE_2__contract_utils_BBSInfoUtils__["f" /* setBBSSynopsis */])(synopsis).then(function(res){console.log(res);Object(__WEBPACK_IMPORTED_MODULE_2__contract_utils_BBSInfoUtils__["a" /* getBBSInfo */])('BBSSynopsis').then(function(synopsis){_this5.setState({synopsis:synopsis});});}).catch(function(err){return console.log(err);});}}},{key:"_isOwner",value:function _isOwner(){return window.neuron.getAccount()===this.state.Owner;}}]);return BBSInfo;}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);/* harmony default export */ __webpack_exports__["a"] = (BBSInfo);var Styles={Container:{display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'column',background:'#456cff',width:'100vw',paddingTop:'15px',paddingBottom:'15px'},NameContainer:{display:'flex',alignItems:'center',justifyContent:'center'},Head:{width:60,height:60,display:'flex',borderRadius:'50%',alignItems:'center',justifyContent:'center',overflow:'hidden',border:'1px solid #ffffff'},Name:{fontSize:18,color:'#ffffff'},Address:{fontSize:12,color:'#ffffff',marginTop:'5px',marginLeft:'20px',marginRight:'20px'},Synopsis:{fontSize:12,color:'#ffffff',marginTop:'5px',marginLeft:'20px',marginRight:'20px'}};
@@ -76427,7 +76427,7 @@ module.exports = __webpack_require__.p + "static/media/ic_button_sendmsg.d580f33
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_CheckPlayer__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_CheckPlayer__ = __webpack_require__(60);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_loading_animation__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_loading_animation___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_loading_animation__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__UserInfo__ = __webpack_require__(426);
@@ -76453,15 +76453,15 @@ var _createClass=function(){function defineProperties(target,props){for(var i=0;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__public_image_icon_png__ = __webpack_require__(84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__public_image_icon_png__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__public_image_icon_png___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__public_image_icon_png__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__contract_utils_UserInfoUtils__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_Dialog_IconDialog__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_Dialog_IconDialog__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_Dialog_SetNameDialog__ = __webpack_require__(161);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_Dialog_SetSynopsisDialog__ = __webpack_require__(163);
 var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}/**
  * Created by 包俊 on 2018/9/6.
- */var UserInfo=function(_React$Component){_inherits(UserInfo,_React$Component);function UserInfo(){_classCallCheck(this,UserInfo);var _this=_possibleConstructorReturn(this,(UserInfo.__proto__||Object.getPrototypeOf(UserInfo)).call(this));_this.state={src:__WEBPACK_IMPORTED_MODULE_1__public_image_icon_png___default.a,iconDisplay:'none',nameDisplay:'none',synopsisDisplay:'none'};return _this;}_createClass(UserInfo,[{key:"componentWillReceiveProps",value:function componentWillReceiveProps(nextProps){this._initAttrs(nextProps);}},{key:"componentDidMount",value:function componentDidMount(){this._initAttrs(this.props);}},{key:"_initAttrs",value:function _initAttrs(props){console.log(props.player);this.setState({src:props.player.icon});}},{key:"render",value:function render(){var _this2=this;return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div",{style:Styles.Container},__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img",{alt:'head',src:this.state.src,style:Styles.Head,onError:function onError(){return __WEBPACK_IMPORTED_MODULE_1__public_image_icon_png___default.a;},onClick:function onClick(){_this2.setState({iconDisplay:'block'});}}),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("text",{style:Styles.Name,onClick:function onClick(){_this2.setState({nameDisplay:'block'});}},this.props.player.sex?this.props.player.name+' ♂':this.props.player.name+' ♀'),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("text",{style:Styles.Address},this.props.player.playerAddress),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("text",{style:Styles.Address,onClick:function onClick(){_this2.setState({synopsisDisplay:'block'});}},this.props.player.synopsis),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_Dialog_IconDialog__["a" /* default */],{display:this.state.iconDisplay,select:function select(icon){_this2.setState({iconDisplay:'none',src:icon});Object(__WEBPACK_IMPORTED_MODULE_2__contract_utils_UserInfoUtils__["h" /* setIcon */])(icon).then(function(res){}).catch(function(err){return console.log(err);});},close:function close(){return _this2.setState({iconDisplay:'none'});}}),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_Dialog_SetNameDialog__["a" /* default */],{display:this.state.nameDisplay,close:function close(){return _this2.setState({nameDisplay:'none'});},setName:function setName(name){return _this2._setName(name);},title:'昵称'}),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__components_Dialog_SetSynopsisDialog__["a" /* default */],{display:this.state.synopsisDisplay,close:function close(){return _this2.setState({synopsisDisplay:'none'});},setSynopsis:function setSynopsis(synopsis){return _this2._setSynopsis(synopsis);},title:'简介'}));}},{key:"_setName",value:function _setName(name){var _this3=this;if(name!==''&&name.length<=10){this.setState({nameDisplay:'none'});this.props.loading(true);Object(__WEBPACK_IMPORTED_MODULE_2__contract_utils_UserInfoUtils__["i" /* setName */])(name).then(function(res){_this3.props.reLoad();}).catch(function(err){return alert(err);});}}},{key:"_setSynopsis",value:function _setSynopsis(synopsis){var _this4=this;if(synopsis!==null&&synopsis.length<=20){this.setState({synopsisDisplay:'none'});this.props.loading(true);Object(__WEBPACK_IMPORTED_MODULE_2__contract_utils_UserInfoUtils__["j" /* setSynopsis */])(synopsis).then(function(res){_this4.props.reLoad();}).catch(function(err){return console.log(err);});}}}]);return UserInfo;}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);/* harmony default export */ __webpack_exports__["a"] = (UserInfo);var Styles={Container:{display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'column',background:'#456cff',width:'100vw',paddingTop:'15px',paddingBottom:'15px'},Head:{width:60,height:60,display:'flex',borderRadius:'50%',alignItems:'center',justifyContent:'center',overflow:'hidden',border:'1px solid #ffffff'},Name:{fontSize:18,marginTop:7,color:'#ffffff'},Address:{fontSize:13,marginTop:3,color:'#ffffff'}};
+ */var UserInfo=function(_React$Component){_inherits(UserInfo,_React$Component);function UserInfo(){_classCallCheck(this,UserInfo);var _this=_possibleConstructorReturn(this,(UserInfo.__proto__||Object.getPrototypeOf(UserInfo)).call(this));_this.state={src:__WEBPACK_IMPORTED_MODULE_1__public_image_icon_png___default.a,iconDisplay:'none',nameDisplay:'none',synopsisDisplay:'none'};return _this;}_createClass(UserInfo,[{key:"componentWillReceiveProps",value:function componentWillReceiveProps(nextProps){this._initAttrs(nextProps);}},{key:"componentDidMount",value:function componentDidMount(){this._initAttrs(this.props);}},{key:"_initAttrs",value:function _initAttrs(props){console.log(props.player);this.setState({src:props.player.icon});}},{key:"render",value:function render(){var _this2=this;return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div",{style:Styles.Container},__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img",{alt:'head',src:this.state.src,style:Styles.Head,onError:function onError(){return __WEBPACK_IMPORTED_MODULE_1__public_image_icon_png___default.a;},onClick:function onClick(){_this2.setState({iconDisplay:'block'});}}),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("text",{style:Styles.Name,onClick:function onClick(){_this2.setState({nameDisplay:'block'});}},this.props.player.sex?this.props.player.name+' ♂':this.props.player.name+' ♀'),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("text",{style:Styles.Address},this.props.player.playerAddress),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("text",{style:Styles.Address,onClick:function onClick(){_this2.setState({synopsisDisplay:'block'});}},this.props.player.synopsis),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_Dialog_IconDialog__["a" /* default */],{display:this.state.iconDisplay,select:function select(icon){_this2.setState({iconDisplay:'none',src:icon});Object(__WEBPACK_IMPORTED_MODULE_2__contract_utils_UserInfoUtils__["h" /* setIcon */])(icon).then(function(res){}).catch(function(err){return console.log(err);});},close:function close(){return _this2.setState({iconDisplay:'none'});}}),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_Dialog_SetNameDialog__["a" /* default */],{display:this.state.nameDisplay,close:function close(){return _this2.setState({nameDisplay:'none'});},setName:function setName(name){return _this2._setName(name);},title:'昵称'}),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__components_Dialog_SetSynopsisDialog__["a" /* default */],{display:this.state.synopsisDisplay,close:function close(){return _this2.setState({synopsisDisplay:'none'});},setSynopsis:function setSynopsis(synopsis){return _this2._setSynopsis(synopsis);},title:'简介'}));}},{key:"_setName",value:function _setName(name){var _this3=this;if(name!==''&&name.length<=10){this.setState({nameDisplay:'none'});this.props.loading(true);Object(__WEBPACK_IMPORTED_MODULE_2__contract_utils_UserInfoUtils__["i" /* setName */])(name).then(function(res){_this3.props.reLoad();}).catch(function(err){alert(JSON.stringify(err));_this3.props.loading(false);});}}},{key:"_setSynopsis",value:function _setSynopsis(synopsis){var _this4=this;if(synopsis!==null&&synopsis.length<=20){this.setState({synopsisDisplay:'none'});this.props.loading(true);Object(__WEBPACK_IMPORTED_MODULE_2__contract_utils_UserInfoUtils__["j" /* setSynopsis */])(synopsis).then(function(res){_this4.props.reLoad();}).catch(function(err){console.log(err);alert(JSON.stringify(err));_this4.props.loading(false);});}}}]);return UserInfo;}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);/* harmony default export */ __webpack_exports__["a"] = (UserInfo);var Styles={Container:{display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'column',background:'#456cff',width:'100vw',paddingTop:'15px',paddingBottom:'15px'},Head:{width:60,height:60,display:'flex',borderRadius:'50%',alignItems:'center',justifyContent:'center',overflow:'hidden',border:'1px solid #ffffff'},Name:{fontSize:18,marginTop:7,color:'#ffffff'},Address:{fontSize:13,marginTop:3,color:'#ffffff'}};
 
 /***/ }),
 /* 427 */
@@ -76567,7 +76567,7 @@ module.exports = __webpack_require__.p + "static/media/ic_tab_home_click.2690e8f
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_Styles__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_Styles___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__components_Styles__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__DiscussInfo__ = __webpack_require__(437);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__utils_CheckPlayer__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__utils_CheckPlayer__ = __webpack_require__(60);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_react_loading_animation__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_react_loading_animation___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_react_loading_animation__);
 var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}/**
@@ -76623,7 +76623,7 @@ var _createClass=function(){function defineProperties(target,props){for(var i=0;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Title__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__public_image_icon_image_png__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__public_image_icon_image_png__ = __webpack_require__(85);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__public_image_icon_image_png___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__public_image_icon_image_png__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_TextAreaView__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__public_image_icon_bbs_msgs_png__ = __webpack_require__(45);
@@ -76637,9 +76637,12 @@ var _createClass=function(){function defineProperties(target,props){for(var i=0;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_react_loading_animation__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_react_loading_animation___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_react_loading_animation__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__contract_utils_tokenStore__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_Dialog_IconDialog__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__public_image_icon_png__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__public_image_icon_png___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__public_image_icon_png__);
 var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}/**
  * Created by 包俊 on 2018/9/19.
- */var NewBBS=function(_React$Component){_inherits(NewBBS,_React$Component);function NewBBS(props){_classCallCheck(this,NewBBS);var _this=_possibleConstructorReturn(this,(NewBBS.__proto__||Object.getPrototypeOf(NewBBS)).call(this,props));_this.state={button:__WEBPACK_IMPORTED_MODULE_7__components_Styles__["CommonStyles"].ButtonClickAble,buttonText:'创建',name:'',logo:'',synopsis:'',descr:''};return _this;}_createClass(NewBBS,[{key:"render",value:function render(){var _this2=this;return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div",null,__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_Title__["a" /* default */],{title:'新建',leftShow:true,leftClick:function leftClick(){_this2.props.history.goBack();}}),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_TextAreaView__["a" /* default */],{image:__WEBPACK_IMPORTED_MODULE_5__public_image_icon_bbs_name_png___default.a,text:'社区名',tip:'（必填，10字以内）',isLong:false,maxLength:10,rows:1,inputValue:function inputValue(value){return _this2.setState({name:value});}}),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_TextAreaView__["a" /* default */],{image:__WEBPACK_IMPORTED_MODULE_2__public_image_icon_image_png___default.a,text:'logo',tip:'（请输入图片地址）',isLong:false,inputValue:function inputValue(value){return _this2.setState({logo:value});}}),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_TextAreaView__["a" /* default */],{image:__WEBPACK_IMPORTED_MODULE_4__public_image_icon_bbs_msgs_png___default.a,text:'简介',tip:'（必填，20字以内）',isLong:false,maxLength:20,rows:1,inputValue:function inputValue(value){return _this2.setState({synopsis:value});}}),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_TextAreaView__["a" /* default */],{image:__WEBPACK_IMPORTED_MODULE_6__public_image_icon_bbs_board_png___default.a,text:'公告',isLong:true,inputValue:function inputValue(value){return _this2.setState({descr:value});}}),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div",{style:Styles.ButtonContainer},__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("text",{style:this.state.button,onClick:function onClick(){return _this2._send();}},this.state.buttonText)),this._loading());}},{key:"_send",value:function _send(){var _this3=this;if(this.state.name!==''&&this.state.synopsis!==''){this.setState({buttonText:'创建中',button:__WEBPACK_IMPORTED_MODULE_7__components_Styles__["CommonStyles"].ButtonUnClickAble,loading:true});Object(__WEBPACK_IMPORTED_MODULE_9__contract_utils_tokenStore__["b" /* deploy */])([this.state.name,this.state.synopsis,this.state.descr,this.state.logo]).then(function(res){window.BBSAddress=res.contractAddress;localStorage.setItem('BBSAddress',window.BBSAddress);alert(localStorage.BBSAddress);_this3.props.history.push('./main');}).catch(function(err){alert(err);_this3.setState({buttonText:'创建',button:__WEBPACK_IMPORTED_MODULE_7__components_Styles__["CommonStyles"].ButtonClickAble,loading:false});});}else{alert("请输入必填项");}}},{key:"_loading",value:function _loading(){if(this.state.loading)return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_8_react_loading_animation___default.a,{style:__WEBPACK_IMPORTED_MODULE_7__components_Styles__["CommonStyles"].Loading});else return null;}}]);return NewBBS;}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);/* harmony default export */ __webpack_exports__["a"] = (NewBBS);var Styles={ButtonContainer:{display:'flex',alignItems:'center',justifyContent:'center'}};
+ */var NewBBS=function(_React$Component){_inherits(NewBBS,_React$Component);function NewBBS(props){_classCallCheck(this,NewBBS);var _this=_possibleConstructorReturn(this,(NewBBS.__proto__||Object.getPrototypeOf(NewBBS)).call(this,props));_this.state={button:__WEBPACK_IMPORTED_MODULE_7__components_Styles__["CommonStyles"].ButtonClickAble,buttonText:'创建',name:'',logo:__WEBPACK_IMPORTED_MODULE_11__public_image_icon_png___default.a,synopsis:'',descr:'',display:'none'};return _this;}_createClass(NewBBS,[{key:"render",value:function render(){var _this2=this;return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div",null,__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_Title__["a" /* default */],{title:'新建',leftShow:true,leftClick:function leftClick(){_this2.props.history.goBack();}}),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_TextAreaView__["a" /* default */],{image:__WEBPACK_IMPORTED_MODULE_5__public_image_icon_bbs_name_png___default.a,text:'社区名',tip:'（必填，10字以内）',isLong:false,maxLength:10,rows:1,inputValue:function inputValue(value){return _this2.setState({name:value});}}),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div",{style:Styles.HeadContainer,onClick:function onClick(){return _this2.setState({display:'block'});}},__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div",{style:Styles.ButtonImageContainer},__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img",{alt:'img',src:__WEBPACK_IMPORTED_MODULE_2__public_image_icon_image_png___default.a,style:Styles.ButtonImage}),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("text",{style:Styles.ButtonText},"头像"),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("text",{style:Styles.ButtonTextTip},"（点击头像设置）")),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img",{alt:'icon',src:this.state.logo,style:Styles.HeadIcon})),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_TextAreaView__["a" /* default */],{image:__WEBPACK_IMPORTED_MODULE_4__public_image_icon_bbs_msgs_png___default.a,text:'简介',tip:'（必填，20字以内）',isLong:false,maxLength:20,rows:1,inputValue:function inputValue(value){return _this2.setState({synopsis:value});}}),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_TextAreaView__["a" /* default */],{image:__WEBPACK_IMPORTED_MODULE_6__public_image_icon_bbs_board_png___default.a,text:'公告',isLong:true,inputValue:function inputValue(value){return _this2.setState({descr:value});}}),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div",{style:Styles.ButtonContainer},__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("text",{style:this.state.button,onClick:function onClick(){return _this2._send();}},this.state.buttonText)),this._loading(),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_10__components_Dialog_IconDialog__["a" /* default */],{display:this.state.display,select:function select(icon){_this2.setState({display:'none',logo:icon});},close:function close(){return _this2.setState({display:'none'});}}));}},{key:"_send",value:function _send(){var _this3=this;if(this.state.name!==''&&this.state.synopsis!==''){this.setState({buttonText:'创建中',button:__WEBPACK_IMPORTED_MODULE_7__components_Styles__["CommonStyles"].ButtonUnClickAble,loading:true});Object(__WEBPACK_IMPORTED_MODULE_9__contract_utils_tokenStore__["b" /* deploy */])([this.state.name,this.state.synopsis,this.state.descr,this.state.logo]).then(function(res){window.BBSAddress=res.contractAddress;localStorage.setItem('BBSAddress',window.BBSAddress);alert(localStorage.BBSAddress);_this3.props.history.push('./main');}).catch(function(err){alert(err);_this3.setState({buttonText:'创建',button:__WEBPACK_IMPORTED_MODULE_7__components_Styles__["CommonStyles"].ButtonClickAble,loading:false});});}else{alert("请输入必填项");}}},{key:"_loading",value:function _loading(){if(this.state.loading)return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_8_react_loading_animation___default.a,{style:__WEBPACK_IMPORTED_MODULE_7__components_Styles__["CommonStyles"].Loading});else return null;}}]);return NewBBS;}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);/* harmony default export */ __webpack_exports__["a"] = (NewBBS);var Styles={ButtonContainer:{display:'flex',alignItems:'center',justifyContent:'center'},HeadContainer:{marginLeft:20,marginTop:20},HeadIcon:{width:60,marginTop:10},ButtonImageContainer:{display:'flex',alignItems:'center'},ButtonImage:{width:30,height:30},ButtonText:{fontSize:16,marginLeft:5},ButtonTextTip:{fontSize:14}};
 
 /***/ }),
 /* 441 */
@@ -76700,4 +76703,4 @@ registerValidSW(swUrl);}}).catch(function(){console.log('No internet connection 
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=main.29d9a0d8.js.map
+//# sourceMappingURL=main.4e9b1192.js.map

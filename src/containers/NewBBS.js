@@ -11,6 +11,8 @@ import IconBoard from "../public/image/icon_bbs_board.png";
 import {CommonStyles} from "../components/Styles";
 import Loading from "react-loading-animation"
 import {deploy} from "../contract/utils/tokenStore"
+import IconDialog from "../components/Dialog/IconDialog";
+import defaultIcon from "../public/image/icon.png";
 
 export default class NewBBS extends React.Component {
     constructor(props) {
@@ -19,9 +21,10 @@ export default class NewBBS extends React.Component {
             button: CommonStyles.ButtonClickAble,
             buttonText: '创建',
             name: '',
-            logo: '',
+            logo: defaultIcon,
             synopsis: '',
             descr: '',
+            display: 'none'
         }
     }
 
@@ -40,11 +43,16 @@ export default class NewBBS extends React.Component {
                               maxLength={10}
                               rows={1}
                               inputValue={(value) => this.setState({name: value})}/>
-                <TextAreaView image={IconPic}
-                              text={'logo'}
-                              tip={'（请输入图片地址）'}
-                              isLong={false}
-                              inputValue={(value) => this.setState({logo: value})}/>
+                <div style={Styles.HeadContainer} onClick={() => this.setState({display: 'block'})}>
+                    <div style={Styles.ButtonImageContainer}>
+                        <img alt={'img'}
+                             src={IconPic}
+                             style={Styles.ButtonImage}/>
+                        <text style={Styles.ButtonText}>{"头像"}</text>
+                        <text style={Styles.ButtonTextTip}>{"（点击头像设置）"}</text>
+                    </div>
+                    <img alt={'icon'} src={this.state.logo} style={Styles.HeadIcon}/>
+                </div>
                 <TextAreaView image={IconMsg}
                               text={'简介'}
                               tip={'（必填，20字以内）'}
@@ -61,6 +69,11 @@ export default class NewBBS extends React.Component {
                           onClick={() => this._send()}>{this.state.buttonText}</text>
                 </div>
                 {this._loading()}
+                <IconDialog display={this.state.display}
+                            select={(icon => {
+                                this.setState({display: 'none', logo: icon})
+                            })}
+                            close={() => this.setState({display: 'none'})}/>
             </div>
         )
     }
@@ -96,5 +109,28 @@ const Styles = {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'
-    }
+    },
+    HeadContainer: {
+        marginLeft: 20,
+        marginTop: 20,
+    },
+    HeadIcon: {
+        width: 60,
+        marginTop: 10
+    },
+    ButtonImageContainer: {
+        display: 'flex',
+        alignItems: 'center'
+    },
+    ButtonImage: {
+        width: 30,
+        height: 30,
+    },
+    ButtonText: {
+        fontSize: 16,
+        marginLeft: 5
+    },
+    ButtonTextTip: {
+        fontSize: 14,
+    },
 }

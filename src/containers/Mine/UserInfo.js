@@ -79,7 +79,10 @@ export default class UserInfo extends React.Component {
             this.props.loading(true)
             setName(name).then(res => {
                 this.props.reLoad()
-            }).catch(err => alert(err))
+            }).catch(err => {
+                alert(JSON.stringify(err))
+                this.props.loading(false)
+            })
         }
     }
 
@@ -89,7 +92,11 @@ export default class UserInfo extends React.Component {
             this.props.loading(true)
             setSynopsis(synopsis).then(res => {
                 this.props.reLoad()
-            }).catch(err => console.log(err))
+            }).catch(err => {
+                console.log(err)
+                alert(JSON.stringify(err))
+                this.props.loading(false)
+            })
         }
     }
 }
