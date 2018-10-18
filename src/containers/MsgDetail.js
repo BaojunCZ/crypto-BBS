@@ -218,7 +218,7 @@ export default class MsgDetail extends React.Component {
 
     _link() {
         if (this.state.url !== '') {
-            window.location.href = this.state.url
+            window.location = this.state.url
         }
     }
 
