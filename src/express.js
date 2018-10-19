@@ -1,5 +1,6 @@
 let express = require('express');
 let app = express();
+const history = require('connect-history-api-fallback');
 
 app.all('*', function (req, res, next) {
     res.set({
@@ -10,6 +11,7 @@ app.all('*', function (req, res, next) {
     next();
 });
 
+app.use(history());
 app.use(express.static('build'));
 // app.use(express.static(path.join(__dirname, '../build')))
 
