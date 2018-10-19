@@ -1,5 +1,5 @@
 import React from 'react'
-import {Router, Route, Switch} from 'react-router-dom'
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import createBrowserHistory from 'history/createBrowserHistory'
 import Test from './containers/Test.js'
 import UnLogined from './containers/SignIn'
@@ -13,7 +13,7 @@ import SetBoard from './containers/ChangeBoard'
 const history = createBrowserHistory()
 
 const router = App => (
-    <Router history={history}>
+    <BrowserRouter history={history}>
         <Switch>
             <Route path="/main" exact component={MainPage} history={history}/>
             <Route path="/test" exact component={Test}/>
@@ -24,7 +24,7 @@ const router = App => (
             <Route path="/new_BBS" exact component={NewBBS} history={history}/>
             <Route path="/setBoard" exact component={SetBoard} history={history}/>
         </Switch>
-    </Router>
+    </BrowserRouter>
 )
 
 export default router

@@ -218,7 +218,7 @@ export default class MsgDetail extends React.Component {
 
     _link() {
         if (this.state.url !== '') {
-            window.open(this.state.url,'_blank')
+            window.open(this.state.url, '_blank')
         }
     }
 
