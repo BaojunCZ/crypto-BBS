@@ -39,7 +39,7 @@ export default class UserInfo extends React.Component {
                 <img alt={'head'}
                      src={this.state.src}
                      style={Styles.Head}
-                     onError={() => headIcon}
+                     onError={() => this.setState({src: headIcon})}
                      onClick={() => {
                          this.setState({iconDisplay: 'block'})
                      }}/>
