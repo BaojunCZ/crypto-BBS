@@ -64,7 +64,9 @@ export default class BBSInfo extends React.Component {
                 <text style={Styles.Address}>{window.BBSAddress}</text>
                 <text style={Styles.Synopsis}
                       onClick={() => {
-                          this.setState({synopsisDisplay: 'block'})
+                          if (this._isOwner()) {
+                              this.setState({synopsisDisplay: 'block'})
+                          }
                       }}>{this.state.synopsis}
                 </text>
                 <IconDialog display={this.state.iconDisplay}
