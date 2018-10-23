@@ -100,7 +100,7 @@ export default class BBSInfo extends React.Component {
     }
 
     _setSynopsis(synopsis) {
-        if (synopsis !== null && synopsis.length <= 20) {
+        if (synopsis !== '' && synopsis.length <= 20) {
             this.setState({synopsisDisplay: 'none'})
             setBBSSynopsis(synopsis).then(res => {
                 console.log(res)

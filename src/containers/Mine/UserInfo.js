@@ -87,7 +87,7 @@ export default class UserInfo extends React.Component {
     }
 
     _setSynopsis(synopsis) {
-        if (synopsis !== null && synopsis.length <= 20) {
+        if (synopsis !== '' && synopsis.length <= 20) {
             this.setState({synopsisDisplay: 'none'})
             this.props.loading(true)
             setSynopsis(synopsis).then(res => {
