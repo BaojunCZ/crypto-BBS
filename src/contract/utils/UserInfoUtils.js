@@ -66,7 +66,7 @@ export const getFavorite = (index) => {
 
 export const getBalance = (address) => {
     return new Promise((resolve) => {
-        resolve(window.nervos.appchain.getBalance(address))
+        resolve(window.appchain.appchain.getBalance(address))
     })
 }
 
@@ -94,7 +94,7 @@ export const setSex = (sex) => {
                     hash = res;
                 }
                 if (hash) {
-                    window.nervos.listeners
+                    window.appchain.listeners
                         .listenToTransactionReceipt(hash)
                         .then(receipt => {
                             if (!receipt.errorMessage) {

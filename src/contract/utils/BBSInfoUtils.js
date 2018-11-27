@@ -7,7 +7,7 @@ const {abi, bytecode} = require("../constantNoAdmin")
 
 export const getBBSName = async function (address) {
     return new Promise(((resolve, reject) => {
-        let contract = new window.nervos.appchain.Contract(abi, address);
+        let contract = new window.appchain.appchain.Contract(abi, address);
         contract.methods.BBSName().call().then((BBSName) => {
             resolve(BBSName)
         }).catch(err => {

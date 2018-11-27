@@ -42,7 +42,7 @@ export const txListener = function (method, tx, resolve, reject) {
                 hash = res;
             }
             if (hash) {
-                window.nervos.listeners
+                window.appchain.listeners
                     .listenToTransactionReceipt(hash)
                     .then(receipt => {
                         if (!receipt.errorMessage) {
@@ -68,7 +68,7 @@ export const deploy = async function (args) {
     return new Promise((resolve, reject) => {
         getTX()
             .then(tx => {
-                const contract = new window.nervos.appchain.Contract(abi);
+                const contract = new window.appchain.appchain.Contract(abi);
                 contract
                     .deploy({data: bytecode, arguments: args})
                     .send(tx)
@@ -81,7 +81,7 @@ export const deploy = async function (args) {
                             hash = res;
                         }
                         if (hash) {
-                            return window.nervos.listeners
+                            return window.appchain.listeners
                                 .listenToTransactionReceipt(hash)
                                 .then(receipt => {
                                     console.log(JSON.stringify(receipt));
