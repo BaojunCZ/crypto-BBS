@@ -36760,8 +36760,8 @@ if (hadRuntime) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var _require=__webpack_require__(216),Nervos=_require.default;// const nervos = Nervos(config.chain) // config.chain indicates that the address of Appchain to interact
-if(typeof window.appchain!=="undefined"){window.appchain=Nervos(window.appchain.currentProvider);window.appchain.currentProvider.setHost("http://47.94.105.230:2337");}else{console.log("No Nervos web3? You should consider trying Neuron!");// fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
-window.appchain=Nervos("http://47.94.105.230:2337");}var appchain=window.appchain;module.exports=appchain;
+if(typeof window.appchain!=="undefined"){window.appchain=Nervos(window.appchain.currentProvider);window.appchain.currentProvider.setHost("http://121.196.200.225:1337");}else{console.log("No Nervos web3? You should consider trying Neuron!");// fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
+window.appchain=Nervos("http://121.196.200.225:1337");}var appchain=window.appchain;module.exports=appchain;
 
 /***/ }),
 /* 216 */
@@ -76703,4 +76703,4 @@ registerValidSW(swUrl);}}).catch(function(){console.log('No internet connection 
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=main.83fe27b4.js.map
+//# sourceMappingURL=main.1928f2c2.js.map
