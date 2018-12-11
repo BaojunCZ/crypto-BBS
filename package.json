@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@nervos/chain": "^0.18.0",
+    "@appchain/base": "^0.20.3",
     "connect-history-api-fallback": "^1.5.0",
-    "express": "^4.16.3",
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2",
+    "express": "^4.16.4",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
     "react-loading-animation": "^1.4.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.5"
